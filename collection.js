@@ -18,3 +18,12 @@ let fizzBuzz = function (n) {
 	}
 	return numbers;
 };
+
+// Write a function that validates the password:
+function isValidPassword(password, username) {
+	let tooShort = password.length < 8;
+	let hasSpace = password.indexOf(' ') !== -1;
+	let tooSimilar = password.indexOf(username) !== -1;
+	if (tooShort || hasSpace || tooSimilar) return false;
+	return true;
+}
