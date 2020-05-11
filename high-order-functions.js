@@ -8,3 +8,4 @@ const getMultipliedArr = (arr) => arr.map((num) => num * 2);
 
 console.log(getMultipliedArr([1, 2, 4, 6]));
 // Output: [ 2, 4, 8, 12 ]
+
