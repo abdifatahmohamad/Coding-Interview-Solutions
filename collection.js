@@ -31,4 +31,14 @@ function getLastElement(arr){
 
  console.log( getLastElement([1,2])); //should return 2
 
+/*Write a function sort that takes an array filled with 3 numbers and returns these 3 numbers sorted 
+in ascending order as an array. sort([2, 3, 1]) should return [1, 2, 3].*/
+
+function sort(arr){
+  let numbers = [2,1,3 ];
+  return numbers.sort();
+}
+
+console.log(sort()); //should return [1, 2, 3].
+
 
