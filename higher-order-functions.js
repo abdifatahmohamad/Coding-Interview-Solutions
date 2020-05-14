@@ -30,3 +30,25 @@ const companies= [
 const eightiesCompanies = companies.filter(company => company.start >= 1980 && company.start < 1990);
 console.log(eightiesCompanies);
 
+// Create a function that return the sum total of arrays
+ const numbers = [1, 2, 3, 4, 5, 6];
+
+ const total = numbers.reduce( function sum (acc, value){
+ return acc + value;
+ }, 0);
+ 
+ console.log(total);
+
+ // Create a function that finds the maximum number of an arrays:
+ const max = numbers.reduce(callback, -Infinity);
+ 
+ function callback(acc, value){
+     if(acc > value){
+      return acc;
+    } else{
+    return value;
+    }
+ }
+ 
+ console.log(max);
+
