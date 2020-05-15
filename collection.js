@@ -41,4 +41,3 @@ function sort(arr){
 
 console.log(sort()); //should return [1, 2, 3].
 
-
