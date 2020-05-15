@@ -41,3 +41,25 @@ function sort(arr){
 
 console.log(sort()); //should return [1, 2, 3].
 
+/*Problem: Transform this simple sorting algorithm into a unique sort,
+meaning it should not return any duplicate value in the 
+sorted array */
+
+const uniqSort = function(arr){
+  let breadcrumbs = {};
+  const result = [];
+
+  for(let i = 0; i < arr.length; i++){
+    let array = arr[i]
+    if(!breadcrumbs[array]){
+      result.push(array);
+      breadcrumbs[array] = true;
+    }
+  }
+  return result.sort((a,b) => a-b);
+}
+
+console.log(uniqSort([4,2,2,3,2,2,2]));
+
+//Output => [2,3,4]
+
