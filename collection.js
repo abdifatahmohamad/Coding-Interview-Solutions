@@ -46,14 +46,14 @@ meaning it should not return any duplicate value in the
 sorted array */
 
 const uniqSort = function(arr){
-  let breadcrumbs = {};
+  let cache = {};
   const result = [];
 
   for(let i = 0; i < arr.length; i++){
     let array = arr[i]
-    if(!breadcrumbs[array]){
+    if(!cache[array]){
       result.push(array);
-      breadcrumbs[array] = true;
+      cache[array] = true;
     }
   }
   return result.sort((a,b) => a-b);
