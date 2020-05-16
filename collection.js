@@ -63,3 +63,25 @@ console.log(uniqSort([4,2,2,3,2,2,2]));
 
 //Output => [2,3,4]
 
+/* Write a function which takes in a string and returns
+counts of each character in the string */
+
+function charCount(str) {
+	let result = {};
+	for (let el of str) {
+		let char = el.toLowerCase();
+		if (/[a-z0-9]/.test(char)) {
+			//Meaning is already in there
+			if (result[char] > 0) {
+				result[char]++;
+			} else {
+				//Meaning is not in there yet
+				result[char] = 1;
+			}
+		}
+	}
+	return result;
+}
+
+console.log(charCount('hhhrr!!! &&  !'));
+
