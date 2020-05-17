@@ -85,3 +85,18 @@ function charCount(str) {
 
 console.log(charCount('hhhrr!!! &&  !'));
 
+/* A palindrome is a word, sentence or other type of character sequence 
+which reads the same backward as forward. For example, “racecar” and “Anna” are palindromes. 
+“Table” and “John” aren’t palindromes, because they don’t read the same from left to right 
+and from right to left. */
+
+function isPalindrome(str){
+    str = str.toLowerCase();
+    return str === str.split('').reverse().join('');
+}
+
+console.log(isPalindrome('racecar'));
+// palindrome('racecar')  ===  true
+// palindrome('table')  ===  false
+
+
