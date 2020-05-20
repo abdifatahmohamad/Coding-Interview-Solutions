@@ -83,7 +83,7 @@ function charCount(str) {
 	return result;
 }
 
-console.log(charCount('hhhrr!!! &&  !'));
+console.log(charCount('hhhrr!!! &&  !'))
 
 /* A palindrome is a word, sentence or other type of character sequence 
 which reads the same backward as forward. For example, “racecar” and “Anna” are palindromes. 
