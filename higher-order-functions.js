@@ -6,7 +6,7 @@ forEach(), every(), some(), sort() and so on to solve a complex problems. */
 
 const getMultipliedArr = (arr) => arr.map((num) => num * 2);
 
-console.log(getMultipliedArr([1, 2, 4, 6]))
+console.log(getMultipliedArr([1, 2, 4, 6]));
 // Output: [ 2, 4, 8, 12 ]
 
 // Find ages above 21 using FILTER method
