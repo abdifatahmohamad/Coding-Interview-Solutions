@@ -1,4 +1,4 @@
 # JavaScript-Algorithm-Challenges
 
-List of Algorithms and Coding Challenges built using JavaScript.
+List of Algorithms and Coding Challenges using JavaScript.
 
