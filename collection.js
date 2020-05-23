@@ -99,3 +99,4 @@ console.log(isPalindrome('racecar'));
 // palindrome('racecar')  ===  true
 // palindrome('table')  ===  false
 
+
