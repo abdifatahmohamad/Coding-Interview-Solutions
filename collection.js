@@ -3,7 +3,6 @@ But for multiples of three it should output “Fizz” instead of the number
 and for the multiples of five output “Buzz”. 
 For numbers which are multiples of both three and five output “FizzBuzz”.
 */
-
 let fizzBuzz = function (n) {
 	let numbers = [];
 	for (let i = 1; i <= n; i++) {
