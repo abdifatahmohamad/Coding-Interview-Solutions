@@ -98,4 +98,13 @@ console.log(isPalindrome('racecar'));
 // palindrome('racecar')  ===  true
 // palindrome('table')  ===  false
 
+// Merge sorted arrays 
+function mergeSortedArrays(arr1, arr2){
+//let combine = arr1.concat(arr2);
+ let combine = [...arr1, ...arr2];
+ return combine.sort((a,b) => a - b);
+}
+
+mergeSortedArrays([0,3,4,31], [3,4,6,30]);
+
 
