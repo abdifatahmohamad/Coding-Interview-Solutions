@@ -1,4 +1,4 @@
-# JavaScript-Algorithm-Challenges
+# Python-Algorithm-Challenges
 
-List of Algorithms and Coding Challenges using JavaScript.
+List of Algorithms and Coding Challenges using Python.
 
