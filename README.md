@@ -1,4 +1,4 @@
 # Python-Algorithm-Challenges
 
-List of Algorithms and Coding Challenges using Python.
+List of algorithms and coding challenges using Python.
 
