@@ -74,7 +74,7 @@ print(pig_latin('word'))'''
 
 
 print(myfunc(1, 2, 3))'''
-##############################################################################################
+############################################################################################
 # define a function called myfunc that takes in an arbitrary number of arguments and returns a list
 
 '''def myfunc(*args):
