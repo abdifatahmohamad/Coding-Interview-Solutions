@@ -18,7 +18,7 @@ for word in st.split():
 ################################################################################
 # Use range() to print all the even numbers from 0 to 10.
 '''print(f"The EVEN numbers are:{list(range(0, 11, 2))}")'''
-###############################################################################
+################################################################################
 # Use a List Comprehension to create a list of all numbers between 1 and 50 that are divisible by 3.
 '''my_list = [num for num in range(1,51) if num % 3 == 0]
 print(my_list)'''
