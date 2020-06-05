@@ -242,7 +242,7 @@ print(blackjack(9, 9, 9))
 # summer_69([1, 3, 5]) --> 9
 # summer_69([4, 5, 6, 7, 8, 9]) --> 9
 # summer_69([2, 1, 6, 9, 11]) --> 14
-def summer_69(arr):
+'''def summer_69(arr):
     while 6 in arr:
         index6 = arr.index(6)
         index9 = arr.index(9)
@@ -252,7 +252,7 @@ def summer_69(arr):
 
 # print(summer_69([1, 3, 5]))
 # print(summer_69([4, 5, 6, 7, 8, 9]))
-# print(summer_69([2, 1, 6, 9, 11]))
+# print(summer_69([2, 1, 6, 9, 11]))'''
 
 # Another way of doing it using boolean and while loop:
 '''def summer_69(arr):
