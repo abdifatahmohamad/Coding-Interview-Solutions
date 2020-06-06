@@ -283,5 +283,29 @@ print(blackjack(9, 9, 9))
 print(summer_69([2, 1, 6, 9, 11]))'''
 
 ###############################################################################################
+# Write a Python function that accepts a string and calculates the number of upper case letters and lower case letters.
+# Sample String : 'Hello Mr. Rogers, how are you this fine Tuesday?'
+# Expected Output :
+# No. of Upper case characters : 4
+# No. of Lower case Characters : 33
+# HINT: Two string methods that might prove useful: .isupper() and .islower()
+# If you feel ambitious, explore the Collections module to solve this problem!
+
+'''import re
+def up_low(s):
+    # s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
+    print("A ascii value: ", ord('A'))
+    uppercase, lowercase = 0, 0
+    for char in s:
+        if ord(char) >= 97:
+            lowercase += 1
+        else:
+            uppercase += 1
+
+    print(f'No. of uppercase: {uppercase}')
+    print(f'No. of lowercase: {lowercase}')
 
 
+up_low('Hello Mr. Rogers, how are you this fine Tuesday?')'''
+
+###############################################################################################
