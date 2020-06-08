@@ -21,7 +21,7 @@ print(valid_anagram('Anagram', 'nagaram')) # True
 print(valid_anagram('rat', 'car')) # False
 print(valid_anagram('awesome', 'awesom')) # False
 print(valid_anagram('qwerty', 'qeywrt')) # True
-print(valid_anagram('texttwisttime', 'timetwisttext')) # Frue
+print(valid_anagram('texttwisttime', 'timetwisttext')) # True
 
 #####################################################################################################
 
