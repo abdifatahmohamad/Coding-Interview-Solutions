@@ -1,4 +1,4 @@
-// Valid Anagram
+# Valid Anagram
 
 import re
 
@@ -22,3 +22,6 @@ print(valid_anagram('rat', 'car')) # False
 print(valid_anagram('awesome', 'awesom')) # False
 print(valid_anagram('qwerty', 'qeywrt')) # True
 print(valid_anagram('texttwisttime', 'timetwisttext')) # Frue
+
+#####################################################################################################
+
