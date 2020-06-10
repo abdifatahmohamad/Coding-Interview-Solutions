@@ -45,5 +45,17 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
 print(ispangram('The quick brown fox jumps over the lazy dog'))  # output: True
 print(ispangram("This string is missing some letters"))  # output: False
 #####################################################################################################
+# Move Zeros:
+# arr = [0, 1, 0, 3, 12]
+# Output: [1, 3, 12, 0, 0]
+def move_zeros(arr):
+    index = 0
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            temp = arr[index]
+            arr[index] = arr[i]
+            arr[i] = temp
+            index += 1
+    return arr
 
-
+print(move_zeros([0, 1, 0, 3, 12]))
