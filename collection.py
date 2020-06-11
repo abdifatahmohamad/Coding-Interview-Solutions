@@ -70,7 +70,7 @@ from typing import List
 def sum_zero(arr: List[int]) -> List[int]:
 	left = 0
 	right = len(arr)-1
-	arr.sort()
+# 	arr.sort() If it's not sorted
 	while left < right:
 		total = arr[left] + arr[right]
 		if total == 0:
@@ -83,6 +83,9 @@ def sum_zero(arr: List[int]) -> List[int]:
 
 arr = [-4, 2, 0, -3, 15, 3, 10, 3, -2]
 print(sum_zero(arr))
+
+# O(n) Time
+# O(1) Space
 
 #####################################################################################################
 
