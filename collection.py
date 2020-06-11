@@ -59,3 +59,33 @@ def move_zeros(arr):
     return arr
 
 print(move_zeros([0, 1, 0, 3, 12]))
+
+####################################################################################################
+'''Write a function called sumZero which accepts a sorted array of integers. 
+The function should find the first pair where the sum is 0. 
+Return an array that includes both values that sum to s=zero or undefined if a pair does not exist.'''
+
+from typing import List 
+
+def sum_zero(arr: List[int]) -> List[int]:
+	left = 0
+	right = len(arr)-1
+	arr.sort()
+	while left < right:
+			total = arr[left] + arr[right]
+			if total == 0:
+					return [arr[left], arr[right]]
+			elif total > 0:
+					right -= 1
+			else:
+					left +=1
+	return []
+
+arr = [-4, 2, 0, -3, 15, 3, 10, 3, -2]
+print(sum_zeros(arr))
+
+#####################################################################################################
+
+
+
+
