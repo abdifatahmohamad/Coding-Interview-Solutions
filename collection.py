@@ -72,13 +72,13 @@ def sum_zero(arr: List[int]) -> List[int]:
 	right = len(arr)-1
 	arr.sort()
 	while left < right:
-			total = arr[left] + arr[right]
-			if total == 0:
-					return [arr[left], arr[right]]
-			elif total > 0:
-					right -= 1
-			else:
-					left +=1
+		total = arr[left] + arr[right]
+		if total == 0:
+			return [arr[left], arr[right]]
+		elif total > 0:
+			right -= 1
+		else:
+			left +=1
 	return []
 
 arr = [-4, 2, 0, -3, 15, 3, 10, 3, -2]
