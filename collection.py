@@ -88,7 +88,31 @@ print(sum_zero(arr))
 # O(1) Space
 
 #####################################################################################################
+# Array Pair Sum: 
+'''Given an integer array, output all the unique pairs that sum up to a specific value k.
+pair_sum([1,3,2,2], 4) Output: 2 pairs of (1,3), (2,2)'''
+
+from typing import List
 
 
+def pair_sum(arr, k: List[int]) -> List[int]:
+    # Check if the input is less than num of 2:
+    if len(arr) < 2:
+        return print('Too small')
+    # Create two counters to track our array
+    seen = set()
+    output = set()
+    for num in arr:
+        target = k - num
+        if target not in seen:
+            seen.add(num)
+        else:
+            output.add((min(num, target), max(num, target)))
 
+    print('\n'.join(map(str, list(output))))
+
+
+pair_sum([1, 3, 2, 2], 4)
+
+#####################################################################################################
 
