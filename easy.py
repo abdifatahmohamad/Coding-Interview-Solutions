@@ -81,7 +81,7 @@ print(myfunc(1, 2, 3))'''
     return [x for x in args if x % 2 == 0]
 print(myfunc(1, 2, 3,4,5,6,7,8,9,10)) # [2, 4, 6, 8, 10]'''
 
-############################################################################################
+###########################################################################################
 # Create a function that takes a string and returns a matching string where every even letter is uppercase, and every odd letter is lowercase
 # The ouput string can start with either an uppercase or lowercase letter, so long as letters alternate throughout the string.
 # myfunc('Anthropomorphism) --> Output: 'aNtHrOpOmOrPhIsM
@@ -97,7 +97,7 @@ print(myfunc(1, 2, 3,4,5,6,7,8,9,10)) # [2, 4, 6, 8, 10]'''
 
 print(myfunc('Abdifatah'))'''
 
-###############################################################################################
+##############################################################################################
 # LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even,
 # but returns the greater if one or both numbers are odd¶
 
