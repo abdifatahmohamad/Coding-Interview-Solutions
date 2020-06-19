@@ -322,9 +322,19 @@ def longest_word(string):
 print(longest_word('Abdifatah Ali')) # Output: Abdifatah
 
 ##############################################################################################
+# Count the number of vowels in a string:
+def vowels_count(string):
+    count = 0
+    vowels = 'aeiou'
+    for vowel in string:
+        if vowel.lower() in vowels:
+            count += 1
 
+    return f'No. of vowels: {count}'
 
+print(vowels_count('Yusuf Abdifatah Ali'))
 
+##############################################################################################
 
 
 
