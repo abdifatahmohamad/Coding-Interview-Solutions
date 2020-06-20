@@ -115,4 +115,21 @@ def pair_sum(arr, k: List[int]) -> List[int]:
 pair_sum([1, 3, 2, 2], 4)
 
 ##################################################################################################
+# Add each previous number in list
+# O(N) Time 
+# O(1) Space
+
+def add_previous(nums: List[int]) -> List[int]:
+    curr_sum = 0
+    for i in range(len(nums)):
+        curr_sum += nums[i]
+        nums[i] = curr_sum
+
+    return nums
+
+nums = [1,2,3,4]
+print(add_previous(nums))
+# output: [1,3,6,10]
+
+##################################################################################################
 
