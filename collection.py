@@ -133,4 +133,44 @@ print(add_previous(nums))
 # output: [1,3,6,10]
 
 #################################################################################################
+# Given two sorted integer arrays arr1 and arr2, merge arr2 into arr1 as one sorted array.
+# arr1 = [0, 3, 4, 31], arr2 = [4, 6, 30] # Output: [0, 3, 4, 4, 6, 30, 31]
+
+def mergeSortedArray(arr1, arr2):
+    mergedArray = []
+    # Grab the length of arr1:
+    len1 = len(arr1)
+    # Grab the length of arr2:
+    len2 = len(arr2)
+    # Index of arr1
+    i = 0
+    # Index of arr2
+    j = 0
+
+    # check the input:
+    if len1 == 0:
+        return arr2
+    if len2 == 0:
+        return arr1
+
+    # While loop to check til i and j within the length of both arr1 and arr2:
+    while ((i < len1) and (j < len2)):
+	# Check which array is smaller and push it to the empty array:
+        if arr1[i] < arr2[j]:
+            mergedArray.append(arr1[i])
+            i += 1
+        else:
+            mergedArray.append(arr2[j])
+            j += 1
+    while i < len1:
+        mergedArray.append(arr1[i])
+        i += 1
+    while j < len2:
+        mergedArray.append(arr2[j])
+        j += 1
+
+    return mergedArray
+
+
+print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30]))
 
