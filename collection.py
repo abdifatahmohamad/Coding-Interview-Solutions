@@ -45,6 +45,23 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
 print(ispangram('The quick brown fox jumps over the lazy dog'))  # output: True
 print(ispangram("This string is missing some letters"))  # output: False
 ####################################################################################################
+# reverse list of numbers: num = [1,2,3,4,5,6,7,8,9], Output: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+def rev_list(num):
+  # Grab the length of our list:
+    length = len(num)
+
+    # Using for loop through starting zero til length divided by 2 index
+    # Swapping 2 indexing:
+    for i in range(length//2):
+      num[i], num[length - i - 1] = num[length - i - 1], num[i]
+
+    print(num)
+
+num = [1,2,3,4,5,6,7,8,9]
+rev_list(num)
+
+####################################################################################################
 # Move Zeros:
 # arr = [0, 1, 0, 3, 12]
 # Output: [1, 3, 12, 0, 0]
