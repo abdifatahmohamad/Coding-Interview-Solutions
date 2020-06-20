@@ -118,6 +118,7 @@ pair_sum([1, 3, 2, 2], 4)
 # Add each previous number in list
 # O(N) Time 
 # O(1) Space
+from typing import List
 
 def add_previous(nums: List[int]) -> List[int]:
     curr_sum = 0
