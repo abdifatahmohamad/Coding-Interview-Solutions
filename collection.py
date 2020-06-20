@@ -172,5 +172,10 @@ def mergeSortedArray(arr1, arr2):
     return mergedArray
 
 
-print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30]))
+print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30])) # Output: [0, 3, 4, 4, 6, 30, 31]
+
+#################################################################################################
+
+
+
 
