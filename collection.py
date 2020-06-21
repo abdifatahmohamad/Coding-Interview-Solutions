@@ -224,3 +224,24 @@ nums1 = [2,0,2,1,1,0]
 print(sortArray(nums1))
 
 #################################################################################################
+# Create a function that asks the user how many Fibonacci numbers to generate and then generates them:
+
+def fibonacci():
+    num = int(input("Please enter how many numbers you want in this series :"))
+    first = 0
+    second = 1
+    if num == 0 or num == 1:
+        print(f'Please enter a number that is more than {num}')
+    else:
+        for number in range(num):
+            print(first, end=' ')
+            # Swap/Shift numbers in the list:
+            temp = first + second
+            first = second
+            second = temp + second
+
+
+fibonacci()
+
+#################################################################################################
+
