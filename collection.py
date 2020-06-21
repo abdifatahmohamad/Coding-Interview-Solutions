@@ -192,5 +192,35 @@ def mergeSortedArray(arr1, arr2):
 print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30])) # Output: [0, 3, 4, 4, 6, 30, 31]
 
 #################################################################################################
+# Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+# Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+# Note: You are not suppose to use the library's sort function for this problem.
+
+def sortArray(nums):
+    start, current, end = 0, 0, len(nums)-1
+
+    while current <= end:
+        if nums[current] == 0:
+            swap(nums, current, start)
+            current += 1
+            start += 1
+        elif nums[current] == 2:
+            swap(nums, current, end)
+            end -= 1
+        else:
+            current += 1
+    return nums
 
 
+def swap(nums, i, j):
+    temp = nums[i]
+    nums[i] = nums[j]
+    nums[j] = temp
+
+
+nums1 = [2,0,2,1,1,0]
+# Output = [0,0,1,1,2,2]
+# You can't use sort built-in methods
+print(sortArray(nums1))
+
+#################################################################################################
