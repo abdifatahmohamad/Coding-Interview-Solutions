@@ -244,4 +244,24 @@ def fibonacci():
 fibonacci()
 
 #################################################################################################
+class Solution(object):
+    def fib(self, N: int) -> int:
+        first, second = 0, 1
+        if N < 0:
+            print('Incorrect Input')
+        elif N == 1:
+            return first
+        elif N == 1:
+            return second
+        else:
+            for i in range(2, N + 1):
+                temp = first + second
+                first = second
+                second = temp
+            return second
+
+N = 10
+solution = Solution()
+print(solution.fib(N))
+#################################################################################################
 
