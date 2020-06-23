@@ -264,4 +264,30 @@ N = 10
 solution = Solution()
 print(solution.fib(N))
 ##################################################################################################
+# Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+# Note: For the purpose of this problem, we define empty string as valid palindrome.
+# s = "A man, a plan, a canal: Panama" # Output: True
+# s = "race a car" # Output: False
+
+import re
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        # Remove special character to the string:
+        s = re.sub('[^A-Za-z0-9]+', '', s).lower()
+        rev_str = s[::-1]
+
+        if s == rev_str:
+            return True
+        else:
+            return False
+
+s = "A man, a plan, a canal: Panama" # Output: True
+# s = "race a car" # Output: False
+solution = Solution()
+print(solution.isPalindrome(s))
+
+#################################################################################################
+
 
