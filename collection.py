@@ -263,7 +263,7 @@ class Solution(object):
 N = 10
 solution = Solution()
 print(solution.fib(N))
-##################################################################################################
+###################################################################################################
 # Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 # Note: For the purpose of this problem, we define empty string as valid palindrome.
 # s = "A man, a plan, a canal: Panama" # Output: True
@@ -288,6 +288,6 @@ s = "A man, a plan, a canal: Panama" # Output: True
 solution = Solution()
 print(solution.isPalindrome(s))
 
-################################################################################################
+#################################################################################################
 
 
