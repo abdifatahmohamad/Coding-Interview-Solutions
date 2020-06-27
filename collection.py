@@ -313,6 +313,31 @@ solution = Solution()
 print(solution.shuffle(nums, n))
 
 ##################################################################################################
+# The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+# If a[i] > b[i], then Alice is awarded 1 point.
+# If a[i] , then Bob is awarded 1 point.
+# If a[i] = b[i], then neither person receives a point.
+# Comparison points is the total points a person earned.
+# Given a and b, determine their respective comparison points.
 
+def compare_triplets(a,b):
+    alice = 0
+    bob = 0
 
+    for i in range(0, len(a)):
+        if a[i] > b[i]:
+            alice += 1
+        if a[i] < b[i]:
+            bob += 1
+    return [alice, bob]
+
+# a = [1, 2, 3]
+# b = [3, 2, 1]
+# a = [17, 28, 30]
+# b = [99, 16, 8]
+a = [17, 28, 30]
+b = [17, 28, 30]
+print(compare_triplets(a, b))
+
+##################################################################################################
 
