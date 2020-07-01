@@ -340,4 +340,29 @@ b = [17, 28, 30]
 print(compare_triplets(a, b))
 
 ###################################################################################################
+# Google question:
+# Given a bunch of characters, create a function that returns the first recurrent character:
+# first_recurring('DBCBA') # Output: 'B'
+# first_recurring('DACBAB') # Output: 'A'
+# first_recurring('ABC') # Output: None
+
+def first_recurring(given_string):
+
+    character = given_string.lower()
+
+    seen = {}
+
+    for char in character:
+        if char in seen:
+            return char
+        else:
+            seen[char] = 1
+    # After the above loop is done, that means there no recurrent character so return None:
+    return None
+
+print(first_recurring('ABCDAB')) #Output: a
+
+###################################################################################################
+
+
 
