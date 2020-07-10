@@ -289,6 +289,18 @@ solution = Solution()
 print(solution.isPalindrome(s))
 
 #################################################################################################
+# Is Palindrome solution using Pointers:
+def isPalindrome(string):
+	leftIdx = 0
+    rightIdx = len(string) - 1
+    while leftIdx < rightIdx:
+        if string[leftIdx] != string[rightIdx]:
+            return False
+        leftIdx += 1
+        rightIdx -= 1
+    return True
+
+#################################################################################################
 # Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
 # Return the array in the form [x1,y1,x2,y2,...,xn,yn].
 # Input: nums = [1,2,3,4,4,3,2,1], n = 4
