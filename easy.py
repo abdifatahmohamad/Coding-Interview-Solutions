@@ -338,5 +338,3 @@ print(vowels_count('Yusuf Abdifatah Ali'))
 
 
 
-
-
