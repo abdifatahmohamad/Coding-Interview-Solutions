@@ -61,6 +61,23 @@ def rev_list(num):
 num = [1,2,3,4,5,6,7,8,9]
 rev_list(num)
 
+
+# Another way of doing it using two pointers:
+def rev_list(num):
+    start = 0
+    end = len(num) - 1
+    while start < end:
+        temp = num[start]
+        num[start] = num[end]
+        num[end] = temp
+        start += 1
+        end -= 1
+    print(num)
+
+
+num = [1,2,3,4,5,6,7,8,9]
+rev_list(num)
+
 ###################################################################################################
 # Move Zeros:
 # arr = [0, 1, 0, 3, 12]
