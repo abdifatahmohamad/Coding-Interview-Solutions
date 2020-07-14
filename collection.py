@@ -411,4 +411,44 @@ sen = 'Hello there, my name is Abdifatah'
 print(longest_word(sen))
 
 ####################################################################################################
+# Find the first recurring number Using HASH MAP:
+# arr = [2,5,1,2,3,5,1,2,4] Output: 2
+
+def first_recurring(arr):
+    map ={}
+    for num in arr:
+        if num in map:
+            return num
+        else:
+            map[num] = 1
+    return f'There is no any recurring number in the array'
+
+arr = [2,5,1,2,3,5,1,2,4]
+# arr = [1,2,3,4,5,6]
+print(first_recurring(arr))
+
+# Using Floyd's Tortoise and Hare (Cycle Detection) method. O(n) Time O(1) Space
+def findDuplicate(nums):
+    slow_pt = fast_pt = nums[0]
+    slow_pt = nums[slow_pt]
+    fast_pt = nums[nums[fast_pt]]
+
+    while slow_pt != fast_pt:
+        slow_pt = nums[slow_pt]
+        fast_pt = nums[nums[fast_pt]]
+
+    slow_pt = nums[0]
+    while slow_pt != fast_pt:
+        slow_pt = nums[slow_pt]
+        fast_pt = nums[fast_pt]
+
+    return slow_pt
+
+nums = [1,3,4,2,2]
+# Output: 2
+print(findDuplicate(nums))
+
+
+####################################################################################################
+ 
 
