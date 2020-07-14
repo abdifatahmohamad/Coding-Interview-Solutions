@@ -392,6 +392,24 @@ def first_recurring(given_string):
 print(first_recurring('ABCDAB')) #Output: a
 
 ####################################################################################################
+# Longest word in the string:
+import re
 
+def longest_word(sen):
+    sen = re.sub('[^A-Za-z0-9]+', ' ', sen).lower()
+    sentence = sen.split()
+    longestWord = len(sentence[0])
+    for word in sentence:
+        word_len = len(word)
+        if word_len > longestWord:
+            longestWord = word_len
+            curr_word = word
+    return curr_word
+
+
+sen = 'Hello there, my name is Abdifatah'
+print(longest_word(sen))
+
+####################################################################################################
 
 
