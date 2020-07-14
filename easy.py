@@ -167,7 +167,7 @@ print(master_yoda('I am home'))
     return abs(100 - n) <= 10 or abs(200 - n) <= 10
 
 print(almost_there(210))'''
-##############################################################################################
+#############################################################################################
 # Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
 # has_33([1, 3, 3]) → True
 # has_33([1, 3, 1, 3]) → False
