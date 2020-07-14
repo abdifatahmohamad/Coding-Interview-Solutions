@@ -10,7 +10,7 @@ print(split('hello'))'''
 my_list = [word[0] for word in st.split()]
 print(my_list)'''
 
-###############################################################################
+################################################################################
 '''st = 'Sam Print only the words that start with s in this sentence'
 for word in st.split():
     if word[0].lower() == 's':
