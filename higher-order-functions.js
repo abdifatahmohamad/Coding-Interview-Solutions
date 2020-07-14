@@ -51,4 +51,3 @@ console.log(eightiesCompanies);
  }
  
  console.log(max);
-
