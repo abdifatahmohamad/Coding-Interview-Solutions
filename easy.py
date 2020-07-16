@@ -396,3 +396,22 @@ arr = [3, 4, 4, 3, 6, 3]
 # Output: [4, 6, 3]
 print(remove_duplicates(arr))
 ##############################################################################################
+# Remove the left-most duplicates from a list of integers and return the result.
+# Remove the 3's at indices 0 and 3 followed by removing a 4 at index 1
+# Input: [3, 4, 4, 3, 6, 3] # => [4, 6, 3], Input: [1,2,1,2,1,2,3] Output:[1,2,3]
+def solve(arr):
+    dupes = []
+    array = arr[::-1]
+    for num in array:
+        if num not in dupes:
+            dupes.append(num)
+    return dupes[::-1]
+
+arr = [1,2,1,2,1,2,3]
+# Output: [4, 6, 3]
+print(remove_duplicates(arr))
+
+# Using list comprehension:
+def solve(arr):
+    return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
+
