@@ -411,9 +411,21 @@ arr = [1,2,1,2,1,2,3]
 # Output: [4, 6, 3]
 print(remove_duplicates(arr))
 
+# The same above solution but different way:
+def remove_duplicates(arr):
+    result = []
+    for index, array in enumerate(arr):
+        if array not in arr[index + 1:]:
+            result.append(index)
+    return result
+
 # Using list comprehension:
 def solve(arr):
-    return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
+    result = [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
+    return result
+
+   # Online return:
+   # return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
 
 ##############################################################################################
 
