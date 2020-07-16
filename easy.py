@@ -416,3 +416,28 @@ def solve(arr):
     return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
 
 ##############################################################################################
+
+# Find the common numbers in the array list:
+# arr1 = [1,2,3,4,6], arr2 = [2,4,6,8] --> Output: [2,4,6]
+
+def find_common_list(arr1,arr2):
+    '''
+
+    result = []
+    for i in arr1:
+        if i in arr2:
+            result.append(i)
+    return result
+
+    '''
+    # One line return:
+    return [i for i in arr1 if i in arr2]
+    '''result = [i for i in arr1 if i in arr2]
+    return result'''
+
+arr1 = [1,2,3,4,6]
+arr2 = [2,4,6,8]
+# Output: [2,4,6]
+print(find_common_list(arr1, arr2))
+##############################################################################################
+
