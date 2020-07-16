@@ -360,5 +360,40 @@ string = 'abca'
 print(count(string))
 
 ##############################################################################################
+# In this Kata, you will remove the left-most duplicates
+# from a list of integers and return the result.
+# ([3, 4, 4, 3, 6, 3]) # => [4, 6, 3]
+# ( https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them)
 
+# To compute the list of duplicated elements without libraries:
+def remove_duplicates(arr):
+    seen = {}
+    dupes = []
+    for num in arr:
+        if num not in seen:
+            seen[num] = 1
+        else:
+            if seen[num] == 1:
+                dupes.append(num)
+            seen[num] += 1
+    return dupes
 
+# This method computes a list of unique elements using set() library:
+def remove_duplicates(arr):
+    seen = set()
+    dupes = []
+    for num in arr:
+        if num not in seen:
+            dupes.append(num)
+            seen.add(num)
+    return dupes
+
+# The same above code using list comprehension:
+def remove_duplicates(arr):
+    seen = set()
+    return [num for num in arr if num not in seen and not seen.add(num)]
+
+arr = [3, 4, 4, 3, 6, 3]
+# Output: [4, 6, 3]
+print(remove_duplicates(arr))
+##############################################################################################
