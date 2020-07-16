@@ -455,7 +455,7 @@ print(find_common_list(arr1, arr2))
 ##############################################################################################
 # find the first missing element in the array:
 def first_missing_element(arr):
-    for i in range(len(arr) -1):
+    for i in arr:
         curr = arr[i]
         next = arr[i + 1]
         if curr + 1 != next:
