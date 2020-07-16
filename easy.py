@@ -415,3 +415,4 @@ print(remove_duplicates(arr))
 def solve(arr):
     return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
 
+##############################################################################################
