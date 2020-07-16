@@ -335,6 +335,30 @@ def vowels_count(string):
 print(vowels_count('Yusuf Abdifatah Ali'))
 
 ###############################################################################################
+# The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+# What if the string is empty? Then the result should be empty object literal, {}.
+def count(s):
+    char_count = {}
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    return char_count
 
+string = 'abca'
+print(count(string))
+
+# The same idea but easier:
+def count(string):
+    counter = {}
+    for char in string:
+        counter[char] = counter.get(char, 0) + 1
+    return counter
+
+string = 'abca'
+print(count(string))
+
+##############################################################################################
 
 
