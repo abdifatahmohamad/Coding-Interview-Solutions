@@ -360,8 +360,7 @@ string = 'abca'
 print(count(string))
 
 ##############################################################################################
-# In this Kata, you will remove the left-most duplicates
-# from a list of integers and return the result.
+# Find duplicates from a list of integers and return the result.
 # ([3, 4, 4, 3, 6, 3]) # => [4, 6, 3]
 # ( https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them)
 
