@@ -467,3 +467,19 @@ arr = [1,2,3,4,6,7,8]
 print(first_missing_element(arr))
 
 ##############################################################################################
+# Find the first element of an array that is not consecutive (Not the missing element).
+def first_non_consecutive(arr):
+    for i in range(len(arr) - 1):
+        curr = arr[i]
+        next = arr[i + 1]
+        if curr + 1 != next:
+            return next
+    return None
+
+
+arr = [1,2,3,4,6,7,8]
+# Output: 6
+print(first_non_consecutive(arr))
+
+##############################################################################################
+
