@@ -23,6 +23,22 @@ for word in st.split():
 '''my_list = [num for num in range(1,51) if num % 3 == 0]
 print(my_list)'''
 
+# Practice list comprehension:
+# Using regular for loop and append:
+'''def no_odds(values):
+    list = []
+    for i in values:
+        if i % 2 == 0:
+            list.append(i)
+    return list
+'''
+# using List comprehension:
+def no_odds(values):
+    return [i for i in values if i % 2 == 0]
+
+values = [1,2,3,4,5,6,7,8,9,10,11]
+print(no_odds(values))
+
 ################################################################################
 # Go through the string below and if the length of a word is even print "even!"
 '''st = 'Print every word in this sentence that has an even number of letters'
