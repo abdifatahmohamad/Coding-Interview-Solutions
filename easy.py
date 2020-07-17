@@ -408,7 +408,7 @@ def remove_duplicates(arr):
     return dupes[::-1]
 
 arr = [1,2,1,2,1,2,3]
-# Output: [4, 6, 3]
+# Output: [1, 2, 3]
 print(remove_duplicates(arr))
 
 # The same above solution but different way:
