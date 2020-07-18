@@ -448,5 +448,33 @@ print(findDuplicate(nums))
 
 
 ####################################################################################################
+#  Remove Duplicates from Sorted Array using two pointer:
+def remove_duplicates(nums):
+    # Check if the array are empty:
+    if len(nums) == 0:
+        return 0
+    # Create our first pointer:
+    pointer1 = 0
+    # Create for loop that compares 2 different elements and always increment pointer2
+    # Start the 2nd pointer at index 1
+    for pointer2 in range(1, len(nums)):
+        if nums[pointer1] != nums[pointer2]:
+	    # Advance pointer1 by 1
+            pointer1 += 1
+	    # Replace element after pointer one (switch):
+            nums[pointer1] = nums[pointer2]
+        else:
+	    # Advance pointer2 by 1
+            pointer2 += 1
+	    # The way we gonna know what the count is of unique elements
+	    # The pointer1 is in whatever index that you left off, and then add 1
+    return pointer1 + 1
+
+nums = [1,3,3,3,3,5,5]
+# Ouput: The length is: 3
+print(remove_duplicates(nums))
+
+####################################################################################################
+
  
 
