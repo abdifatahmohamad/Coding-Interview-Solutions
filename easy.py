@@ -499,4 +499,29 @@ arr = [1,2,3,4,6,7,8]
 print(first_non_consecutive(arr))
 
 ##############################################################################################
+# ways to convert list of ASCII value to string:
+def covertListToString(nums):
+    res = ''
+    for char in nums:
+        res += chr(char)
+    return str(res)
+###############################################
+# Using map()
+def covertListToString2(nums):
+    res = ''.join(map(chr, myList))
+    return str(res)
+
+###############################################
+# Using join and list comprehension
+def covertListToString3(nums):
+    res = ''.join(chr(char) for char in myList)
+    return str(res)
+
+# myList = [71, 101, 101, 107, 115, 102, 111, 114, 71, 101, 101, 107, 115]
+myList = [65, 98, 100, 105, 102, 97, 116, 97, 104, 77, 111, 104, 97, 109, 101, 100]
+print(covertListToString(myList))
+
+##########################################################################################################################################
+
+
 
