@@ -475,5 +475,30 @@ nums = [1,3,3,3,3,5,5]
 print(remove_duplicates(nums))
 
 ####################################################################################################
+# Third Maximum Number Input: [3, 2, 1] Output: 1
+import math
 
- 
+
+def thirdMax(nums):
+    max = nums[0]
+    secondMax = -math.inf
+    thirdMax =  -math.inf
+    for i in range(len(nums)):
+        num = nums[i]
+        if num > max:
+            thirdMax = secondMax
+            secondMax = max
+            max = num
+        elif num > secondMax and num < max:
+            thirdMax = secondMax
+            secondMax = num
+        elif num > thirdMax and num < secondMax:
+            thirdMax = num
+    return max if thirdMax == -math.inf else thirdMax
+
+nums = [33, 5, 7, 9]
+print(thirdMax(nums))
+
+####################################################################################################
+
+
