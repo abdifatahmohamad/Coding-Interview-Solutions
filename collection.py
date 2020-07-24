@@ -446,7 +446,6 @@ nums = [1,3,4,2,2]
 # Output: 2
 print(findDuplicate(nums))
 
-
 ####################################################################################################
 #  Remove Duplicates from Sorted Array using two pointer:
 def remove_duplicates(nums):
