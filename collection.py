@@ -499,5 +499,41 @@ nums = [33, 5, 7, 9]
 print(thirdMax(nums))
 
 ####################################################################################################
+# you will be given two strings a and b and your task will be to return 
+# the characters that are not common in the two strings. print(solve("xyab","xzca")) # Output: "ybzc"
 
+# method1:
+def solve(a,b):
+    unique = ''
+    for char in a + b:
+        if char in a and char in b: continue
+        unique += char
+    return unique
+
+# method2:
+def solve(a,b):
+    unique = []
+    for char in a:
+        if char not in b:
+            unique.append(i)
+    for i in b:
+        if char not in a:
+            unique.append(i)
+            
+    return "".join(unique) 
+
+# method3:
+def solve(left, right):
+    result = ''
+    for char in left:
+        if char not in right:
+            result += char
+    for char in right:
+        if char not in left:
+            result += char
+    return result
+print(solve("xyab","xzca"))
+# Output: "ybzc"
+
+####################################################################################################
 
