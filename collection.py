@@ -1,5 +1,4 @@
 # Valid Anagram
-
 import re
 
 def valid_anagram(str1, str2):
