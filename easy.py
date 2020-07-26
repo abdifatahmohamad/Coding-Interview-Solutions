@@ -449,6 +449,19 @@ def remove_duplicates(arr):
 # Find the common numbers in the array list:
 # arr1 = [1,2,3,4,6], arr2 = [2,4,6,8] --> Output: [2,4,6]
 
+# Brute-Force Solution:
+def solve(arr1, arr2):
+    result = []
+    d = {}
+    for i in arr1:
+        d[i] = 1
+    for key in arr2:
+        if key in d:
+            result.append(key)
+    return result
+
+# Better Solution:
+
 def find_common_list(arr1,arr2):
     '''
 
