@@ -515,10 +515,10 @@ def solve(a,b):
     unique = []
     for char in a:
         if char not in b:
-            unique.append(i)
+            unique.append(char)
     for i in b:
         if char not in a:
-            unique.append(i)
+            unique.append(char)
             
     return "".join(unique) 
 
