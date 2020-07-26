@@ -516,7 +516,7 @@ def solve(a,b):
     for char in a:
         if char not in b:
             unique.append(char)
-    for i in b:
+    for char in b:
         if char not in a:
             unique.append(char)
             
