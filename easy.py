@@ -477,6 +477,17 @@ def find_common_list(arr1,arr2):
     '''result = [i for i in arr1 if i in arr2]
     return result'''
 
+# another better solution using two pointers:
+def solve(arr1, arr2):
+    i = j = 0
+    result = []
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] == arr2[j]:
+            result.append(arr2[j])
+            j += 1
+        i += 1
+    return result
+
 arr1 = [1,2,3,4,6]
 arr2 = [2,4,6,8]
 # Output: [2,4,6]
