@@ -536,4 +536,21 @@ print(solve("xyab","xzca"))
 # Output: "ybzc"
 
 ####################################################################################################
+# Merge two lists of array (arr1, arr2) and return it sorted removing duplicate numbers:
+def solve(arr1, arr2):
+    result = []
+    for num in arr1 + arr2:
+        if num not in arr1 and num not in arr2: continue
+        result.append(num)
+    return result
+
+
+arr1 = [1, 2, 3, 4, 6]
+arr2 = [2, 4, 6, 8]
+# Output: [1, 2, 3, 4, 6, 2, 4, 6, 8]
+print(solve(arr1, arr2))
+
+####################################################################################################
+
+
 
