@@ -34,22 +34,23 @@ def isAnagram(s: str, t: str) -> bool:
 
 print(valid_anagram('Anagram', 'nagaram')) # True
 #####################################################################################################
-# Write a Python function to check whether a string is pangram or not.
-# Note : Pangrams are words or sentences containing every letter of the alphabet at least once.
-# For example : "The quick brown fox jumps over the lazy dog"
-# Hint: Look at the string module
-# import string --> print(string.ascii_lowercase) 'abcdefghijklmnopqrstuvwxyz'
-# print(ispangram("The quick brown fox jumps over the lazy dog")) # output: True
-#print(ispangram("This string is missing some letters")) # output: False
-
 import string, re
-
 
 def ispangram(str1, alphabet=string.ascii_lowercase):
     # Remove special character to the string:
     str1 = re.sub('[^A-Za-z0-9]+', '', str1).lower()
     alphaset = set(alphabet)
     return alphaset <= set(str1)
+
+# Another way using for loop check if each character of the string belongs to the alphabet set or not:
+import string
+def ispangram(s):
+    st = s.lower()
+    alphabet = set(string.ascii_lowercase)
+    for char in alphabet:
+        if char not in st:
+            return False
+    return True
 
 print(ispangram('The quick brown fox jumps over the lazy dog'))  # output: True
 print(ispangram("This string is missing some letters"))  # output: False
