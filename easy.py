@@ -545,6 +545,22 @@ myList = [65, 98, 100, 105, 102, 97, 116, 97, 104, 77, 111, 104, 97, 109, 101, 1
 print(covertListToString(myList))
 
 ##########################################################################################################################################
+# Two ways to map dictionary elements/characters in its index
+def firstUniqChar(s: str) -> int:
+    unique = {}
+    for char in range(len(s)):
+        unique[s[char]] = char
+    
+    # Another way using enumerate function:
+    # for i, el in enumerate(s):
+    #     unique[el] = i
+
+    return unique
+
+s = "leetcode"
+print(firstUniqChar(s))
+
+##########################################################################################################################################
 
 
 
