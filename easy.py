@@ -444,7 +444,7 @@ def remove_duplicates(arr):
    # Online return:
    # return [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
 
-##############################################################################################
+#############################################################################################
 
 # Find the common numbers in the array list:
 # arr1 = [1,2,3,4,6], arr2 = [2,4,6,8] --> Output: [2,4,6]
