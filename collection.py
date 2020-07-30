@@ -420,7 +420,7 @@ def longest_word(sen):
 sen = 'Hello there, my name is Abdifatah'
 print(longest_word(sen))
 
-####################################################################################################
+#####################################################################################################
 # Find the first recurring number Using HASH MAP:
 # arr = [2,5,1,2,3,5,1,2,4] Output: 2
 
