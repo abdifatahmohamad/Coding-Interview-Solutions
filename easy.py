@@ -6,6 +6,37 @@
 print(split('hello'))'''
 
 #################################################################################
+# A program that generates a random number and guesses the right number:
+import random
+
+randomNum = random.randint(1,100)
+for _ in range(100):
+    guess = int(input('Guess a number'))
+    if guess == randomNum:
+        print('You got it!')
+        break
+    elif guess > randomNum:
+        print('Your guess is too high')
+    else:
+        print('Your guess is too low')
+        
+# The same program using while loop:
+import random
+
+randomNum = random.randint(1,100)
+keep_looping = True
+while keep_looping:
+    guess = int(input('Guess a number'))
+    if guess == randomNum:
+        print('You got it!')
+        # break
+        keep_looping = False
+    elif guess > randomNum:
+        print('Your guess is too high')
+    else:
+        print('Your guess is too low')
+
+#################################################################################
 #  Use List Comprehension to create a list of the first letters of every word in the string below:
 '''st = 'Create a list of the first letters of every word in this string'
 my_list = [word[0] for word in st.split()]
