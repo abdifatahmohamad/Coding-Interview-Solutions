@@ -55,7 +55,7 @@ def ispangram(s):
 
 print(ispangram('The quick brown fox jumps over the lazy dog'))  # output: True
 print(ispangram("This string is missing some letters"))  # output: False
-#####################################################################################################
+####################################################################################################
 # reverse list of numbers: num = [1,2,3,4,5,6,7,8,9], Output: [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 def rev_list(num):
