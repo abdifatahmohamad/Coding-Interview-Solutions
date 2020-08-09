@@ -53,6 +53,18 @@ while keep_looping:
 my_list = [word[0] for word in st.split()]
 print(my_list)'''
 
+# The same above solution using regular for loop:
+def makeList(st):
+    s = st.split()
+    letter = []
+    for word in s:
+        letter.append(word[0])
+    return letter
+
+
+my_list = 'Create a list of the first letters of every word in this string'
+print(makeList(my_list))
+
 #################################################################################
 '''st = 'Sam Print only the words that start with s in this sentence'
 for word in st.split():
