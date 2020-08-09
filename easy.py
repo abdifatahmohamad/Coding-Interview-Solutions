@@ -1,6 +1,17 @@
 # Split string into list of characters
 '''def split(word):
     return [char for char in word]
+#########################################
+def split(word):
+    # for char in word:
+    # splits = []
+    # for char in word:
+    #     splits.append(char)
+    # return splits
+#############################################    
+    splits = [char for char in word]
+    return splits
+#############################################    
     # return list(word)
 
 print(split('hello'))'''
