@@ -34,7 +34,7 @@ def isAnagram(s: str, t: str) -> bool:
 
 print(valid_anagram('Anagram', 'nagaram')) # True
 
-####################################################################################################
+###################################################################################################
 import string, re
 
 def ispangram(str1, alphabet=string.ascii_lowercase):
