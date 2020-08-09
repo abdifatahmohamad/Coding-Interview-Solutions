@@ -87,7 +87,7 @@ print(my_list)'''
             list.append(i)
     return list
 '''
-# using List comprehension:
+# using regular for loop:
 def no_odds(values):
     return [i for i in values if i % 2 == 0]
 
