@@ -16,7 +16,7 @@ def split(word):
 
 print(split('hello'))'''
 
-###################################################################################
+##################################################################################
 # A program that generates a random number and guesses the right number:
 import random
 
