@@ -103,12 +103,6 @@ for word in st.split():
     print(f'EVEN strings are: {word}')'''
 
 ################################################################################
-#  Use List Comprehension to create a list of the first letters of every word in the string below:
-'''st = 'Create a list of the first letters of every word in this string'
-my_list = [word[0] for word in st.split()]
-print(my_list)'''
-
-################################################################################
 # Write a program that prints the integers from 1 to 100. But for multiples of three
 # print "Fizz" instead of the number, and for the multiples of five print "Buzz".
 # For numbers which are multiples of both three and five print "FizzBuzz".
