@@ -65,6 +65,24 @@ def makeList(st):
 my_list = 'Create a list of the first letters of every word in this string'
 print(makeList(my_list))
 
+####################################################################################
+# Program that capitalizes first letter of the string:
+
+#using regulat for loop:
+def captilizeFirstletter(st):
+    # s = st.split()
+    # lst = []
+    # for word in s:
+    #     lst.append(word[0].upper() + word[1:])
+    # return ' '.join(lst)
+    
+    # using list comprehension 
+    lst = [word[0].upper() + word[1:] for word in st.split()]
+    return ' '.join(lst)
+
+my_list = 'Create a list of the first letters of every word in this string'
+print(captilizeFirstletter(my_list))
+
 #################################################################################
 '''st = 'Sam Print only the words that start with s in this sentence'
 for word in st.split():
