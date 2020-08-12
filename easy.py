@@ -180,6 +180,20 @@ print(myfunc(1, 2, 3,4,5,6,7,8,9,10)) # [2, 4, 6, 8, 10]'''
 
 print(myfunc('Abdifatah'))'''
 
+# The same above code using range loop and append array:
+def myfunc(word):
+    res = []
+    for i in range(len(word)):
+        letter = word[i]
+        if i % 2 == 0:
+            res.append(letter.lower())
+        else:
+            res.append(letter.upper())
+    return ''.join(res)
+
+
+print(myfunc("abdifatah"))
+
 ##############################################################################################
 # LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even,
 # but returns the greater if one or both numbers are odd¶
