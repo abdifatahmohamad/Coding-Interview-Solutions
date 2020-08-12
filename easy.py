@@ -68,7 +68,7 @@ print(makeList(my_list))
 ####################################################################################
 # Program that capitalizes first letter of the string:
 
-#using regulat for loop:
+#using regular for loop:
 def captilizeFirstletter(st):
     # s = st.split()
     # lst = []
