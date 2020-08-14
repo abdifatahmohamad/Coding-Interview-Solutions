@@ -1,17 +1,22 @@
 # Valid Anagram
+from typing import List
+import string
 import re
+
 
 def valid_anagram(str1, str2):
    # Remove special character to the string:
     str1 = re.sub('[^A-Za-z0-9]+', '', str1).lower()
     str2 = re.sub('[^A-Za-z0-9]+', '', str2).lower()
    # Cast string as a list:
-    list_str1, list_str2 = list(str1), list(str2)  
+    list_str1, list_str2 = list(str1), list(str2)
     list_str1.sort()
-    list_str2.sort()	
+    list_str2.sort()
     return (list_str1 == list_str2)
 
 # Another way of doing it using a HashMap:
+
+
 def isAnagram(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
@@ -32,10 +37,11 @@ def isAnagram(s: str, t: str) -> bool:
             seen[letter] -= 1
     return True
 
-print(valid_anagram('Anagram', 'nagaram')) # True
+
+print(valid_anagram('Anagram', 'nagaram'))  # True
 
 ##################################################################################################
-import string, re
+
 
 def ispangram(str1, alphabet=string.ascii_lowercase):
     # Remove special character to the string:
@@ -43,8 +49,10 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
     alphaset = set(alphabet)
     return alphaset <= set(str1)
 
+
 # Another way using for loop check if each character of the string belongs to the alphabet set or not:
-import string
+
+
 def ispangram(s):
     st = s.lower()
     alphabet = set(string.ascii_lowercase)
@@ -53,10 +61,12 @@ def ispangram(s):
             return False
     return True
 
+
 print(ispangram('The quick brown fox jumps over the lazy dog'))  # output: True
 print(ispangram("This string is missing some letters"))  # output: False
 ####################################################################################################
 # reverse list of numbers: num = [1,2,3,4,5,6,7,8,9], Output: [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
 
 def rev_list(num):
   # Grab the length of our list:
@@ -69,7 +79,8 @@ def rev_list(num):
 
     print(num)
 
-num = [1,2,3,4,5,6,7,8,9]
+
+num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 rev_list(num)
 
 
@@ -86,13 +97,15 @@ def rev_list(num):
     print(num)
 
 
-num = [1,2,3,4,5,6,7,8,9]
+num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 rev_list(num)
 
 ####################################################################################################
 # Move Zeros:
 # arr = [0, 1, 0, 3, 12]
 # Output: [1, 3, 12, 0, 0]
+
+
 def move_zeros(arr):
     index = 0
     for i in range(len(arr)):
@@ -103,14 +116,14 @@ def move_zeros(arr):
             index += 1
     return arr
 
+
 print(move_zeros([0, 1, 0, 3, 12]))
 
 ####################################################################################################
-'''Write a function called sumZero which accepts a sorted array of integers. 
-The function should find the first pair where the sum is 0. 
+'''Write a function called sumZero which accepts a sorted array of integers.
+The function should find the first pair where the sum is 0.
 Return an array that includes both values that sum to s=zero or undefined if a pair does not exist.'''
 
-from typing import List 
 
 def sum_zero(arr: List[int]) -> List[int]:
 	left = 0
@@ -123,8 +136,9 @@ def sum_zero(arr: List[int]) -> List[int]:
 		elif total > 0:
 			right -= 1
 		else:
-			left +=1
+			left += 1
 	return []
+
 
 arr = [-4, 2, 0, -3, 15, 3, 10, 3, -2]
 print(sum_zero(arr))
@@ -133,11 +147,9 @@ print(sum_zero(arr))
 # O(1) Space
 
 ###################################################################################################
-# Array Pair Sum: 
+# Array Pair Sum:
 '''Given an integer array, output all the unique pairs that sum up to a specific value k.
 pair_sum([1,3,2,2], 4) Output: 2 pairs of (1,3), (2,2)'''
-
-from typing import List
 
 
 def pair_sum(arr, k: List[int]) -> List[int]:
@@ -161,9 +173,9 @@ pair_sum([1, 3, 2, 2], 4)
 
 #################################################################################################
 # Add each previous number in list
-# O(N) Time 
+# O(N) Time
 # O(1) Space
-from typing import List
+
 
 def add_previous(nums: List[int]) -> List[int]:
     curr_sum = 0
@@ -173,13 +185,15 @@ def add_previous(nums: List[int]) -> List[int]:
 
     return nums
 
-nums = [1,2,3,4]
+
+nums = [1, 2, 3, 4]
 print(add_previous(nums))
 # output: [1,3,6,10]
 
 ##################################################################################################
 # Given two sorted integer arrays arr1 and arr2, merge arr2 into arr1 as one sorted array.
 # arr1 = [0, 3, 4, 31], arr2 = [4, 6, 30] # Output: [0, 3, 4, 4, 6, 30, 31]
+
 
 def mergeSortedArray(arr1, arr2):
     mergedArray = []
@@ -217,12 +231,14 @@ def mergeSortedArray(arr1, arr2):
     return mergedArray
 
 
-print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30])) # Output: [0, 3, 4, 4, 6, 30, 31]
+# Output: [0, 3, 4, 4, 6, 30, 31]
+print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30]))
 
 ##################################################################################################
 # Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 # Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
 # Note: You are not suppose to use the library's sort function for this problem.
+
 
 def sortArray(nums):
     start, current, end = 0, 0, len(nums)-1
@@ -246,13 +262,14 @@ def swap(nums, i, j):
     nums[j] = temp
 
 
-nums1 = [2,0,2,1,1,0]
+nums1 = [2, 0, 2, 1, 1, 0]
 # Output = [0,0,1,1,2,2]
 # You can't use sort built-in methods
 print(sortArray(nums1))
 
 #################################################################################################
 # Create a function that asks the user how many Fibonacci numbers to generate and then generates them:
+
 
 def fibonacci():
     num = int(input("Please enter how many numbers you want in this series :"))
@@ -268,9 +285,12 @@ def fibonacci():
             first = second
             second = temp + second
 
+
 fibonacci()
 
 ################################################################################################
+
+
 class Solution(object):
     def fib(self, N: int) -> int:
         first, second = 0, 1
@@ -287,6 +307,7 @@ class Solution(object):
                 second = temp
             return second
 
+
 N = 10
 solution = Solution()
 print(solution.fib(N))
@@ -295,8 +316,6 @@ print(solution.fib(N))
 # Note: For the purpose of this problem, we define empty string as valid palindrome.
 # s = "A man, a plan, a canal: Panama" # Output: True
 # s = "race a car" # Output: False
-
-import re
 
 
 class Solution:
@@ -310,13 +329,16 @@ class Solution:
         else:
             return False
 
-s = "A man, a plan, a canal: Panama" # Output: True
+
+s = "A man, a plan, a canal: Panama"  # Output: True
 # s = "race a car" # Output: False
 solution = Solution()
 print(solution.isPalindrome(s))
 
 #################################################################################################
 # Is Palindrome solution using Pointers:
+
+
 def isPalindrome(string):
 	leftIdx = 0
     rightIdx = len(string) - 1
@@ -417,7 +439,7 @@ def longest_word(sen):
     return curr_word
 
 
-sen = 'Hello there, my name is Abdifatah'
+sen = "Hello there, my name is Abdifatah"
 print(longest_word(sen))
 
 #####################################################################################################
