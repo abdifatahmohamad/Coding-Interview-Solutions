@@ -17,5 +17,19 @@ class Solution:
         return "".join(word)
 
 
+# O(n) time | O(n) space
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        if len(s) < 1:
+            return ""
+
+        s = s.split()
+        res = []
+        for word in s:
+            res.append(word[::-1])
+        return " ".join(res)
+
+
 solution = Solution()
 print(solution.reverseWords("Let's take LeetCode contest"))
+# Output: "s'teL ekat edoCteeL tsetnoc"
