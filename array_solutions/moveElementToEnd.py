@@ -16,7 +16,7 @@ def moveElementToEnd(array, toMove):
             swap(left, right, array)
             # Move pointers together
             left += 1
-            right += 1
+            right -= 1
 
     return array
 
