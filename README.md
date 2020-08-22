@@ -1,4 +1,4 @@
-# Python-Algorithm-Challenges
+# Coding-Interview-Solutions
 
-List of algorithms and coding challenges using Python.
+Solutions to coding problems and preparing for technical interviews using Python.
 
