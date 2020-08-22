@@ -3,6 +3,7 @@ from typing import List
 import string
 import re
 
+
 def valid_anagram(str1, str2):
    # Remove special character to the string:
     str1 = re.sub('[^A-Za-z0-9]+', '', str1).lower()
@@ -584,5 +585,59 @@ arr2 = [2, 4, 6, 8]
 print(solve(arr1, arr2))
 
 ####################################################################################################
+# Different ways to reverse string:
+def reverse_words(s: str) -> str:
+    # Using built in function:
+    '''s = s[::-1]
+    print(s)'''
 
+    # Using for loop:
+    '''res = []
+    for word in range(len(s)-1, -1, -1):
+        res.append(s[word])
+    return "".join(res)'''
+
+    # Using two pointers:
+    '''s = list(s)
+    left, right = 0, len(s) -1
+    while left < right:
+        # Here we gonna use swapping
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+    return "".join(s)'''
+
+    # Swapping technique1:
+    '''s = list(s)
+    left, right = 0, len(s) -1
+    while left < right:
+        # Swapping using temp
+        temp = s[left]
+        s[left] = s[right]
+        s[right] = temp
+        left += 1
+        right -= 1
+    return "".join(s)'''
+
+    # Swapping technique2:
+    s = list(s)
+    left, right = 0, len(s) -1
+    while left < right:
+        # Swapping using helper function
+        swap(s, left, right)
+        left += 1
+        right -= 1
+    return "".join(s)
+
+# Create the above swap function:
+def swap(s, left, right):
+    temp = s[left]
+    s[left] = s[right]
+    s[right] = temp
+
+s = "Let's take LeetCode contest"
+# Output: "tsetnoc edoCteeL ekat s'teL"
+print(reverse_words(s))
+
+####################################################################################################
 
