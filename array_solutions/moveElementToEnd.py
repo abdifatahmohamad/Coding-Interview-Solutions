@@ -30,5 +30,5 @@ def swap(i, j, nums):
 
 array = [2, 1, 2, 2, 2, 3, 4, 2]
 toMove = 2
-# Output: [4, 1, 2, 2, 3, 2, 2, 2]
+# Output: [4, 1, 3, 2, 2, 2, 2, 2]
 print(moveElementToEnd(array, toMove))
