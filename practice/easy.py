@@ -20,7 +20,7 @@ print(split('hello'))'''
 # A program that generates a random number and guesses the right number:
 import random
 
-randomNum = random.randint(1,100)
+randomNum = random.randint(1, 100)
 for _ in range(100):
     guess = int(input('Guess a number'))
     if guess == randomNum:
@@ -30,11 +30,10 @@ for _ in range(100):
         print('Your guess is too high')
     else:
         print('Your guess is too low')
-        
-# The same program using while loop:
-import random
 
-randomNum = random.randint(1,100)
+# The same program using while loop:
+
+randomNum = random.randint(1, 100)
 keep_looping = True
 while keep_looping:
     guess = int(input('Guess a number'))
@@ -54,6 +53,8 @@ my_list = [word[0] for word in st.split()]
 print(my_list)'''
 
 # The same above solution using regular for loop:
+
+
 def makeList(st):
     s = st.split()
     letter = []
@@ -68,17 +69,20 @@ print(makeList(my_list))
 ####################################################################################
 # Program that capitalizes first letter of the string:
 
-#using regular for loop:
+# using regular for loop:
+
+
 def captilizeFirstletter(st):
     # s = st.split()
     # lst = []
     # for word in s:
     #     lst.append(word[0].upper() + word[1:])
     # return ' '.join(lst)
-    
-    # using list comprehension 
+
+    # using list comprehension
     lst = [word[0].upper() + word[1:] for word in st.split()]
     return ' '.join(lst)
+
 
 my_list = 'Create a list of the first letters of every word in this string'
 print(captilizeFirstletter(my_list))
@@ -106,10 +110,13 @@ print(my_list)'''
     return list
 '''
 # using regular for loop:
+
+
 def no_odds(values):
     return [i for i in values if i % 2 == 0]
 
-values = [1,2,3,4,5,6,7,8,9,10,11]
+
+values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 print(no_odds(values))
 
 ################################################################################
@@ -181,6 +188,8 @@ print(myfunc(1, 2, 3,4,5,6,7,8,9,10)) # [2, 4, 6, 8, 10]'''
 print(myfunc('Abdifatah'))'''
 
 # The same above code using range loop and append array:
+
+
 def myfunc(word):
     res = []
     for i in range(len(word)):
@@ -333,7 +342,7 @@ print(paper_doll('Hello'))'''
 print(blackjack(9, 9, 9))
 # print(blackjack(9,9,11))'''
 
-###############################################################################################
+##############################################################################################
 # SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6
 # and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
 # summer_69([1, 3, 5]) --> 9
@@ -408,18 +417,22 @@ up_low('Hello Mr. Rogers, how are you this fine Tuesday?')'''
 #############################################################################################
 # Find the longest word in the string:
 
+
 def longest_word(string):
     words = string.split(' ')
-    longestWord  = ''
+    longestWord = ''
     for word in words:
         if len(word) > len(longestWord):
             longestWord = word
     return longestWord
 
-print(longest_word('Abdifatah Ali')) # Output: Abdifatah
+
+print(longest_word('Abdifatah Ali'))  # Output: Abdifatah
 
 ##############################################################################################
 # Count the number of vowels in a string:
+
+
 def vowels_count(string):
     count = 0
     vowels = 'aeiou'
@@ -429,11 +442,14 @@ def vowels_count(string):
 
     return f'No. of vowels: {count}'
 
+
 print(vowels_count('Yusuf Abdifatah Ali'))
 
 ###############################################################################################
 # The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
 # What if the string is empty? Then the result should be empty object literal, {}.
+
+
 def count(s):
     char_count = {}
     for char in s:
@@ -443,15 +459,19 @@ def count(s):
             char_count[char] = 1
     return char_count
 
+
 string = 'abca'
 print(count(string))
 
 # The same idea but easier:
+
+
 def count(string):
     counter = {}
     for char in string:
         counter[char] = counter.get(char, 0) + 1
     return counter
+
 
 string = 'abca'
 print(count(string))
@@ -462,6 +482,8 @@ print(count(string))
 # ( https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them)
 
 # To compute the list of duplicated elements without libraries:
+
+
 def remove_duplicates(arr):
     seen = {}
     dupes = []
@@ -475,6 +497,8 @@ def remove_duplicates(arr):
     return dupes
 
 # This method computes a list of unique elements using set() library:
+
+
 def remove_duplicates(arr):
     seen = set()
     dupes = []
@@ -485,9 +509,12 @@ def remove_duplicates(arr):
     return dupes
 
 # The same above code using list comprehension:
+
+
 def remove_duplicates(arr):
     seen = set()
     return [num for num in arr if num not in seen and not seen.add(num)]
+
 
 arr = [3, 4, 4, 3, 6, 3]
 # Output: [4, 6, 3]
@@ -496,6 +523,8 @@ print(remove_duplicates(arr))
 # Remove the left-most duplicates from a list of integers and return the result.
 # Remove the 3's at indices 0 and 3 followed by removing a 4 at index 1
 # Input: [3, 4, 4, 3, 6, 3] # => [4, 6, 3], Input: [1,2,1,2,1,2,3] Output:[1,2,3]
+
+
 def remove_duplicates(arr):
     dupes = []
     array = arr[::-1]
@@ -504,11 +533,14 @@ def remove_duplicates(arr):
             dupes.append(num)
     return dupes[::-1]
 
-arr = [1,2,1,2,1,2,3]
+
+arr = [1, 2, 1, 2, 1, 2, 3]
 # Output: [1, 2, 3]
 print(remove_duplicates(arr))
 
 # The same above solution but different way:
+
+
 def remove_duplicates(arr):
     result = []
     for index, array in enumerate(arr):
@@ -517,8 +549,11 @@ def remove_duplicates(arr):
     return result
 
 # Using list comprehension:
+
+
 def remove_duplicates(arr):
-    result = [array for index, array in enumerate(arr) if array not in arr[index + 1:]]
+    result = [array for index, array in enumerate(
+        arr) if array not in arr[index + 1:]]
     return result
 
    # Online return:
@@ -530,6 +565,8 @@ def remove_duplicates(arr):
 # arr1 = [1,2,3,4,6], arr2 = [2,4,6,8] --> Output: [2,4,6]
 
 # Brute-Force Solution:
+
+
 def solve(arr1, arr2):
     result = []
     d = {}
@@ -542,7 +579,8 @@ def solve(arr1, arr2):
 
 # Better Solution:
 
-def find_common_list(arr1,arr2):
+
+def find_common_list(arr1, arr2):
     '''
 
     result = []
@@ -558,6 +596,8 @@ def find_common_list(arr1,arr2):
     return result'''
 
 # another better solution using two pointers:
+
+
 def solve(arr1, arr2):
     i = j = 0
     result = []
@@ -568,13 +608,16 @@ def solve(arr1, arr2):
         i += 1
     return result
 
-arr1 = [1,2,3,4,6]
-arr2 = [2,4,6,8]
+
+arr1 = [1, 2, 3, 4, 6]
+arr2 = [2, 4, 6, 8]
 # Output: [2,4,6]
 print(find_common_list(arr1, arr2))
 
 ##############################################################################################
 # find the first missing element in the array:
+
+
 def first_missing_element(arr):
     for i in arr:
         curr = arr[i]
@@ -583,12 +626,14 @@ def first_missing_element(arr):
             return curr + 1
 
 
-arr = [1,2,3,4,6,7,8]
+arr = [1, 2, 3, 4, 6, 7, 8]
 # Output: 5
 print(first_missing_element(arr))
 
 ##############################################################################################
 # Find the first element of an array that is not consecutive (Not the missing element).
+
+
 def first_non_consecutive(arr):
     for i in range(len(arr) - 1):
         curr = arr[i]
@@ -598,12 +643,14 @@ def first_non_consecutive(arr):
     return None
 
 
-arr = [1,2,3,4,6,7,8]
+arr = [1, 2, 3, 4, 6, 7, 8]
 # Output: 6
 print(first_non_consecutive(arr))
 
 ##############################################################################################
 # ways to convert list of ASCII value to string:
+
+
 def covertListToString(nums):
     res = ''
     for char in nums:
@@ -611,32 +658,41 @@ def covertListToString(nums):
     return str(res)
 ###############################################
 # Using map()
+
+
 def covertListToString2(nums):
     res = ''.join(map(chr, myList))
     return str(res)
 
 ###############################################
 # Using join and list comprehension
+
+
 def covertListToString3(nums):
     res = ''.join(chr(char) for char in myList)
     return str(res)
 
+
 # myList = [71, 101, 101, 107, 115, 102, 111, 114, 71, 101, 101, 107, 115]
-myList = [65, 98, 100, 105, 102, 97, 116, 97, 104, 77, 111, 104, 97, 109, 101, 100]
+myList = [65, 98, 100, 105, 102, 97, 116,
+          97, 104, 77, 111, 104, 97, 109, 101, 100]
 print(covertListToString(myList))
 
 ##########################################################################################################################################
 # Two ways to map dictionary elements/characters in its index
+
+
 def firstUniqChar(s: str) -> int:
     unique = {}
     for char in range(len(s)):
         unique[s[char]] = char
-    
+
     # Another way using enumerate function:
     # for i, el in enumerate(s):
     #     unique[el] = i
 
     return unique
+
 
 s = "leetcode"
 print(firstUniqChar(s))
@@ -644,6 +700,7 @@ print(firstUniqChar(s))
 ##########################################################################################################################################
 # Find the first repeating character in the input string and return its index using dictionary HashMap:
 # s = "leetcode" Output: 2 --> which e at index 2
+
 
 def firstUniqChar(s: str) -> int:
     unique = {}
@@ -654,9 +711,8 @@ def firstUniqChar(s: str) -> int:
         else:
             unique[s[char]] = 1
 
+
 s = "leetcode"
 print(firstUniqChar(s))
 
 #########################################################################################################################################
-
-
