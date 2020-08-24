@@ -3,7 +3,6 @@ from typing import List
 import string
 import re
 
-
 def valid_anagram(str1, str2):
    # Remove special character to the string:
     str1 = re.sub('[^A-Za-z0-9]+', '', str1).lower()
