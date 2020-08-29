@@ -36,7 +36,6 @@ def isAnagram(s: str, t: str) -> bool:
             seen[letter] -= 1
     return True
 
-
 print(valid_anagram('Anagram', 'nagaram'))  # True
 
 ##################################################################################################
