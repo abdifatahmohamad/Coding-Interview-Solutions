@@ -40,7 +40,6 @@ print(valid_anagram('Anagram', 'nagaram'))  # True
 
 ################################################################################################
 
-
 def ispangram(str1, alphabet=string.ascii_lowercase):
     # Remove special character to the string:
     str1 = re.sub('[^A-Za-z0-9]+', '', str1).lower()
