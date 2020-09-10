@@ -156,7 +156,7 @@ for word in st.split():
 
 print(pig_latin('word'))'''
 
-#######################################################################################
+########################################################################################
 # Create function that takes args and returns sum of that args:
 '''def myfunc(*args):
     return sum((args))
