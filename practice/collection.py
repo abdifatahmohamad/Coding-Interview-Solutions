@@ -15,7 +15,6 @@ def valid_anagram(str1, str2):
 
 # Another way of doing it using a HashMap:
 
-
 def isAnagram(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
