@@ -303,7 +303,6 @@ class Solution(object):
                 second = temp
             return second
 
-
 N = 10
 solution = Solution()
 print(solution.fib(N))
