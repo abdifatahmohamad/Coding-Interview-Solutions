@@ -199,7 +199,6 @@ def myfunc(word):
             res.append(letter.upper())
     return ''.join(res)
 
-
 print(myfunc("abdifatah"))
 
 ##############################################################################################
