@@ -265,7 +265,6 @@ print(sortArray(nums1))
 #################################################################################################
 # Create a function that asks the user how many Fibonacci numbers to generate and then generates them:
 
-
 def fibonacci():
     num = int(input("Please enter how many numbers you want in this series :"))
     first = 0
