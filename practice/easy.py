@@ -694,7 +694,7 @@ def firstUniqChar(s: str) -> int:
 s = "leetcode"
 print(firstUniqChar(s))
 
-##########################################################################################################################################
+#########################################################################################################################################
 # Find the first repeating character in the input string and return its index using dictionary HashMap:
 # s = "leetcode" Output: 2 --> which e at index 2
 
