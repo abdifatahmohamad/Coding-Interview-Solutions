@@ -321,7 +321,6 @@ class Solution:
         else:
             return False
 
-
 s = "A man, a plan, a canal: Panama"  # Output: True
 # s = "race a car" # Output: False
 solution = Solution()
