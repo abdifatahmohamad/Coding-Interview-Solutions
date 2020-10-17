@@ -353,7 +353,6 @@ print(blackjack(9, 9, 9))
         del arr[index6:index9 + 1]
     return sum(arr)
 
-
 # print(summer_69([1, 3, 5]))
 # print(summer_69([4, 5, 6, 7, 8, 9]))
 # print(summer_69([2, 1, 6, 9, 11]))'''
