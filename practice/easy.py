@@ -86,7 +86,7 @@ def captilizeFirstletter(st):
 my_list = 'Create a list of the first letters of every word in this string'
 print(captilizeFirstletter(my_list))
 
-#################################################################################
+####################################################################################
 '''st = 'Sam Print only the words that start with s in this sentence'
 for word in st.split():
     if word[0].lower() == 's':
