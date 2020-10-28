@@ -82,7 +82,6 @@ def captilizeFirstletter(st):
     lst = [word[0].upper() + word[1:] for word in st.split()]
     return ' '.join(lst)
 
-
 my_list = 'Create a list of the first letters of every word in this string'
 print(captilizeFirstletter(my_list))
 
