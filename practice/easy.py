@@ -706,7 +706,6 @@ def firstUniqChar(s: str) -> int:
         else:
             unique[s[char]] = 1
 
-
 s = "leetcode"
 print(firstUniqChar(s))
 
