@@ -560,7 +560,7 @@ def solve(left, right):
 print(solve("xyab","xzca"))
 # Output: "ybzc"
 
-####################################################################################################
+###################################################################################################
 # Merge two lists of array (arr1, arr2) and return it sorted removing duplicate numbers:
 def solve(arr1, arr2):
     result = []
@@ -575,7 +575,7 @@ arr2 = [2, 4, 6, 8]
 # Output: [1, 2, 3, 4, 6, 2, 4, 6, 8]
 print(solve(arr1, arr2))
 
-####################################################################################################
+###################################################################################################
 # Different ways to reverse string:
 def reverse_words(s: str) -> str:
     # Using built in function:
