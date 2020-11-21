@@ -429,7 +429,6 @@ def longest_word(sen):
             curr_word = word
     return curr_word
 
-
 sen = "Hello there, my name is Abdifatah"
 print(longest_word(sen))
 
