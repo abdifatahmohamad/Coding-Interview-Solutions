@@ -248,7 +248,7 @@ print(makes_twenty(2, 3))'''
     return word[:3] + word[3:].capitalize()
 
 print(capitalize('abdifatah'))'''
-##############################################################################################
+#############################################################################################
 # MASTER YODA: Given a sentence, return a sentence with the words reversed¶
 # master_yoda('I am home') --> 'home am I'
 # master_yoda('We are ready') --> 'ready are We'
