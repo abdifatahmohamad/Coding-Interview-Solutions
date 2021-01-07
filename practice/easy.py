@@ -139,7 +139,7 @@ for word in st.split():
     print(f'Buzz')
   else:  
     print(word)'''
-##################################################################################
+#################################################################################
 # PIG LATIN problem:
 # print(pig_latin(word)) --> ordway
 # print(pig_latin(apple)) --> appleay
