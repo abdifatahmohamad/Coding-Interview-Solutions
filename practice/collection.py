@@ -255,7 +255,6 @@ def swap(nums, i, j):
     nums[i] = nums[j]
     nums[j] = temp
 
-
 nums1 = [2, 0, 2, 1, 1, 0]
 # Output = [0,0,1,1,2,2]
 # You can't use sort built-in methods
