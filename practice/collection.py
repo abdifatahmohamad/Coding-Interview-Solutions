@@ -260,7 +260,7 @@ nums1 = [2, 0, 2, 1, 1, 0]
 # You can't use sort built-in methods
 print(sortArray(nums1))
 
-###############################################################################################
+##############################################################################################
 # Create a function that asks the user how many Fibonacci numbers to generate and then generates them:
 
 def fibonacci():
