@@ -179,7 +179,6 @@ def add_previous(nums: List[int]) -> List[int]:
 
     return nums
 
-
 nums = [1, 2, 3, 4]
 print(add_previous(nums))
 # output: [1,3,6,10]
