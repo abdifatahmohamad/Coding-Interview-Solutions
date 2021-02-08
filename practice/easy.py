@@ -225,7 +225,7 @@ print(lesser_of_two_evens(13,43))'''
 print(animal_crackers('Levelheaded Llama'))
 print(animal_crackers('Crazy Kangaroo'))'''
 
-##############################################################################################
+################################################################################################
 # MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20.
 # If not, return False¶
 # makes_twenty(20,10) --> True
