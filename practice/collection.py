@@ -520,7 +520,7 @@ def thirdMax(nums):
 nums = [33, 5, 7, 9]
 print(thirdMax(nums))
 
-####################################################################################################
+#######################################################################################################
 # you will be given two strings a and b and your task will be to return 
 # the characters that are not common in the two strings. print(solve("xyab","xzca")) # Output: "ybzc"
 
