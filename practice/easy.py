@@ -109,7 +109,6 @@ print(my_list)'''
 '''
 # using regular for loop:
 
-
 def no_odds(values):
     return [i for i in values if i % 2 == 0]
 
