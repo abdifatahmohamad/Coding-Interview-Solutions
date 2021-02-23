@@ -232,7 +232,6 @@ print(mergeSortedArray([0, 3, 4, 31], [4, 6, 30]))
 # Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
 # Note: You are not suppose to use the library's sort function for this problem.
 
-
 def sortArray(nums):
     start, current, end = 0, 0, len(nums)-1
 
