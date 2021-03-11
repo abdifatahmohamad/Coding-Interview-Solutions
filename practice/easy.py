@@ -624,7 +624,7 @@ arr = [1, 2, 3, 4, 6, 7, 8]
 # Output: 5
 print(first_missing_element(arr))
 
-##############################################################################################
+###############################################################################################
 # Find the first element of an array that is not consecutive (Not the missing element).
 
 
