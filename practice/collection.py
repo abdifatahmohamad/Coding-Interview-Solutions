@@ -565,7 +565,6 @@ def solve(arr1, arr2):
         result.append(num)
     return result
 
-
 arr1 = [1, 2, 3, 4, 6]
 arr2 = [2, 4, 6, 8]
 # Output: [1, 2, 3, 4, 6, 2, 4, 6, 8]
