@@ -307,7 +307,7 @@ print(has_33([1, 3, 3]))'''
 
 
 print(paper_doll('Hello'))'''
-############################################
+#############################################
 # An easy way of doing it:
 '''def paper_doll(string):
     result = ''
