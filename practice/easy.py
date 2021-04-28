@@ -477,7 +477,6 @@ print(count(string))
 
 # To compute the list of duplicated elements without libraries:
 
-
 def remove_duplicates(arr):
     seen = {}
     dupes = []
