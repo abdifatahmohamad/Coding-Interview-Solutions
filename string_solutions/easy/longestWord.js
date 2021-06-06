@@ -25,7 +25,7 @@ function findLongestWord(str){
     return longestWord[0];
 }
 
-// The third way to solve is to use Array.prototype.sort():
+// The third way to solve is to use Array.prototype.reduce():
 function findLongestWord(str){
     let strSplit = str.split(' ');
 
@@ -40,5 +40,26 @@ function findLongestWord(str){
     return longestWord;
 }
 
-let str = "Abdifatah Abdiweli Mohamed";
+// Fourth way to solve is to use sort() + filter():
+function longestWord(str){
+    // Put away alphanumeric value
+    const wordArr = str.toLowerCase().match(/[a-z0-9]+/g);
+
+
+    // Sort the array by length:
+    const sorted = wordArr.sort((a, b) =>b.length - a.length);
+    
+
+    // If there is multiple words, put them into an array:
+    const longestWordArr = sorted.filter(word => word.length === sorted[0].length);
+
+    // Check if more than one array value:
+    if(longestWordArr.length === 1){
+        return longestWordArr[0];
+    } else{
+        return longestWordArr;
+    }
+}
+
+let str = "Hello, there my name Abdifatah Mohamed!";
 console.log(longestWord(str));
