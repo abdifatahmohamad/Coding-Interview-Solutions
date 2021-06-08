@@ -20,8 +20,8 @@ function seekAndDestroy(arr){
 }
 
 // Solution 2 using ...rest, filter & includes
-function seekAndDestroy(arr){
-    return arr.filter(val => !resizeTo.includes(val));
+function seekAndDestroy(arr, ...rest){
+    return arr.filter(val => !rest.includes(val));
 }
 
 console.log(seekAndDestroy([2,3,4,6,6, 'hello'], 2,6));
