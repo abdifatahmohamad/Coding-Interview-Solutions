@@ -6,6 +6,7 @@ function count(str){
     const arr = Array.from(str);
     let seen = {};
     for(let char of arr){
+      console.log(char);
         if (char in seen){
             seen[char] ++;
         } else{
@@ -28,4 +29,4 @@ const count = Array.from('aabbccddeee').reduce((acc, char) => {
     return acc;
   }, {});
 
-  console.log(count);
+  console.log(count(str));
