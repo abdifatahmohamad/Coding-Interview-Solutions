@@ -16,14 +16,18 @@ class LinkedList:
 ######################################################################
 
     def insertAtTail(self, val):
+        # Case1: create new node that consist of data
         new_node = Node(val)
 
+        # Case2: if check if the list is NOT NULL
         if self.head is None:
             self.head = new_node
             return
 
+        # Case3: if there is some values in list
         last_node = self.head
         while last_node.next:
+            # Move the head pointer to the right
             last_node = last_node.next
         last_node.next = new_node
 
@@ -97,9 +101,12 @@ class LinkedList:
 
 
     def printList(self):
+        # Case1: check first if the head is NOT NULL
         if self.head is None:
             print('The list is empty')
             return
+
+        # Case2: if there is some values in list
         curr_node = self.head
         while curr_node is not None:
             print(curr_node.val, end=" -> ")  # Insert at the tail
