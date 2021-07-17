@@ -7,7 +7,7 @@ def isValidSubsequence(array, sequence):
             index += 1
     return count == len(sequence)
 
-# Another way to solve it using for loop:
+# Another way to solve it using for while loop:
 def isValidSubsequence(array, sequence):
 	arrIdx = 0
     seqIdx = 0
