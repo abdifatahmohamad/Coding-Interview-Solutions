@@ -8,11 +8,12 @@ public class FindCommonNumbers {
         int arr2[] = { 17, 35, 39, 40, 55, 58, 60 };
         // Output: [35, 40, 55]
 
-        System.out.println(findCommonNumbers(arr1, arr2));
+        System.out.println(findCommonNumbers1(arr1, arr2));
+        System.out.println(findCommonNumbers2(arr1, arr2));
     }
 
     // Brute force approach
-    public static List<Integer> findCommonNumbers(int[] arr1, int[] arr2) {
+    public static List<Integer> findCommonNumbers1(int[] arr1, int[] arr2) {
         List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < arr1.length; i++) {
             for (int j = 0; j < arr2.length; j++) {
@@ -24,7 +25,7 @@ public class FindCommonNumbers {
     }
 
     // HashMap O(N) Time || O(N) Space
-    public static List<Integer> findCommonNumbers(int[] arr1, int[] arr2) {
+    public static List<Integer> findCommonNumbers2(int[] arr1, int[] arr2) {
 
         HashMap<Integer, Integer> map = new HashMap();
         List<Integer> newList = new ArrayList<Integer>();
