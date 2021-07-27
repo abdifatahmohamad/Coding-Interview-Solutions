@@ -19,24 +19,23 @@ class Solution:
         arr[j] = temp
 
     # Using while loop:
-     def moveZerosToFront(self, nums: List[int]) -> List[int]:
-        if nums == 0:
-            return []
-        idx = 0
-        i = 0
-        while i < len(nums):
-            if nums[i] == 0:
-                self.swap(idx, i, nums)
-                idx += 1
-            i += 1
-        return nums
+    #  def moveZerosToFront(self, nums: List[int]) -> List[int]:
+    #     if nums == 0:
+    #         return []
+    #     idx = 0
+    #     i = 0
+    #     while i < len(nums):
+    #         if nums[i] == 0:
+    #             self.swap(idx, i, nums)
+    #             idx += 1
+    #         i += 1
+    #     return nums
 
-
-    @staticmethod
-    def swap(i, j, arr):
-        temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
+    # @staticmethod
+    # def swap(i, j, arr):
+    #     temp = arr[i]
+    #     arr[i] = arr[j]
+    #     arr[j] = temp
 
 
 solution = Solution()
