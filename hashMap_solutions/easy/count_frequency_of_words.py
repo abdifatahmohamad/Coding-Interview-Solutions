@@ -5,7 +5,7 @@ for char in splitString:
 
     # if char not in empty_dict.keys():
     #     empty_dict[char] = 0
-    # empty_dict[char] = empty_dict[char] + 1
+    # empty_dict[char] += 1
 
     # The same above code but easier
     # if char in empty_dict:
