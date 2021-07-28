@@ -32,6 +32,13 @@ class Solution:
         # Return joined list as a string
         return "".join(res)
 
+        # Using string concatenation
+        new_list = ""
+        for i in range(len(word)):
+            if i != index:
+                new_list += word[i]
+        return new_list
+
 
 solution = Solution()
 print(solution.missing_char('kitten', 1))
