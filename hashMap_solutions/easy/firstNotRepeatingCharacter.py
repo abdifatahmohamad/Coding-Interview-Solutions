@@ -3,7 +3,7 @@ def firstNotRepeatingCharacter(s):
     for char in s:
         mapping[char] = mapping.get(char, 0) + 1
 
-    for i, el in enumerate(s):
+    for i in range(len(s)):
         if mapping[s[i]] == 1:
             return i
 
