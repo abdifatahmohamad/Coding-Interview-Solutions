@@ -9,8 +9,11 @@ class LinkedList:
         self.head = None
 
     def insertAtHead(self, val):
+        # Case1: create new node that consist of data
         new_node = Node(val)
+        # Case2: Change the next component/field of the new node to point to the head of the list
         new_node.next = self.head
+        # Case3: move the head to the new node
         self.head = new_node
 
 ######################################################################
@@ -19,7 +22,7 @@ class LinkedList:
         # Case1: create new node that consist of data
         new_node = Node(val)
 
-        # Case2: if check if the list is NOT NULL
+        # Case2: check if the list is NOT NULL
         if self.head is None:
             self.head = new_node
             return
