@@ -24,7 +24,7 @@ class LinkedList:
             self.head = new_node
             return
 
-        # Case3: check if there is some values in list
+        # Case3: check if there is some values in the list
         last_node = self.head
         while last_node.next:
             # Move the head pointer to the right
