@@ -10,18 +10,14 @@ class SinglyLinkedList:
         self.tail = None
 
     # Method that inserts the node at the tail
-    def insert_node_AtTail(self, node_data):
-        # Case1: Create new node that consist of new node
-        node = SinglyLinkedListNode(node_data)
-
-        # Case2: Check if list is NOT null
-        if not self.head:
-            self.head = node
-        # Case 3: Else => if there is some values in the list
-        else:
-            self.tail.next = node
-
-        self.tail = node
+    def insertNodeAtHead(self, data):
+        # Case1: Create new node that consist of data
+        new_node = SinglyLinkedListNode(data)
+        # Case2: Change the next component/field of the new node to point to the head of the list
+        if self.head != None:
+            new_node.next = self.head
+        # Move the head node to the new node
+        self.head = new_node
 
     # This method prints the elements of the linkedList
     def printLinkedList(self):
@@ -32,12 +28,18 @@ class SinglyLinkedList:
         # Case2: If there is some values in the list
         curr_node = self.head
         while curr_node is not None:
-            print(curr_node.data, end=" -> ")  # Insert at the tail
+            print(curr_node.data, end=" <- ")  # Insert at the head
             curr_node = curr_node.next
         print()
 
 
 LL = SinglyLinkedList()
-LL.insert_node_AtTail(16)
-LL.insert_node_AtTail(13)
+LL.insertNodeAtHead(321)
+LL.insertNodeAtHead(975)
+LL.insertNodeAtHead(392)
+LL.insertNodeAtHead(484)
+LL.insertNodeAtHead(383)
+
+LL.insertNodeAtHead(9000)
+
 LL.printLinkedList()
