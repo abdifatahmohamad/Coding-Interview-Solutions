@@ -27,7 +27,7 @@ class SinglyLinkedList:
             return
 
         # Case2: Head is NOT NULL
-        # Use another data structure "stack" data structure to add the node to the stack each time
+        # Use another data structure "stack" which adds the node to the stack each time
         curr_node = self.head
         while curr_node != None:
             self.stack.append(curr_node)
