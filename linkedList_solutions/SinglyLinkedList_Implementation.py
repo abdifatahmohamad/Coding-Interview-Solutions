@@ -51,26 +51,28 @@ class LinkedList:
 ######################################################################
 
     def deleteNode(self, key):
-        # Delete node that is the head of the list
+         # Case 1: If node to be deleted at the head of the list
         curr_node = self.head
-        if self.head and curr_node.val == key:
+        if curr_node and curr_node.data == key:
             self.head = curr_node.next
             curr_node = None
             return
 
-        # Delete node that is NOT head of the list
+        # Case 2: If node to be deleted is Not the head node (any position in the list)
         prev_node = None
-        # Loop through while head node in NOT None
-        curr_node = self.head
-        while curr_node and curr_node.val != key:
+        # Find the node that consist of the position we are looking for:
+        # As long as the head pointer is not null,
+        # and the el of the node we are currently on is not the el we are looking for
+        while curr_node and curr_node.data != key:
+            # Move the head pointer
             prev_node = curr_node
             curr_node = curr_node.next
 
-        # Check if the node we wanna del is NOT in the list
+        # If the node to be deleted is NOT in the list
         if curr_node is None:
-            print("Sorry, the node is NOT in the list.")
+            print("Sorry, the element to be deleted is NOT in the list.")
             return
-        # Otherwise if the node we wanna del is in the list
+        # Otherwise, if the node to be deleted in the list
         prev_node.next = curr_node.next
         curr_node = None
 
