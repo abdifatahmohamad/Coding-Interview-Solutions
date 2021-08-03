@@ -51,7 +51,7 @@ class LinkedList:
 ######################################################################
 
     def deleteNode(self, key):
-         # Case 1: If node to be deleted at the head of the list (position 0)
+         # Case 1: If node to be deleted at the head of the list
         curr_node = self.head
         if curr_node and curr_node.data == key:
             self.head = curr_node.next
