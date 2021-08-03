@@ -28,7 +28,9 @@ class SinglyLinkedList:
         curr, prev = self.head, None
         while curr != None:
             temp = curr.next
+            # Change the direction of the nodes
             curr.next = prev
+            # Shifting the nodes
             prev = curr
             curr = temp
         self.head = prev
