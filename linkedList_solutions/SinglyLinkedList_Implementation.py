@@ -60,7 +60,7 @@ class LinkedList:
 
         # Delete node that is NOT head of the list
         prev_node = None
-        # Loop through while head node in NOT None
+        # Loop through while head node is NOT None
         curr_node = self.head
         while curr_node and curr_node.val != key:
             prev_node = curr_node
