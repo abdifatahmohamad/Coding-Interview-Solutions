@@ -15,3 +15,17 @@ arr = ["MSP", "BOS", "ATL", "LAX"]
 targetIdx = 3
 
 print(findIndexFromLast(arr, targetIdx))
+
+
+# O(1) Time and Space
+from typing import List
+
+def PFL(arr: List[str], pos)-> str:
+  if pos > len(arr) - 1:
+    return "Invalid Position"
+  return arr[len(arr) - 1 - pos]
+  
+
+arr = ["MSP", "BOS", "ATL", "LAX"]
+pos = 3
+print(PFL(arr, pos))
