@@ -89,7 +89,6 @@ class LinkedList:
         # Case 2: when the position is anywhere in the list (other head of the list)
         count = 0
         prev_node = None
-        curr_node = self.head
         while curr_node and count != position:
             prev_node = curr_node
             curr_node = curr_node.next
