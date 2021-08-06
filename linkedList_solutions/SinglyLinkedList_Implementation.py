@@ -88,9 +88,9 @@ class LinkedList:
             head = head.next
 
         # Case 3: If position is anywhere in the list (other head of the list)
-        counter = 0
+        counter = 1
         curr_node = head
-        while curr_node and counter < position:
+        while curr_node and counter < position: # We could start counter at 1, and pos - 1
             # Keep looping through the list
             curr_node = curr_node.next
             counter += 1
