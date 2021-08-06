@@ -79,27 +79,31 @@ class LinkedList:
 ######################################################################
     # It's similar idea of deleting node
     def deleteNodeAtPosition(self, position):
-        # Case 1: when the position is 0 (Node is head of the list)
-        curr_node = self.head
+        # Case1: If there is no nodes in the list (Nothing to delete)
+        if head == None:
+            return head
+
+        # Case 2: If position is 0 (Node is head of the list)  
         if position == 0:
-            self.head = curr_node.next
-            curr_node = None
-            return
+            head = head.next
 
-        # Case 2: when the position is anywhere in the list (other head of the list)
-        count = 0
-        prev_node = None
-        while curr_node and count != position:
-            prev_node = curr_node
+        # Case 3: If position is anywhere in the list (other head of the list)
+        counter = 0
+        curr_node = head
+        while curr_node and counter < position:
+            # Keep looping through the list
             curr_node = curr_node.next
-            count += 1
-        if curr_node is None:
-            print(
-                "The position was greater than the number of elements in the list.")
-            return
-        prev_node.next = curr_node.next
-        curr_node = None
+            counter += 1
 
+        # Check if we exceeded the pos (higher pos)    
+        if curr_node is None:
+            print("Invalid position!")
+            return 
+
+        # Case3: Delete the node when it reaches particular position
+        curr_node.next = curr_node.next.next
+        curr_node = None
+      
 
 ######################################################################
 
