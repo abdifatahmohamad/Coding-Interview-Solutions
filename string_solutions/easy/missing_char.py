@@ -42,3 +42,16 @@ class Solution:
 
 solution = Solution()
 print(solution.missing_char('kitten', 1))
+
+#########################################
+
+
+def missing_char(word, ch):
+    new_list = []
+    for i in range(len(word)):
+        if word[i] != ch:
+            new_list.append(word[i])
+    return "".join(new_list)
+
+
+print(missing_char("somalia", "a"))
