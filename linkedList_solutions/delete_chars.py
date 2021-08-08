@@ -32,37 +32,32 @@ def helper_function(head: LinkedList, node) -> None:
     last_node.next = LinkedList(node)
 
 
-def delete_char(head: LinkedList, ch):
+# O(N) Time || O(1) Space
+def delete_chars(head: LinkedList, ch) -> LinkedList:
     # Case1: If there is no characters in the list (Nothing to delete).
     if head == None:
         return head
 
     # Case 2: If character is the head of the list.
-    if ch == 0:
+    if head.val == ch:
         head = head.next
-    else:
-        # Case 3: If character is in anywhere in the list.
-        counter = 1
-        curr_node = head
-        while curr_node and counter < ch:
-            # Keep looping through the list
+
+    # Case3: If character anywhere in the list
+    curr_node = head
+    while curr_node.next is not None:
+        if curr_node.next.val != ch:
+            # Keep looping through
             curr_node = curr_node.next
-            counter += 1
-
-        # Check if given char not found in list
-        if curr_node is None:
-            print("Invalid character!")
-            return
-
-        # Case3: Delete the given character
-        curr_node.next = curr_node.next.next
+        else:
+            # Delete character
+            curr_node.next = curr_node.next .next
     return head
 
 
-string = "somalia"
+string = "somalis"
 nodes = insertAtTail(string)
-print("The original lists are: ")
+print("Original list: ")
 print_list(nodes)
 print("\nLinked List after Deletion at specific character.")
-node = delete_char(nodes, 3)
+node = delete_chars(nodes, "s")
 print_list(node)
