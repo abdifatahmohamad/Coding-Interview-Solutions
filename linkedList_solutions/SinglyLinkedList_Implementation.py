@@ -51,7 +51,7 @@ class LinkedList:
 ######################################################################
 
     def deleteNode(self, key):
-         # Case 1: If node to be deleted at the head of the list
+        # Case 1: If node to be deleted at the head of the list
         curr_node = self.head
         if curr_node and curr_node.data == key:
             self.head = curr_node.next
@@ -78,24 +78,24 @@ class LinkedList:
 
 ######################################################################
     # It's similar idea of deleting node
-    def deleteNodeAtPosition(self, position):
+    def deleteNodeAtPosition(head, position):
         # Case1: If there is no nodes in the list (Nothing to delete)
         if head == None:
             return head
 
-        # Case 2: If position is 0 (node is head of the list)  
+        # Case 2: If position is 0 (node is head of the list)
         if position == 0:
             head = head.next
         else:
             # Case 3: If position is anywhere in the list (other than the head of the list)
             counter = 1
             curr_node = head
-            while curr_node and counter < position: # We could start counter at 1, and pos -1
+            while curr_node and counter < position:  # We could start counter at 1, and pos -1
                 # Keep looping through the list
                 curr_node = curr_node.next
                 counter += 1
 
-            # Check if we exceeded the pos (higher pos)    
+            # Check if we exceeded the pos (higher pos)
             if curr_node is None:
                 print("Invalid position!")
                 return
@@ -103,10 +103,9 @@ class LinkedList:
             # Case3: Delete the node when it reaches particular position
             curr_node.next = curr_node.next.next
             curr_node = None
-      
+
 
 ######################################################################
-
 
     def printList(self):
         # Case1: check first if the head is NOT NULL
