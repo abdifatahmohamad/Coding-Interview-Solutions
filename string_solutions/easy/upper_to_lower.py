@@ -1,5 +1,7 @@
-# Write a simple program to convert uppercase letters to lowercase
+# https://learncodingfast.com/2-ways-to-convert-a-string-to-lowercase-in-python/
 
+
+# Write a simple program to convert uppercase letters to lowercase
 msg1 = 'HeLLo'
 msg2 = ''
 
