@@ -26,7 +26,7 @@ class Solution:
         # Solution 2 using for loop:
         res = []
         for i in range(len(word)):
-            # If curr idx doesn't equal to target idx, don't put in the list
+            # We only append to the list characters that != target idx
             if i != index:
                 res.append(word[i])
         # Return joined list as a string

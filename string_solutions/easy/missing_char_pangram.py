@@ -1,32 +1,45 @@
 
-
 class Solution:
-    def missing_char_pangram(self, string: str) -> str:
-        # Python3 program to find characters
-        # that needs to be added to make Pangram
-        MAX_CHAR = 26
-        # A boolean array to store characters
-        # present in string.
-        present = [False for i in range(MAX_CHAR)]
+    def missing_char_pangram(self, s: str) -> str:
+        present = [False] * 26
+        for i in range(len(s)):
+            if 'a' <= s[i] <= 'z':  # s[i] >= 'a' and s[i] <= 'z':
+                present[ord(s[i]) - ord('a')] = True
+            elif 'A' <= s[i] <= 'Z':  # s[i] >= 'A' and s[i] <= 'Z':
+                present[ord(s[i]) - ord('A')] = True
 
-        # Traverse string and mark characters
-        # present in string.
-        for i in range(len(string)):
-            if (string[i] >= 'a' and string[i] <= 'z'):
-                present[ord(string[i]) - ord('a')] = True
-            elif (string[i] >= 'A' and string[i] <= 'Z'):
-                present[ord(string[i]) - ord('A')] = True
+        res = []
 
-        # Store missing characters in alphabetic
-        # order.
-        res = ""
+        for i in range(26):
+            if not present[i]:  # present[i] == False:
+                # Increment while appending the letters in the list
+                res.append(chr(ord('a') + i))
 
-        for i in range(MAX_CHAR):
-            if (present[i] == False):
-                res += chr(i + ord('a'))
+        return "".join(res)
 
-        return res
+    # Another way
+    def missing_char_pangram(s: str) -> str:
+        s = s.lower()
+        missing = [False] * 26
+        # for i in range(len(s)):
+        for ch in s:
 
+            # if 'a' <= s[i] <= 'z':
+            # missing[ord(s[i]) - ord('a')] = True
+
+            if ch.isalpha():
+                missing[ord(ch) - ord('a')] = True
+
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        res = []
+        # Check if char is missing from our previous string
+        for i in range(len(missing)):
+            if missing[i] == False:
+                res.append(alphabet[i])
+        return "".join(res)
+
+
+print(missing_char_pangram("The quick brown fox jumps"))
 
 solution = Solution()
 print(solution.missing_char_pangram("The quick brown fox jumps"))  # adglvyz

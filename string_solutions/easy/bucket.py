@@ -37,3 +37,30 @@ def myLower(s):
 
 
 print(myLower('AEIOU'))
+
+
+###################################################
+# Ways to initialize list with alphabets
+# Run a loop till 26 and incrementing it while appending the letters in the list.
+def alph():
+    lst = []
+    alpha = "a"
+    for i in range(0, 26):
+        lst.append(alpha)
+        # Increment while appending the letters in the list
+        alpha = chr(ord(alpha) + 1)
+    return lst
+
+
+# Another way :
+def alph():
+    lst = []
+    for c in range(ord('a'), ord('z') + 1):
+        lst.append(chr(c))
+
+    # using list comprehension for filling alphabets
+    # lst = [chr(c) for c in range(ord('a'), ord('z') + 1)]
+    return lst
+
+
+print(alph())
