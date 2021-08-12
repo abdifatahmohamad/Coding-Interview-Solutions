@@ -58,7 +58,7 @@ def first_non_rep(s: str) -> str:
 
 
 # Test Cases:
-s1 = "aabccd"  # -> b
+s1 = "aabccd"  # -> d
 s2 = "aabbcf"  # -> c
 s3 = "kllm"  # -> k
 s4 = "a"  # -> a
