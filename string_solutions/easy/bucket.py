@@ -48,7 +48,7 @@ def alph():
     for i in range(0, 26):
         lst.append(alpha)
         # Increment while appending the letters in the list
-        alpha = chr(ord(alpha) + 1)
+        alpha = chr(ord(alpha) + i)
     return lst
 
 
