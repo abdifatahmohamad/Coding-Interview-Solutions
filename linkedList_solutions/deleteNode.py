@@ -65,7 +65,7 @@ def deleteNodeAtPosition(head: LinkedList, pos) -> LinkedList:
     if not head:
         return None
 
-    # Function return number of nodes present in list
+    # Function return number of nodes present in list.
     def length(head: LinkedList) -> int:
         current = head
         count = 0
