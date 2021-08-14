@@ -15,9 +15,8 @@ def print_list(head: LinkedList) -> None:
             break
         head = head.next
 
+
 # O(N) Time || O(1) Space
-
-
 def insertAtTail(arr: List[str]) -> LinkedList:
     head = LinkedList(arr)
     if not head:
@@ -31,9 +30,8 @@ def insertAtTail(arr: List[str]) -> LinkedList:
         last_node.next = LinkedList(i)
     return head
 
+
 # O(1) Time and Space
-
-
 def deleteFromBeginning(head: LinkedList) -> LinkedList:
     # Case1: If there is no nodes in the list (Nothing to delete)
     if not head:
@@ -60,9 +58,8 @@ def deleteAtEnd(head: LinkedList) -> LinkedList:
     second_last.next = None
     return head
 
+
 # O(N) Time || O(1) Space
-
-
 def deleteNodeAtPosition(head: LinkedList, pos) -> LinkedList:
     # Case1: If there is no nodes in the list (Nothing to delete)
     if not head:
