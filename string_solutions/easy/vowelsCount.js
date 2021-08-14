@@ -13,15 +13,29 @@
 
 // SOLUTION 2
 function vowelsCount(str){
-    let vowelsCount = 0;
+    str = str.toLowerCase();
+    let count = 0;
     const arr = str.split('');
     for(let char in arr){
-        // console.log(arr[char]);
-        if(arr[char].includes("aeiou")){
-            vowelsCount++;
+        if("aeiou".includes(arr[char])){
+            count++;
         }
     }
-    return vowelsCount;
+    return `The number of vowels are: ${count} vowels`;
 }
 
 console.log(vowelsCount("Abdifatah Mohamed"));
+
+// In Python:
+
+// def vowelsCount(s: str) -> int:
+//     count = 0
+//     vowels = ['a', 'e', 'i', 'u', 'o']
+//     # vowels = "aeiou"
+//     # lst = list(s)
+//     for char in s:
+//         if char in vowels:
+//             count += 1
+//     return count
+
+// print(vowelsCount("abdifatah Mohamed"));
