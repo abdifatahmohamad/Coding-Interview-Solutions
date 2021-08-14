@@ -28,7 +28,6 @@ arr1 = [13, 27, 35, 40, 49, 55, 59]
 arr2 = [17, 35, 39, 40, 55, 58, 60]
 print(findCommonNumbers(arr1, arr2))  # Output: [35, 40, 55]
 
-
 # Java Solution:
 # import java.util.ArrayList;
 # import java.util.List;
