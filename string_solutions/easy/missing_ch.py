@@ -11,6 +11,10 @@ print(missing_char("somalia", "a"))
 
 # Solving this problem using bucket
 def missing_chars(word: str, target: str) -> str:
+    # If target char is NOT present in the word
+    if target not in word:
+        return "Not found!"
+
     word = word.lower()
     missing = [False] * 26
     for char in word:
