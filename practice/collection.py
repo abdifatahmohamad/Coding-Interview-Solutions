@@ -583,6 +583,11 @@ def reverse_words(s: str) -> str:
     for word in range(len(s)-1, -1, -1):
         res.append(s[word])
     return "".join(res)'''
+    ##############
+    '''res = ""
+    for ch in s:
+        res = ch + res
+    return res'''
 
     # Using two pointers:
     '''s = list(s)
