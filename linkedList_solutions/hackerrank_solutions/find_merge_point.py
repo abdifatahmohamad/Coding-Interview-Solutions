@@ -98,6 +98,7 @@ def print_list(head: SinglyLinkedListNode) -> None:
     while head:
         print(head.val, end=" -> ")
         head = head.next
+    print("None")
 
 
 # O(N) Time || O(1) Space
