@@ -574,6 +574,18 @@ print(solve(arr1, arr2))
 #####################################################################################################
 # Different ways to reverse string:
 def reverse_words(s: str) -> str:
+#     length = len(s)
+#     for i in range(length // 2):
+#         # Swap elements using temp variable
+#         temp = s[i]
+#         s[i] = s[length - 1 - i]
+#         s[length - 1 - i] = temp
+#
+#         # Swap elements in one line
+#         # s[i], s[length - 1 - i] = s[length - 1 - i], s[i]
+#     return s
+
+
     # Using built in function:
     '''s = s[::-1]
     print(s)'''
