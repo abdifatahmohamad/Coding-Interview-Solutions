@@ -585,6 +585,22 @@ def reverse_words(s: str) -> str:
 #         # s[i], s[length - 1 - i] = s[length - 1 - i], s[i]
 #     return s
 
+def reverse_string(s):
+#     lst = list(s)
+#     length = len(lst)
+#     for i in range(length // 2):
+#         # Swap elements using temp variable
+#         # temp = lst[i]
+#         # lst[i] = lst[length - i - 1]
+#         # lst[length - i - 1] = temp
+# 
+#         # Swap elements in one line
+#         lst[i], lst[length - i - 1] = lst[length - 1 - i], lst[i]
+#     return "".join(lst)
+# 
+# string = "hello"
+# print(reverse_string(string))
+
 
     # Using built in function:
     '''s = s[::-1]
