@@ -114,13 +114,19 @@ def merge_two_lists(list1: ListNode, list2: ListNode) -> ListNode:
 
     while list1 is not None and list2 is not None:
         if list1.val < list2.val:
+            # Insert list1 to the current
             current.next = list1
+            # Update list1 pointer
             list1 = list1.next
         else:
+            # Insert list1 to the current
             current.next = list2
+            # Update list2 pointer
             list2 = list2.next
+        # Update current pointer
         current = current.next
 
+    # If one of the lists exhausted
     if list1 is not None:
         current.next = list1
     else:
