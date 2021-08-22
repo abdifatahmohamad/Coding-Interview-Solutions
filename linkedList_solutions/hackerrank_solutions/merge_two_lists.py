@@ -12,6 +12,12 @@ def print_list(head: LinkedList) -> None:
 
 
 def merge_lists(headA, headB):
+    # Base case
+    if not headA:
+        return headB
+    if not headB:
+        return headA
+
     dummy = LinkedList(None)
     curr = dummy
 
@@ -62,6 +68,12 @@ class LinkedList:
 
 
 def merge_lists(headA, headB):
+    # Base case
+    if not headA:
+        return headB
+    if not headB:
+        return headA
+
     dummy = LinkedList(None)
     curr = dummy
 
@@ -109,6 +121,12 @@ def print_list(head: ListNode) -> None:
 
 
 def merge_two_lists(list1: ListNode, list2: ListNode) -> ListNode:
+    # Base case
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+
     dummy_head = ListNode(-1)
     current = dummy_head
 
