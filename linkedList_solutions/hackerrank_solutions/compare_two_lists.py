@@ -49,6 +49,7 @@ print(compare_lists(L1, L2))
 
 #############################################
 # Neater Solution
+# O(N) Time || O(1) Space
 def compare_lists(L1: LinkedList, L2: LinkedList) -> int:
     # Check edge case
     if L1 is None or L2 is None:
