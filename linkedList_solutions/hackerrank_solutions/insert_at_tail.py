@@ -11,6 +11,7 @@ def print_list(head: LinkedList) -> None:
     print("None")
 
 
+# O(N) Time || O(1) Space
 def insertAtTail(head: LinkedList, data) -> LinkedList:
     new_node = LinkedList(data)
     # Case 1: if head pointer is None
