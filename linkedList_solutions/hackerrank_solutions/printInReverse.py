@@ -11,6 +11,7 @@ def print_list(head: LinkedList) -> None:
         head = head.next
 
 
+# O(N)Time || O(1) Space
 def reverse_list(head: LinkedList) -> LinkedList:
     curr_node = head
     prev_node = None
