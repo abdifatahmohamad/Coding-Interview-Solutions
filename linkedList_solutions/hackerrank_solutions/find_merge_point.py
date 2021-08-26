@@ -28,9 +28,8 @@ def insertAtTail(arr: List[str]) -> LinkedList:
         last_node.next = LinkedList(i)
     return head
 
+
 # O(N + M) Time || O(1) Space
-
-
 def find_merge_node(headA: LinkedList, headB: LinkedList) -> int:
     # Return the length both LinkedList and store it in a variable
     m = length(headA)
