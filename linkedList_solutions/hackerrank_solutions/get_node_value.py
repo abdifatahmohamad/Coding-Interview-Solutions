@@ -32,6 +32,7 @@ def helper_function(head: LinkedList, node) -> None:
     last_node.next = LinkedList(node)
 
 
+# O(N) Time || O(1) Space
 def getNode(head: LinkedList, pos) -> LinkedList:
     leng = get_length(head) - 1
     if pos > leng:
