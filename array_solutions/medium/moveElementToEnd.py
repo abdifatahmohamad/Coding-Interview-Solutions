@@ -21,7 +21,7 @@ def moveElementToEnd(array, toMove):
     return array
 
 
-# Create a function that does swap for us
+# Swap helper function
 def swap(i, j, nums):
     temp = nums[i]
     nums[i] = nums[j]
