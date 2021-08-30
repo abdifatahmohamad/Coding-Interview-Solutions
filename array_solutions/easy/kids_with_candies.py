@@ -17,6 +17,7 @@ class Solution:
                 result[i] = True
         return result
 
+
         # Same as above
         # for i in range(len(nums)):
         #     curr = nums[i]
