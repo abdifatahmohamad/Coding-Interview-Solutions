@@ -2,7 +2,7 @@
 def camel_case() -> str:
     # Take user's input
     string = input("Enter a sentence: ")
-    # Remove non alphanumeric characters from the string
+    # Strip away non alphanumeric characters from the string
     sen = re.sub('[^A-Za-z0-9]+', ' ', string)
     # Turn string into a list
     sen = list(sen)
