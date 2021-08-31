@@ -1,3 +1,6 @@
+import re
+
+
 # O(N) Time || O(N) Space
 def camel_case() -> str:
     # Take user's input
@@ -23,6 +26,48 @@ def camel_case() -> str:
             res.append(curr)
     return "".join(res)
 
+
+###################################################
+string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+sen = re.sub('[^A-Za-z0-9]+', ' ', string)
+sen = sen.split()
+
+res = []
+for i in range(len(sen)):
+    first = sen[i][0].upper()
+    rest = sen[i][1:]
+    camelCase = first + rest
+    res.append(camelCase)
+print("".join(res))
+
+##########################################
+string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+sen = re.sub('[^A-Za-z0-9]+', ' ', string)
+sen = sen.split()
+
+# res = ""
+# for word in sen:
+#     res += word[0].upper() + word[1:]
+# print("".join(res))
+
+# Same above code using string comprehension
+res = "".join(word[0].upper() + word[1:] for word in sen)
+print(res)
+
+###################################################
+
+string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+sen = re.sub('[^A-Za-z0-9]+', ' ', string)
+sen = sen.split()
+
+# res = []
+# for word in sen:
+#     res.append(word[0].upper() + word[1:])
+# print("".join(res))
+
+# Same above code using list comprehension
+res = "".join([word[0].upper() + word[1:] for word in sen])
+print(res)
 
 # hi there, my name is abdifatah!
 print(camel_case())  # HiThereMyNameIsAbdifatah
