@@ -10,5 +10,5 @@ def firstNotRepeatingCharacter(s):
     return -1
 
 
-print(firstNotRepeatingCharacter("aaabcccdeeef"))
-print(firstNotRepeatingCharacter("aabbcc"))
+print(firstNotRepeatingCharacter("aaabcccdeeef"))  # Index 3
+print(firstNotRepeatingCharacter("aabbcc"))  # -1
