@@ -28,7 +28,7 @@ def camel_case() -> str:
 
 
 ###################################################
-string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+string = input("Enter a sentence: ")
 sen = re.sub('[^A-Za-z0-9]+', ' ', string)
 sen = sen.split()
 
@@ -41,7 +41,7 @@ for i in range(len(sen)):
 print("".join(res))
 
 ##########################################
-string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+string = input("Enter a sentence: ")
 sen = re.sub('[^A-Za-z0-9]+', ' ', string)
 sen = sen.split()
 
@@ -56,7 +56,7 @@ print(res)
 
 ###################################################
 
-string = input("Enter a sentence: ")  # hi there, my name is abdifatah!
+string = input("Enter a sentence: ")
 sen = re.sub('[^A-Za-z0-9]+', ' ', string)
 sen = sen.split()
 
