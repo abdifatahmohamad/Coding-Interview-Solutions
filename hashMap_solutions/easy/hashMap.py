@@ -1,5 +1,6 @@
 # A simple program that pulls data from excel sheet that gives price based on date
 # # https://www.youtube.com/watch?v=ea8BRGxGmlA
+# https://www.youtube.com/watch?v=ISir207RuKQ&t=550s
 
 # stock_prices = {}
 # filename = "stock_prices.csv"

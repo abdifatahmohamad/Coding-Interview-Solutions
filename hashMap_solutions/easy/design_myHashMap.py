@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=ISir207RuKQ&t=550s
+# # https://www.youtube.com/watch?v=ea8BRGxGmlA
+
 class MyHashMap:
 
     def __init__(self):
