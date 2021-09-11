@@ -1,3 +1,4 @@
+// O(N) Time and Space
 function removeAllEvenNumbers(arr){
     let odds =[]
     for (let num of arr){
