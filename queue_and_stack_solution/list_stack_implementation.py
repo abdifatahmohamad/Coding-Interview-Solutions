@@ -1,4 +1,101 @@
+# https://stackoverflow.com/questions/18279775/implementing-stack-with-python/64601545#64601545
 # https://www.codesdope.com/course/data-structures-stacks/
+
+class Stack:
+    def __init__(self, size):
+        # Three ways to create an empty list:
+        # One:
+        self.__size = size
+        self.__arr = [0] * self.__size
+
+        # Two:
+        # self.__size = size
+        # self.__arr = [0 for _ in range(self.__size)]
+
+        # Three:
+        # self.__size = size
+        # self.__arr = [0] * self.__size
+        # for i in range(len(self.__arr)):
+        #     self.__arr[i] = 0
+
+        self.__top = -1
+
+    def is_empty(self) -> bool:
+        """
+        :return: if the stack is empty or not
+        """
+        return self.__top == -1
+
+    def push(self, item) -> None:
+        """
+        :return: element that is removed from stack otherwise raise exception
+        """
+        self.__top += 1
+        if self.__top == self.__size:
+            raise IndexError("Stack Overflow!")
+        else:
+            self.__arr[self.__top] = item
+
+    # Print stack using string representation
+    def __str__(self) -> str:
+        print("Printing stack.")
+        # Without list comprehension
+        # res = []
+        # for item in self.__arr:
+        #     res.append(str(item))
+        # return " ".join(res)
+
+        # Using list comprehension
+        return " ".join(str(item) for item in self.__arr)
+
+    # Print stack by creating print function/method
+    # def print_list(self) -> None:
+    #     print("Printing stack.")
+    #     for item in self.__arr:
+    #         print(item, end=" ")
+    #     print()
+
+    def pop(self) -> None:
+        """
+        :return: element that is removed from stack otherwise raise exception
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        else:
+            self.__arr[self.__top] = 0
+            self.__top -= 1
+            return self.__arr[self.__top]
+
+    def peek(self) -> str:
+        """
+        :return: get the last element on the stack
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        else:
+            return f"The top element of the stack is: {self.__arr[self.__top]}"
+
+
+if __name__ == '__main__':
+    stack = Stack(10)
+    stack.push(5)
+    stack.push(4)
+    stack.push(3)
+    stack.push(7)
+
+    print(stack)
+    stack.pop()
+    stack.pop()
+
+    print(stack)
+    print(stack.peek())
+
+    # stack.print_list()
+
+
+#####################################################################
+
+
 class Stack:
     def __init__(self, capacity):
         self.__arr = [0] * capacity
