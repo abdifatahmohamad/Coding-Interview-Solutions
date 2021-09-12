@@ -1,3 +1,4 @@
+# https://www.codesdope.com/course/data-structures-stacks/
 class Stack:
     def __init__(self, capacity):
         self.__arr = [0] * capacity
