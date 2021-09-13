@@ -1,22 +1,25 @@
 # https://stackoverflow.com/questions/18279775/implementing-stack-with-python/64601545#64601545
 # https://www.codesdope.com/course/data-structures-stacks/
 
+# https://stackoverflow.com/questions/18279775/implementing-stack-with-python/64601545#64601545
+# https://www.codesdope.com/course/data-structures-stacks/
+
 class Stack:
-    def __init__(self, size):
+    def __init__(self, length):
         # Three ways to create an empty list:
         # One:
-        self.__size = size
-        self.__arr = [0] * self.__size
+        self.__length = length
+        self.__S = [0] * self.__length
 
         # Two:
-        # self.__size = size
-        # self.__arr = [0 for _ in range(self.__size)]
+        # self.__length = length
+        # self.__S = [0 for _ in range(self.__length)]
 
         # Three:
-        # self.__size = size
-        # self.__arr = [0] * self.__size
-        # for i in range(len(self.__arr)):
-        #     self.__arr[i] = 0
+        # self.__length = length
+        # self.__S = [0] * self.__length
+        # for i in range(len(self.__S)):
+        #     self.__S[i] = 0
 
         self.__top = -1
 
@@ -26,15 +29,15 @@ class Stack:
         """
         return self.__top == -1
 
-    def push(self, item) -> None:
+    def push(self, x) -> None:
         """
         :return: element that is removed from stack otherwise raise exception
         """
         self.__top += 1
-        if self.__top == self.__size:
+        if self.__top == self.__length:
             raise IndexError("Stack Overflow!")
         else:
-            self.__arr[self.__top] = item
+            self.__S[self.__top] = x
 
     # Print stack using string representation
     def __str__(self) -> str:
@@ -46,7 +49,7 @@ class Stack:
         # return " ".join(res)
 
         # Using list comprehension
-        return " ".join(str(item) for item in self.__arr)
+        return " ".join(str(x) for x in self.__S)
 
     # Print stack by creating print function/method
     # def print_list(self) -> None:
@@ -62,9 +65,9 @@ class Stack:
         if self.is_empty():
             raise Exception("Stack is empty")
         else:
-            self.__arr[self.__top] = 0
+            self.__S[self.__top] = 0
             self.__top -= 1
-            return self.__arr[self.__top]
+            return self.__S[self.__top]
 
     def peek(self) -> str:
         """
@@ -73,7 +76,7 @@ class Stack:
         if self.is_empty():
             raise Exception("Stack is empty")
         else:
-            return f"The top element of the stack is: {self.__arr[self.__top]}"
+            return f"The top element of the stack is: {self.__S[self.__top]}"
 
 
 if __name__ == '__main__':
@@ -90,7 +93,7 @@ if __name__ == '__main__':
     print(stack)
     print(stack.peek())
 
-    # stack.print_list()
+    # stack.print_lilength
 
 
 #####################################################################
