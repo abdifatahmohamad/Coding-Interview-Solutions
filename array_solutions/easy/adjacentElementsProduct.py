@@ -9,9 +9,8 @@ def adjacentElementsProduct(nums):
     # One line return using list comprehension:
     # return max([nums[i] * nums[i+1] for i in range(len(nums)-1)])
 
+
 # Optimized solution O(N) Time || O(1) Space
-
-
 def adjacentElementsProduct(nums):
     res = float('-inf')
     n = len(nums)
