@@ -3,7 +3,7 @@
 
 # https://stackoverflow.com/questions/18279775/implementing-stack-with-python/64601545#64601545
 # https://www.codesdope.com/course/data-structures-stacks/
-
+# http://www2.hawaii.edu/~suthers/courses/ics311f20/Notes/Topic-04.html
 class Stack:
     def __init__(self, length):
         # Three ways to create an empty list:
