@@ -6,11 +6,11 @@
 #     array[i] = None
 # print(array)
 
-# Solution 2:
+# Solution 2 - Using list comprehension:
 # array = [None for _ in range(10)]
 # print(array)
 
-# Solution 2:
+# Solution 3:
 size = 10
 array = [None] * size
 print(array)
