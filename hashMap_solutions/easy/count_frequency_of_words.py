@@ -13,6 +13,6 @@ for char in splitString:
     # else:
     #     empty_dict[char] = 1
 
-    # The same above code but shorter
+    # Shorter version of the above code
     empty_dict[char] = empty_dict.get(char, 0) + 1
 print(empty_dict)
