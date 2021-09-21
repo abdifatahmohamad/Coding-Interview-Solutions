@@ -1,3 +1,26 @@
+# O(N^2) Time, O(1) Space
+def twoNumberSum(nums, target):
+    for i in range(len(nums)):
+        for j in range(1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return [-1, -1]
+
+
+# O(N log N) Time, O(1) Space
+def twoNumberSum(nums, target):
+    nums.sort()  # Array is sorted under the hood here
+    left, right = 0, len(nums) - 1
+    while left < right:
+        if nums[left] + nums[right] == target:
+            return [left, right]
+        elif nums[left] + nums[right] < target:
+            left += 1
+        else:
+            right -= 1
+    return [-1, -1]
+
+
 # O(n) time | O(n) space
 def twoNumberSum(array, target):
     mapping = {}
