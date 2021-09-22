@@ -72,7 +72,7 @@ print(sum([2, 15, 11, 7], 9))
 # 11 - 2
 # }
 
-# for loop to end of numbers array
+# Loop through till the end of numbers array
 # determine complement
 # if complement is in dictionary, return value of complement and i
 # otherwise, new key-value pair in dicitonary, number -> i
