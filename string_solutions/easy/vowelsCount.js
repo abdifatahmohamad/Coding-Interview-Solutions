@@ -27,7 +27,7 @@ function vowelsCount(str){
 console.log(vowelsCount("Abdifatah Mohamed"));
 
 // In Python:
-
+// Solution using Python code
 // def vowelsCount(s: str) -> int:
 //     count = 0
 //     vowels = ['a', 'e', 'i', 'u', 'o']
