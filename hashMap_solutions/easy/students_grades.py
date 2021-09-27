@@ -13,3 +13,9 @@ for name, grade in students:
     mapping[name].append(grade)
 
 print(mapping)
+# Output:
+
+# {
+# 'Hassan': [92, 88, 73],
+# 'Abdifatah': [95, 76, 81]
+# }
