@@ -52,6 +52,6 @@ def compressWords(message):
 
 msg0 = "abaabbbc"  # ===> aba2b3c
 msg1 = "ab"  # ===> "ab"
-msg2 = "aa"  # ===> "ab"
+msg2 = "aa"  # ===> "a2"
 msg3 = "abb"  # ===> "ab2"
 print(compressWords(msg0))
