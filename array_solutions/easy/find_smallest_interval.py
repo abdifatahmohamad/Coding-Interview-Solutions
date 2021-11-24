@@ -1,3 +1,16 @@
+# O(N) Time || O(1) Space
+def find_smallest_interval(arr):
+    first = second = float('inf')
+    for num in arr:
+        if num < first:
+            second = first
+            first = num
+        elif num < second and num != first:
+            second = num
+
+    return abs(first - second)
+
+
 # O(N LOG N) Time || O(1) Space
 def find_smallest_interval(num):
     num.sort()
@@ -9,11 +22,6 @@ def find_smallest_interval(num):
     return smallest
 
 
-num1 = [1, 6, 4, 8, 2]
-num2 = [6, 4, 8, 2]
-print(find_smallest_interval(num2))
-
-
 # O(N^2) Time || O(1) Space
 def find_smallest_interval(num):
     smallest = float('inf')
@@ -22,3 +30,8 @@ def find_smallest_interval(num):
             if abs(num[i] - num[j]) < smallest:
                 smallest = abs(num[i] - num[j])
     return smallest
+
+
+num1 = [1, 6, 4, 8, 2]
+num2 = [6, 4, 8, 2]
+print(find_smallest_interval(num2))
