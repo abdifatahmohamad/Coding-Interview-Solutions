@@ -12,3 +12,13 @@ def find_smallest_interval(num):
 num1 = [1, 6, 4, 8, 2]
 num2 = [6, 4, 8, 2]
 print(find_smallest_interval(num2))
+
+
+# O(N^2) Time || O(1) Space
+def find_smallest_interval(num):
+    smallest = float('inf')
+    for i in range(len(num) - 1):
+        for j in range(i + 1, len(num)):
+            if abs(num[i] - num[j]) < smallest:
+                smallest = abs(num[i] - num[j])
+    return smallest
