@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 
 def next_greatest_letter(letters, target) -> str:
-    for i in range(len(letters)):
-        if ord(letters[i]) > ord(target):
-            return letters[i]
+    for c in letters:
+        if ord(c) > ord(target):
+            return letters[c]
     return letters[0]
 
 
