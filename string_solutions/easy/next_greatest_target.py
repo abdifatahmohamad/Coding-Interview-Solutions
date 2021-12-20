@@ -3,7 +3,7 @@
 def next_greatest_letter(letters, target) -> str:
     for c in letters:
         if ord(c) > ord(target):
-            return letters[c]
+            return c
     return letters[0]
 
 
