@@ -4,42 +4,58 @@ from logging import raiseExceptions
 
 
 class MinStack:
-    min = float("inf")
+    min_stack = float("inf")
 
     def __init__(self):
+        # Keep the truck the current minimum stack
+        self.min_stack = float("inf")
+        # Regular stack
         self.stack = []
-        self.min = float("inf")
 
-    def push(self, val):
-        if val <= self.min:
-            self.stack.append(self.min)
-            self.min = val
-        else:
-            self.stack.append(val)
+    def push(self, val: int) -> None:
+        if val <= self.min_stack:
+            self.stack.append(self.min_stack)
+            self.min_stack = val
 
-    def pop(self):
-        stack_top = self.stack[len(self.stack) - 1]
+        # Always bush the regular stack
+        self.stack.append(val)
+
+    def pop(self) -> None:
+        top_stack = self.stack[len(self.stack) - 1]
+
+        # Always pop off the regular stack
         self.stack.pop()
-        if self.min == stack_top:
-            self.min = self.stack[len(self.stack) - 1]
+        if self.min_stack == top_stack:
+            self.min_stack = self.stack[len(self.stack) - 1]
             self.stack.pop()
 
-    def top(self):
+    def top(self) -> int:
         return self.stack[len(self.stack) - 1]
 
-    def getMin(self):
-        return self.min
+    def getMin(self) -> float:
+        return self.min_stack
+
+    # Print stack using string representation
+    def __str__(self) -> str:
+        # print("Printing stack.")
+        return " ".join(str(x) for x in self.stack)
 
 
+# Your MinStack object will be instantiated and called as such:
 obj = MinStack()
-
-obj.push(-2)
+obj.push(2)
+obj.push(3)
+obj.pop()
+obj.push(4)
 obj.push(-1)
-obj.push(9)
-obj.push(-34)
-obj.push(-3)
+print("Top of the stack: ", obj.top())
+obj.push(6)
+obj.getMin()
+obj.push(-2)
+obj.pop()
+print("The minimum of the stack: ", obj.getMin())
 
-print(obj.getMin())
+print("Printing the entire stack: ", obj)
 
 
 ###############################################################
