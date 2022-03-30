@@ -2,7 +2,7 @@ class Solution:
     def makeGood(self, s: str) -> str:
 
         # Case 1:
-        if len(s) == 1:
+        if len(s) <= 1:
             return s
 
         stack = []
@@ -12,6 +12,23 @@ class Solution:
             if len(stack) >= 2 and stack[-1].lower() == stack[-2].lower() and stack[-1] != stack[-2]:
                 stack.pop()
                 stack.pop()
+
+        return "".join(stack)
+################################################################
+# Cleaner solution
+
+    def makeGood(self, s: str) -> str:
+
+        # Case 1:
+        if len(s) <= 1:
+            return s
+
+        stack = []
+        for ch in s:
+            if stack and abs(ord(stack[-1]) - ord(ch) == 32):
+                stack.pop()
+            else:
+                stack.append(ch)
 
         return "".join(stack)
 
