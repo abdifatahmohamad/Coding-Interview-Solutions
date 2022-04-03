@@ -10,23 +10,29 @@ count_unique("sore", "zebra") ➞ 7
 count_unique("a", "soup") ➞ 5
 '''
 
-# Solution using HashMap O(N) Time & Space
+# Solution O(N) Time & Space
 
 
 def count_unique(s1, s2):
-    d = {}
-    total = 0
-    for k, v in enumerate(s1):
-        d[v] = d.get(v, 0) + 1
-        if k > 1:
-            total += 1
+    res = []
+    for ch1 in s1:
+        res.append(ch1)
 
-    for k, v in enumerate(s2):
-        d[v] = d.get(v, 0) + 1
-        if k > 1:
-            total += 1
+    for ch2 in s2:
+        res.append(ch2)
 
-    return total
+    return len(set(res))
+
+# Easy Solution
+
+
+def count_unique(s1, s2):
+    unique = []
+    for char in (s1 + s2):
+        if char not in unique:
+            unique.append(char)
+
+    return len(unique)
 
 
 print(count_unique("apple", "play"))
