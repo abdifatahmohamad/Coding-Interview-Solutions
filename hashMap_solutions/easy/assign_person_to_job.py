@@ -24,6 +24,17 @@ def assign_person_to_job(names, jobs):
     # return dict(zip(names, jobs))
 
 
+# Without using zip
+def assign_person_to_job(names, jobs):
+    mapping = {}
+    i, j = 0, 0
+    while i < len(names) or j < len(jobs):
+        mapping[names[i]] = jobs[j]
+        i += 1
+        j += 1
+    return mapping
+
+
 names = ["Dennis", "Vera", "Mabel", "Annette", "Sussan"]
 jobs = ["Butcher", "Programmer", "Doctor", "Teacher", "Lecturer"]
 
