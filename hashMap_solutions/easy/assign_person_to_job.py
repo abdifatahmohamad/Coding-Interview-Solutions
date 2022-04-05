@@ -35,6 +35,14 @@ def assign_person_to_job(names, jobs):
     return mapping
 
 
+# Soultion 3:
+def assign_person_to_job(names, jobs):
+    mapping = {}
+    for i, name in enumerate(names):
+        mapping[name] = jobs[i]
+    return mapping
+
+
 names = ["Dennis", "Vera", "Mabel", "Annette", "Sussan"]
 jobs = ["Butcher", "Programmer", "Doctor", "Teacher", "Lecturer"]
 
