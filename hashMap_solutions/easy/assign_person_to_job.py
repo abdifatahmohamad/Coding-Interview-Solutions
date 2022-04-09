@@ -60,11 +60,3 @@ Output: {
   "Sussan": "Lecturer"
 }
 '''
-
-'''
-Output: {
-'Annie': 'Teacher', 
-'Steven': 'Engineer', 
-'Lisa': 'Doctor', 
-'Osman': 'Cashier'}
-'''
