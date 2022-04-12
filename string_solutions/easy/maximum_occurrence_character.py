@@ -1,7 +1,7 @@
 from collections import OrderedDict
+
+
 # CodePath easy problem
-
-
 def maximum_occurrence_character(s):
     frequency = {}
     for char in s:
