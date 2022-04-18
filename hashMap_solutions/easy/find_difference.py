@@ -2,6 +2,19 @@
 
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
+        # This solution is slow
+        res = []
+        for ch in t:
+            res.append(ch)
+
+        for ch in s:
+            res.remove(ch)
+
+        return "".join(res)
+
+
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
         mapping = {}
         for ch in s:
             mapping[ch] = mapping.get(ch, 0) + 1
@@ -13,6 +26,32 @@ class Solution:
                 mapping[ch] -= 1
 
         return -1
+
+# Solution using XOR operator:
+# Find the XOR of chars for both strings separately then XOR the result.
+
+
+def findTheDifference(s, t):
+
+    s_code = 0
+    for ch in s:
+        s_code ^= ord(ch)
+
+    t_code = 0
+    for ch in t:
+        t_code ^= ord(ch)
+
+    return chr(s_code ^ t_code)
+
+    # Short version:
+    # code = 0
+    # for ch in s + t:
+    #     code ^= ord(ch)
+    # return chr(code)
+
+
+print(findTheDifference("abcd", "abcde"))
+# print(findTheDifference("a", "aa"))
 
 
 # This is same as "valid anagram problem", same data structure involved:
