@@ -19,15 +19,14 @@ def counts(teamA, teamB):
 # O(NLOGN) Time || O(N) Space
 def counts(teamA, teamB):
     lst1_sorted = sorted(teamA)
-    lst2_sorted = sorted(teamB)
     '''
     res = []
-    for val in lst2_sorted:
+    for val in teamB:
         res.append(binary_search(lst1_sorted, val))
     return res
     '''
     # Short version with list comprehension
-    return [binary_search(lst1_sorted, val) for val in lst2_sorted]
+    return [binary_search(lst1_sorted, val) for val in teamB]
 
 
 def binary_search(nums, val):
@@ -49,6 +48,5 @@ print(counts([2, 10, 5, 4, 8], [3, 1, 7, 8]))  # [1, 0, 3, 4]
 
 # Using bisect_right imported from binary search package
 lst1_sorted = sorted(teamA)  # NlogN
-lst2_sorted = sorted(teamB)  # MlogM
 
-res = [bisect_right(lst1_sorted, val) for val in lst2_sorted]  # MlogN
+res = [bisect_right(lst1_sorted, val) for val in teamB]  # MlogN
