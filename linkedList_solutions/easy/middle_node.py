@@ -36,8 +36,9 @@ def insert_helper(head: ListNode, node: int) -> ListNode:
 
 def middle_node(head: ListNode) -> int:
     count = 0
-    while head:
-        head = head.next
+    current = head
+    while current:
+        current = current.next
         count += 1
 
     curr = head
