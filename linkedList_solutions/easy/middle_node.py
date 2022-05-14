@@ -33,30 +33,32 @@ def insert_helper(head: ListNode, node: int) -> ListNode:
     return head
 
 
-def linked_list_cycle(head: ListNode) -> bool:
+def middle_node(head: ListNode) -> int:
+    count = 0
+    while head:
+        head = head.next
+        count += 1
+
     curr = head
-    hash_set = set()
-    while curr:
-        if curr in hash_set:
-            return True
-
-        hash_set.add(curr)
+    # mid = get_length(head) // 2
+    mid = count // 2
+    for i in range(mid):
         curr = curr.next
-    return False
+    return curr
 
 
-nums = [3, 2, 0, 4]
+# def get_length(head: ListNode) -> int:
+#     count = 0
+#     while head:
+#         head = head.next
+#         count += 1
+#     return count
+
+
+nums = [1, 2, 3, 4, 5]
 nodes = insertAtTail(nums)
 print_list(nodes)
 
-three = ListNode(3)
-two = ListNode(2)
-zero = ListNode(0)
-n_four = ListNode(4)
+print(middle_node(nodes))
 
-three.next = two
-two.next = zero
-zero.next = n_four
-n_four.next = zero
-
-print(linked_list_cycle(nodes))
+# print(get_length(nodes))
