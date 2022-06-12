@@ -36,42 +36,26 @@ def leaf_similar(root1, root2) -> bool:
 def leaf_similar_iter(root1, root2) -> bool:
     ls1, ls2 = [], []
 
-    def tree1(root1):
-        if not root1:
-            return root1
+    def tree1(r1, ls1):
+        if not r1:
+            return r1
 
-        stack = [root1]
-        while stack:
-            node = stack.pop()
+        if not r1.left and not r1.right:
+            ls1.append(r1.val)
 
-            if node.right:
-                stack.append(node.right)
+        return tree1(r1.left, ls1) or tree1(r1.right, ls1)
 
-            if node.left:
-                stack.append(node.left)
+    def tree2(r2, ls2):
+        if not r2:
+            return r2
 
-            if not node.left and not node.right:
-                ls1.append(node.val)
+        if not r2.left and not r2.right:
+            ls2.append(r2.val)
 
-    def tree2(root2):
-        if not root2:
-            return root2
+        return tree2(r2.left, ls2) or tree2(r2.right, ls2)
 
-        stack = [root2]
-        while stack:
-            node = stack.pop()
-
-            if node.right:
-                stack.append(node.right)
-
-            if node.left:
-                stack.append(node.left)
-
-            if not node.left and not node.right:
-                ls2.append(node.val)
-
-    tree1(root1)
-    tree2(root2)
+    tree1(root1, ls1)
+    tree2(root2, ls2)
 
     return ls1 == ls2
 
