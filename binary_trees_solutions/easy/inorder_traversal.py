@@ -1,83 +1,102 @@
-class TreeNode(object):
-    def __init__(self, val):
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
-        self.right = None
-        self.left = None
-
-    # left root right
-    def inorder_traversal(self, root):
-        # Base case:
-        if not root:
-            return
-
-        self.inorder_traversal(root.left)
-        print(root.val, end=" ")
-        self.inorder_traversal(root.right)
-
-    # Function finds each path of the tree
-    @staticmethod
-    def path_finder(root):
-        path_finder_helper(root, "")
-
-    # Function sums up each path of the tree
-    @staticmethod
-    def sum_path(root):
-        lst = []
-        sum_path_helper(root, lst, 0)
-        print(lst)
+        self.left = left
+        self.right = right
 
 
-def path_finder_helper(root, cur_val):
-    # Base case:
-    if not root:
-        return
+def leaf_similar(root1, root2) -> bool:
+    ls1, ls2 = [], []
 
-    cur_val += str(root.val) + " -> "
-    if root.left is None and root.right is None:
-        print(cur_val, "None")
+    def tree1(root1, ls1):
+        if not root1:
+            return root1
 
-    path_finder_helper(root.left, cur_val)
-    path_finder_helper(root.right, cur_val)
+        if not root1.left and not root1.right:
+            ls1.append(root1.val)
 
+        return tree1(root1.left, ls1) or tree1(root1.right, ls1)
 
-def sum_path_helper(root, lst, curSum):
-    # Base case:
-    if not root:
-        return
+    def tree2(root2, ls2):
+        if not root2:
+            return root2
 
-    curSum += root.val
-    if root.left is None and root.right is None:
-        lst.append(curSum)
+        if not root2.left and not root2.right:
+            ls2.append(root2.val)
 
-    sum_path_helper(root.left, lst, curSum)
-    sum_path_helper(root.right, lst, curSum)
+        return tree2(root2.left, ls2) or tree2(root2.right, ls2)
 
+    tree1(root1, ls1)
+    tree2(root2, ls2)
 
-def build_tree():
-    tree = TreeNode(1)
-    tree.left = TreeNode(2)
-    tree.right = TreeNode(3)
-    tree.left.left = TreeNode(4)
-    tree.left.right = TreeNode(5)
-    tree.right.left = TreeNode(6)
-    tree.right.right = TreeNode(7)
-    tree.left.right.right = TreeNode(8)
-    tree.right.right.right = TreeNode(9)
-
-    tree.inorder_traversal(tree)
-    print()
-    print("Printing node paths: ")
-    tree.path_finder(tree)
-    print("Sum all paths of the tree:")
-    tree.sum_path(tree)
+    return ls1 == ls2
 
 
-#                1
-#              /   \
-#             2     3
-#            /  \  /  \
-#           4    5 6   7
-#                 \     \
-#                  8     9
+# DFS iterative solution:
+def leaf_similar_iter(root1, root2) -> bool:
+    ls1, ls2 = [], []
+
+    def tree1(root1):
+        if not root1:
+            return root1
+
+        stack = [root1]
+        while stack:
+            node = stack.pop()
+
+            if node.right:
+                stack.append(node.right)
+
+            if node.left:
+                stack.append(node.left)
+
+            if not node.left and not node.right:
+                ls1.append(node.val)
+
+    def tree2(root2):
+        if not root2:
+            return root2
+
+        stack = [root2]
+        while stack:
+            node = stack.pop()
+
+            if node.right:
+                stack.append(node.right)
+
+            if node.left:
+                stack.append(node.left)
+
+            if not node.left and not node.right:
+                ls2.append(node.val)
+
+    tree1(root1)
+    tree2(root2)
+
+    return ls1 == ls2
+
+
 if __name__ == "__main__":
-    build_tree()
+    '''
+         1
+       /   \
+      2     3
+
+    '''
+
+    '''
+          1
+        /   \
+       3     2 
+
+     '''
+    # Input: root1 = [1,2,3], root2 = [1,3,2]
+    tree1 = TreeNode(1)
+    tree1.left = TreeNode(2, None, None)
+    tree1.right = TreeNode(3, None, None)
+
+    tree2 = TreeNode(1)
+    tree2.left = TreeNode(3, None, None)
+    tree2.right = TreeNode(2, None, None)
+
+    print(leaf_similar(tree1, tree2))
