@@ -1,4 +1,4 @@
-​```python
+```python
 
 from typing import List
 class TreeNode:
@@ -63,4 +63,5 @@ if __name__ == "__main__":
     tree.left = TreeNode(1, None, None)
     tree.right = TreeNode(3, None, None)
     print(balanceBST(tree))
+
 ```
