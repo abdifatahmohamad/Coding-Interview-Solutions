@@ -19,7 +19,6 @@ class Solution:
                     root = root.right
 
                 root = stack.pop()
-                # res.append(root.val)
                 total += root.val
                 root.val = total
                 root = root.left
