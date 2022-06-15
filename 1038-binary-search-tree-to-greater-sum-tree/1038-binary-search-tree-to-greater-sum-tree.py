@@ -6,22 +6,21 @@
 #         self.right = right
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
+        if not root:
+            return root
+        
+        curr = root
         total = 0
-        def dfs(root):
-            nonlocal total
-            if not root:
-                return root
+        stack = []
+        while stack or curr:
+            while curr:
+                stack.append(curr)
+                curr = curr.right
 
-            stack = []
-            while stack or root:
-                while root:
-                    stack.append(root)
-                    root = root.right
+            curr = stack.pop()
+            total += curr.val
+            curr.val = total
+            curr = curr.left
 
-                root = stack.pop()
-                total += root.val
-                root.val = total
-                root = root.left
-        dfs(root)
         return root
         
