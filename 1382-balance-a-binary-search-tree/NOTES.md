@@ -1,4 +1,4 @@
-​```Python
+​```python
 
 from typing import List
 class TreeNode:
