@@ -1,4 +1,5 @@
-​class TreeNode:
+```python
+class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
@@ -43,3 +44,4 @@ if __name__ == "__main__":
     print(bstToGst(tree))
 
 
+```
