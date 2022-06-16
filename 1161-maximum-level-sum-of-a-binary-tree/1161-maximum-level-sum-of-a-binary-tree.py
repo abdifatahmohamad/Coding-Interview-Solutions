@@ -8,11 +8,14 @@ class Solution:
     def maxLevelSum(self, root: Optional[TreeNode]) -> int:
             if not root:
                 return 0
+            
             queue = collections.deque([root])
             levels_sum = []
+            
             while queue:
                 level_size = len(queue)
                 total = 0
+                
                 for _ in range(level_size):
                     curr = queue.popleft()
                     total += curr.val
