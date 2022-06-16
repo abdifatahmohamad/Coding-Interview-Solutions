@@ -24,9 +24,7 @@ class Solution:
                         queue.append(curr.left)
                     if curr.right:
                         queue.append(curr.right)
-
-                    level_size -= 1
-
+                        
                 levels_sum.append(total)
 
             maximal = levels_sum[0]
