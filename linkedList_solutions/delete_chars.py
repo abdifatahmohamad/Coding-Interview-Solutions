@@ -50,7 +50,7 @@ def delete_chars(head: LinkedList, ch) -> LinkedList:
             curr_node = curr_node.next
         else:
             # Delete character
-            curr_node.next = curr_node.next .next
+            curr_node.next = curr_node.next.next
     return head
 
 
