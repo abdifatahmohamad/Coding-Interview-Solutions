@@ -10,20 +10,20 @@ class Solution:
             if len(heap) > k:
                 heappop(heap)
                 
-        print("Heap:", heap)
-        ans = [0] * k
-        i = 0
-        while heap: # O(k)
-            frq, item = heappop(heap) # O(logk)
-            ans[i] = item
-            i += 1
-        return ans
+        # ans = [0] * k
+        # i = 0
+        # while heap: # O(k)
+        #     frq, item = heappop(heap)
+        #     ans[i] = item
+        #     i += 1
+        # return ans
                 
-#         ans = [0] * k
-#         for i in range(k):
-#             ans[i] = heapq.heappop(heap)
+        ans = [0] * k
+        for i in range(k):
+            frq, item = heappop(heap)
+            ans[i] = item
             
-#         return ans
+        return ans
         
         
         
