@@ -12,4 +12,6 @@ class Solution:
             product *= nums[i]
         
         return res
-        
+
+
+# https://www.youtube.com/watch?v=tSRFtR3pv74
