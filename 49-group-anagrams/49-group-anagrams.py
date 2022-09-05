@@ -7,6 +7,7 @@ class Solution:
                 alpha[ord(c) - ord('a')] += 1
                 
             key = tuple(alpha)
+            # Use this if statement if you are not using defualtdict in mapping
             if key not in mapping:
                 mapping[key] = []
             mapping[key].append(word)
