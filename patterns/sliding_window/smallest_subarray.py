@@ -1,10 +1,21 @@
 '''
 # Sliding window technique called "dynamically resizable windows or dynamic variant:
 Find smallest subarray with given sum, where sum of value >= to the target sum
+
+Test Case 1:
 nums = [4, 2, 1, 7, 8, 1, 2, 8, 1, 0]
 target_sum = 8
 Output: 1
-Explanation: The smallest sum that is >= to the target sum from the input is 8 which is only 1 value. Note we have another 8 and 10 which >= to the target sum but return only the first value.
+
+Explanation: The smallest sum that is >= to the target sum from the input is 8 which is only 1 value. Note we have another 8 which >= to the target sum but return only the first value that is >= to the target sum.
+
+Test Case 2:
+nums = [2, 7, 0]
+target_sum = 9
+Output: 2
+
+Explanation: 2 + 7 >= 9, hence the output should be 2
+
 https://www.youtube.com/watch?v=MK-NZ4hN7rs&t=1555s
 '''
 
