@@ -4,6 +4,7 @@ Find smallest subarray with given sum, where sum of value >= to the target sum
 nums = [4, 2, 1, 7, 8, 1, 2, 8, 1, 0]
 target_sum = 8
 Output: 1
+Explanation: The smallest sum that is >= to the target sum from the input is 8 which is only 1 value. Note we have another 8 and 10 which >= to the target sum but return only the first value.
 https://www.youtube.com/watch?v=MK-NZ4hN7rs&t=1555s
 '''
 
