@@ -22,16 +22,16 @@ https://www.youtube.com/watch?v=MK-NZ4hN7rs&t=1555s
 
 class Solution:
     def smallest_subarray(self, nums, target) -> int:
-        min_window_size = float("Inf")
-        curr_window_sum = 0
+        min_value = float("Inf")
+        curr_running_sum = 0
         left = 0
         for right in range(len(nums)):
-            curr_window_sum += nums[right]
-            while curr_window_sum >= target:
-                min_window_size = min(min_window_size, (right - left + 1))
-                curr_window_sum -= nums[left]
+            curr_running_sum += nums[right]
+            while curr_running_sum >= target:
+                min_value = min(min_value, (right - left + 1))
+                curr_running_sum -= nums[left]
                 left += 1
-        return min_window_size
+        return min_value
 
 
 solution = Solution()
