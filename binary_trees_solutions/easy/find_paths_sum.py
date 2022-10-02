@@ -47,7 +47,7 @@ def sum_path_helper(root, lst, curSum) -> List:
 """
            5
           /  \
-         5    8
+         4    8
         / \   / \
       11   5 13  4
      /  \         \
@@ -60,6 +60,7 @@ tree = TreeNode(5)
 tree.left = TreeNode(4)
 tree.right = TreeNode(8)
 tree.left.left = TreeNode(11)
+tree.left.right = TreeNode(5)
 tree.right.left = TreeNode(13)
 tree.left.left.left = TreeNode(7)
 tree.left.left.right = TreeNode(2)
