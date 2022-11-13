@@ -3,7 +3,7 @@ class Solution:
         rows, cols = len(puzzle), len(puzzle[0])
         # Initialize all puzzle/matrix to infinity values
         dist = [[float("Inf")] * cols for _ in range(rows)]
-        dist[0][0] = 0
+        # dist[0][0] = 0
         # Priority queue that represents a tuple which holds distance, row, and col
         pq = [(0, 0, 0)]
         # All four directions
@@ -17,8 +17,6 @@ class Solution:
             if r == rows - 1 and c == cols - 1:
                 return effort
 
-            # for i in range(4):
-            #     new_row, new_col = r + directions[i], c + directions[i + 1]
             for x, y in [right, left, top, down]:
                 new_row, new_col = r + x, c + y
                 if 0 <= new_row < rows and 0 <= new_col < cols:
