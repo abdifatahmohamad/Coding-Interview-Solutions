@@ -10,17 +10,15 @@ class Solution:
             return []
 
         paths = []
-        
+        stack = [(root, str(root.val))]
+        while stack:
+            node, path = stack.pop()
 
-        def dfs(root, path, paths):
-            path += str(root.val)
-
-            if not root.left and not root.right:
+            if not node.left and not node.right:
                 paths.append(path)
-            if root.left:
-                dfs(root.left, path+"->", paths)
-            if root.right:
-                dfs(root.right, path+"->", paths)
-        
-        dfs(root, "", paths)
+
+            if node.left:
+                stack.append((node.left, path+"->" + str(node.left.val)))
+            if node.right:
+                stack.append((node.right, path+"->" + str(node.right.val)))
         return paths
