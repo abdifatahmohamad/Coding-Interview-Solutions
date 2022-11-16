@@ -36,6 +36,9 @@ if __name__ == "__main__":
               /  \
              15   7 
     '''
+    # The whole playlist: https://www.youtube.com/watch?v=cpgAULF6Vpw&list=PL7g1jYj15RUOjoeZAJsWjwV8XUo9r0hwc
+    # https://www.youtube.com/watch?v=NEq_zWZWu_U&list=PL7g1jYj15RUOjoeZAJsWjwV8XUo9r0hwc&index=9
+    
     tree = TreeNode(3)
     tree.left = TreeNode(9, None, None)
     tree.right = TreeNode(20, TreeNode(15, None, None),
