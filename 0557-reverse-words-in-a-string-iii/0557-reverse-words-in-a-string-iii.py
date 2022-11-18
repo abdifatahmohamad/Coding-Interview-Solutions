@@ -3,13 +3,20 @@ class Solution:
         s = s.split()
         res = []
         for i in range(len(s)):
-            w = list(s[i])
-            l, r = 0, len(w) - 1
-            while l < r:
-                temp = w[l]
-                w[l] = w[r]
-                w[r] = temp
-                l += 1
-                r -= 1
+            w = swap(s[i])
             res.append("".join(w))
         return " ".join(res)
+
+
+def swap(w):
+    # word = [w[i] for i in range(len(w))]
+    # Short version
+    word = list(w)
+    l, r = 0, len(word) - 1
+    while l < r:
+        temp = word[l]
+        word[l] = word[r]
+        word[r] = temp
+        l += 1
+        r -= 1
+    return "".join(word)
