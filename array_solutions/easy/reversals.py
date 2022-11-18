@@ -92,6 +92,8 @@ def reverse_string_words(s: str) -> str:
 
 
 def swap(word):
+    # word = [w[i] for i in range(len(w))]
+    # Short version
     w = list(word)
     l, r = 0, len(w) - 1
     while l < r:
