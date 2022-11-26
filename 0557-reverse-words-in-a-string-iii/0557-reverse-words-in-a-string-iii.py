@@ -9,9 +9,7 @@ class Solution:
 
 
 def swap(w):
-    # word = [w[i] for i in range(len(w))]
-    # Short version
-    word = list(w)
+    word = [w[i] for i in range(len(w))]
     l, r = 0, len(word) - 1
     while l < r:
         temp = word[l]
@@ -20,3 +18,4 @@ def swap(w):
         l += 1
         r -= 1
     return "".join(word)
+        
