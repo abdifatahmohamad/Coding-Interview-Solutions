@@ -56,6 +56,27 @@ def most_frequent(arr):
     return ''
 
 
+
+# Bonus feature
+def most_frequent(arr):
+    bucket = [0 for _ in range(26)]
+    for c in arr:
+        # Increment each alphabet location
+        index = ord(c) - ord('a')
+        bucket[index] += 1
+
+    max_val = float("-Inf")
+    for val in bucket:
+        max_val = max(max_val, bucket[val])
+
+    # Add bonus feature
+    bonus = []
+    for i, c in enumerate(bucket):
+        if max_val == bucket[i]:
+            bonus.append(chr(ord('a') + i))
+
+    return ", ".join(bonus)
+
 print(most_frequent(['b', 'a', 'a', 'b', 'b',
                      'a', 'c', 'y', 'c', 'b', 'a', 'b']))
 print(most_frequent(['z', 'z', 'z', 'z']))
