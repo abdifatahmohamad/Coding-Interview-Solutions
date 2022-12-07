@@ -1,14 +1,34 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int total1 = 0; int total2 = 0;
+        // Map<Integer, Integer> mp = new HashMap<>();
+        // for (int i = 0; i < nums; i++){
+        //     if (mp.containsKey(arr[i]))
+        //     {
+        //         mp.put(arr[i], mp.get(arr[i]) + 1);
+        //     }
+        //     else
+        //     {
+        //         mp.put(arr[i], 1);
+        //     }
+        // }
+        
+        // Shorter version
+        Map<Integer,Integer> mp = new HashMap<>();
         for(int n: nums){
-            total1 += n;
+           mp.put(n, mp.getOrDefault(n, 0) + 1);
         }
         
-        total2 = nums.length * (nums.length + 1) / 2;
-        int diff = total2 - total1;
-        
-        return diff;
+        int missing = 0;
+        for(int i = 1; i < nums.length + 1; i++){
+            if(!mp.containsKey(i)){
+                missing = i;
+            }
+        }
+        // for i in range(1, len(nums) + 1):
+        //     if i not in lookup:
+        //         missing = i
+
+        return missing;
         
     }
 }
