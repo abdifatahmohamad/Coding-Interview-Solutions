@@ -4,7 +4,7 @@ class Solution:
         if len(s) == 1:
             return ""
         for i in range(len(s) // 2):
-            if s[i] > 'a':
+            if s[i] != 'a':
                 s[i] = 'a'
                 break
                 
