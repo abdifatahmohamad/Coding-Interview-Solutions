@@ -3,13 +3,13 @@ class Solution:
         s = list(s)
         if len(s) == 1:
             return ""
-        for i in range(len(s) // 2):
+        
+        for i in range(len(s)//2):
             if s[i] != 'a':
                 s[i] = 'a'
                 break
                 
         else:
             s[-1] = 'b'
-
         return "".join(s)
-      
+        
