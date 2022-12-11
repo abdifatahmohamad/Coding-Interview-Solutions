@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        res = []
+        dummy_head = ListNode(None)
+        curr = dummy_head
         while head:
             total = 0
             while head.val != 0:
@@ -13,16 +14,10 @@ class Solution:
                 head = head.next
                             
             if total > 0:
-                res.append(total)
+                curr.next = ListNode(total)
+                curr = curr.next
             head = head.next
             
-        # Convert array into LikedList
-        dummyHead = ListNode(None)
-        curr = dummyHead
-        for num in res:
-            curr.next = ListNode(num)
-            curr = curr.next
-
-        return dummyHead.next
+        return dummy_head.next
                 
         
