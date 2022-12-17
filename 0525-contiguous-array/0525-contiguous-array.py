@@ -1,8 +1,7 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
         d = {0: -1}
-        max_length = 0
-        count = 0
+        count = max_length = 0
         for i in range(len(nums)):
             # if nums[i]:
             #     count += 1
