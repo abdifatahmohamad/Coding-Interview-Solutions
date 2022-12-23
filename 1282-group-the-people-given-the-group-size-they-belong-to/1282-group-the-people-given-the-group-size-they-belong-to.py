@@ -7,10 +7,12 @@ class Solution:
             person = i
             if groupSize not in mapping:
                 mapping[groupSize] = []
-            mapping.get(groupSize).append(person)
-            key = mapping.get(groupSize)
-            if len(key) == groupSize:
-                res.append(key)
+                
+            value = mapping.get(groupSize)
+            value.append(person)
+        
+            if len(value) == groupSize:
+                res.append(value)
                 # Remove key
                 del mapping[groupSize]
         return res
