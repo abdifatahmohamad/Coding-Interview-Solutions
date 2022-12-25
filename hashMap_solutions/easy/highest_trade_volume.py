@@ -44,8 +44,23 @@ def highest_trade_volume(trade: List[str]) -> str:
 
     return max_ticker
 
+    '''
+        max_trade = float("-Inf")
+        max_ticker = ""
+        d = {}
+        for data in trade:
+            ticker, trade_val = data.split(" ")
+            trade_val = int(trade_val)
+            d[ticker] = d.get(ticker, 0) + int(trade_val)
+            if d.get(ticker) > max_trade:
+                max_trade = d.get(ticker)
+                max_ticker = ticker
+        return max_ticker
+    '''
 
 # My approach
+
+
 def highest_trade_volume(trade: List[str]) -> str:
     mapping = {}
     max_trade = float("-Inf")
