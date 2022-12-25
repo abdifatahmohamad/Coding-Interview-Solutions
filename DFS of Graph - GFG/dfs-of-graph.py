@@ -12,8 +12,11 @@ class Solution:
             if not visited[node]:
                 visited[node] = 1
                 res.append(node)
-                for neighbor in range(len(adj[node]) -1, -1, -1):
-                    stack.append(adj[node][neighbor])
+                # for neighbor in range(len(adj[node]) -1, -1, -1):
+                #     stack.append(adj[node][neighbor])
+                
+                # Using list comprehension
+                stack += [adj[node][neighbor] for neighbor in range(len(adj[node]) -1, -1, -1)]
         return res
                 
                 
