@@ -12,8 +12,8 @@ class Solution:
             if not visited[node]:
                 visited[node] = 1
                 res.append(node)
-                # Add the neighbors of the node to the stack
-                stack.extend(reversed(adj[node]))
+                for neighbor in range(len(adj[node]) -1, -1, -1):
+                    stack.append(adj[node][neighbor])
         return res
                 
                 
