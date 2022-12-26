@@ -9,21 +9,20 @@ class Node:
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         d = {}
-        
-        def dfs(node):
-            if not node:
-                return None
-            
-            if node in d:
-                return d[node]
-            
-            clone = Node(node.val)
-            d[node] = clone
-            for nei in node.neighbors:
-                clone.neighbors.append(dfs(nei))
-            return clone
-        
-        return dfs(node)
+        return self.dfs(node, d)
+    
+    def dfs(self, node, d):
+        if not node:
+            return None
+
+        if node in d:
+            return d[node]
+
+        clone = Node(node.val)
+        d[node] = clone
+        for nei in node.neighbors:
+            clone.neighbors.append(self.dfs(nei, d))
+        return clone
         
         
         
