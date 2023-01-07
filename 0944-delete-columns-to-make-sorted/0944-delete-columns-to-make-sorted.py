@@ -1,8 +1,9 @@
 class Solution:
     def minDeletionSize(self, s: List[str]) -> int:
+        rows, cols = len(s) - 1, len(s[0])
         min_deletions = 0
-        for i in range(len(s[0])):
-            for j in range(len(s) - 1):
+        for i in range(cols):
+            for j in range(rows):
                 if s[j][i] > s[j + 1][i]:
                     min_deletions += 1
                     break
