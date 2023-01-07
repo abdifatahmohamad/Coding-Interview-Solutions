@@ -1,16 +1,11 @@
 class Solution:
-    def minDeletionSize(self, strs: List[str]) -> int:
-        if strs is None or len(strs) == 0:
-            return 0
-
-        deletions = 0
-        for col in range(len(strs[0])):
-            char = strs[0][col]
-            for word in range(len(strs)):
-                if strs[word][col] < char:
-                    deletions += 1
+    def minDeletionSize(self, s: List[str]) -> int:
+        min_deletions = 0
+        for i in range(len(s[0])):
+            for j in range(len(s) - 1):
+                if s[j][i] > s[j + 1][i]:
+                    min_deletions += 1
                     break
-                char = strs[word][col]
-
-        return deletions
+                    
+        return min_deletions
         
