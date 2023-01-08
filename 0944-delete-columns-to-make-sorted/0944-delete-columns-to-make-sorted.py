@@ -1,12 +1,19 @@
 class Solution:
     def minDeletionSize(self, s: List[str]) -> int:
-        rows, cols = len(s) - 1, len(s[0])
+        res = []
+        for i in range(len(s[0])):
+            new_string = ""
+            for j in range(len(s)):
+                new_string += s[j][i]
+            res.append(new_string)
+
+        # res give us ['abc', 'bca', 'cee'], ['cdg', 'bah', 'afi']
+
         min_deletions = 0
-        for i in range(cols):
-            for j in range(rows):
-                if s[j][i] > s[j + 1][i]:
+        for word in res:
+            for i in range(len(word) - 1):
+                if ord(word[i + 1]) < ord(word[i]):
                     min_deletions += 1
                     break
-                    
         return min_deletions
         
