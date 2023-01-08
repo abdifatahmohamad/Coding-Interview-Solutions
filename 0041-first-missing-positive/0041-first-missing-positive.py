@@ -1,15 +1,11 @@
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-        positive_set = set()
-    
-        # Iterate through the input array and add each positive integer to the set
+        mapping = {}
         for num in nums:
             if num > 0:
-                positive_set.add(num)
+                mapping[num] = True
+        missing = 1
+        while missing in mapping:
+            missing += 1
 
-        # The first missing positive integer is the smallest positive integer that is not in the set
-        i = 1
-        while i in positive_set:
-            i += 1
-
-        return i
+        return missing
