@@ -12,9 +12,8 @@
     
 class Solution:
     def missingNumber(self, nums):
-        mp = {}
-        for i in range(len(nums)):
-            mp[nums[i]] = i
+        mp = {n: i for i, n in enumerate(nums)}
+            
         for i in range(len(nums)+1):
             if i not in mp:
                 return i
