@@ -5,13 +5,12 @@ class Solution:
             frequency[n] = frequency.get(n, 0) + 1
 
         res = 0
-        for n in frequency:
-            count = frequency[n]
-            if count == 1:
+        for key, value in frequency.items():
+            if value == 1:
                 return -1
-            if count % 3 == 0:
-                res += count // 3
-            if count % 3 == 1 or count % 3 == 2:
-                res += count // 3 + 1
+            if value % 3 == 0:
+                res += value // 3
+            if value % 3 == 1 or value % 3 == 2:
+                res += value // 3 + 1
         return res
         
