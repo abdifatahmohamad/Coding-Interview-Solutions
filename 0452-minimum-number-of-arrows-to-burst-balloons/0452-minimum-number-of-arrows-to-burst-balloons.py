@@ -3,12 +3,12 @@ class Solution:
         # points.sort(key=lambda x: x[1])
         points = sorted(points, key=lambda x: x[1])
         res = 0
-        ending = float("-Inf")
+        prevoius = float("-Inf")
         for point in points:
             start, end = point[0], point[1]
-            if start > ending:
+            if start > prevoius:
                 res += 1
-                ending = end
+                prevoius = end
 
         return res
         
