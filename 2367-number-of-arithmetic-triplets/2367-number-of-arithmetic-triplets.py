@@ -1,14 +1,11 @@
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        mapping = collections.Counter(nums)
+        seen = set(nums)
+        one_time_diff = [(n - diff) for n in nums]
+        two_time_diff = [(n - diff * 2) for n in nums]
         unique = 0
-        res = []
-        for n in nums: 
-            complement1 = n - diff
-            complement2 = n + diff 
-            curr = n 
-            if complement1 in mapping and complement2 in mapping:
-                res.append((complement1, curr, complement2))
+        for i in range(len(nums)):
+            if one_time_diff[i] in seen and two_time_diff[i] in seen:
                 unique += 1
-        print(res)
+
         return unique
