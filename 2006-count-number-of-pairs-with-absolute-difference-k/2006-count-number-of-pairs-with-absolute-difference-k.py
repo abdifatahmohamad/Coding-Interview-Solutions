@@ -1,10 +1,15 @@
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
-        kth_diff = 0
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if abs(nums[i] - nums[j]) == k:
-                    kth_diff += 1
-        return kth_diff
+        nums_dict, count = {}, 0
+        for num in nums:
+            if num not in nums_dict:
+                nums_dict[num] = 1
+            else:
+                nums_dict[num] += 1
+
+        for num in nums:
+            if num + k in nums_dict:
+                count += nums_dict[num + k]
+        return count
 
         
