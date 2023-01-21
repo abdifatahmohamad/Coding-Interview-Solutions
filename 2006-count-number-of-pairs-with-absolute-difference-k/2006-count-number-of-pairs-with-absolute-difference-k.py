@@ -1,13 +1,12 @@
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
-        mapping = {}
-        for n in nums:
-            mapping[n] = mapping.get(n, 0) + 1
+        mapping = Counter(nums)
 
         count = 0
         for n in nums:
-            if n + k in mapping:
-                count += mapping[n + k]
+            complement = n + k
+            if complement in mapping:
+                count += mapping[complement]
         return count
 
         
