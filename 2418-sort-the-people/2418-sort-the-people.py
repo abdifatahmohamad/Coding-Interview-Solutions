@@ -4,9 +4,17 @@ class Solution:
         for i in range(len(names)):
             mapping[heights[i]] = names[i]
 
-        mapping = sorted(mapping.items(), reverse=True)
+        # Sort dictionary
+        # mapping = sorted(mapping.items(), reverse=True)
+        # res = []
+        # for _, people in mapping:
+        #     res.append(people)
+        # return res
+
+        # Another approach
+        heights = sorted(heights, reverse=True)
         res = []
-        for _, people in mapping:
-            res.append(people)
+        for height in heights:
+            res.append(mapping.get(height))
         return res
         
