@@ -1,19 +1,16 @@
 class Solution:
     def countPoints(self, rings: str) -> int:
         mapping = {}
-        for i in range(len(rings)):
-            char = rings[i]
-            if char.isalpha():
-                rods = rings[i + 1]
-                if rods not in mapping:
-                    mapping[rods] = [char]
-                else:
-                    mapping[rods].append(char)
-
-        colors = ['R', 'G', 'B']
+        for i in range(0, len(rings), 2):
+            ch = rings[i]
+            rod = rings[i + 1]
+            if rod not in mapping:
+                mapping[rod] = [ch]
+            else:
+                mapping[rod].append(ch)
         res = 0
-        for i, rods in mapping.items():
-            if set(rods) == set(colors):
+        for k, v in mapping.items():
+            if len(set(v)) == 3:
                 res += 1
         return res
         
