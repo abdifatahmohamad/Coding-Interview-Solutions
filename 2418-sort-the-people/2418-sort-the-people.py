@@ -3,8 +3,10 @@ class Solution:
         mapping = {}
         for i in range(len(names)):
             mapping[heights[i]] = names[i]
+
+        mapping = sorted(mapping.items(), reverse=True)
         res = []
-        for _, people in sorted(mapping.items(), reverse=True):
+        for _, people in mapping:
             res.append(people)
         return res
         
