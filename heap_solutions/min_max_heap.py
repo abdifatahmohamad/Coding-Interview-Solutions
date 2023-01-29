@@ -6,11 +6,9 @@ def min_heap(heights):
     for height in heights:
         heapq.heappush(heap, height)
 
-    i = 0
     res = []
     while heap:
         res.append(heapq.heappop(heap))
-        i += 1
 
     return res
 
@@ -23,12 +21,10 @@ def max_heap(heights):
     for height in heights:
         heapq.heappush(heap, -height)
 
-    i = 0
     res = []
     while heap:
         h = heapq.heappop(heap) * -1
         res.append(h)
-        i += 1
 
     return res
 
