@@ -3,14 +3,22 @@ def sortPeople(names, heights):
     for i in range(len(names)):
         mapping[heights[i]] = names[i]
 
-    mapping = sorted(mapping.items(), reverse=True)
+    # Sort dictionary
+    # mapping = sorted(mapping.items(), reverse=True)
+    # res = []
+    # for _, people in mapping:
+    #     res.append(people)
+    # return res
+
+    # Another approach
+    heights = sorted(heights, reverse=True)
     res = []
-    for _, people in mapping:
-        res.append(people)
+    for height in heights:
+        res.append(mapping.get(height))
     return res
 
 
-# ["Mary","Emma","John"]
 print(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]))
-# ["Bob","Alice","Bob"]
+# ["Mary","Emma","John"]
 print(sortPeople(["Alice", "Bob", "Bob"], [155, 185, 150]))
+# ["Bob","Alice","Bob"]
