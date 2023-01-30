@@ -1,12 +1,9 @@
 class Solution:
     def areOccurrencesEqual(self, s: str) -> bool:
         mapping = Counter(s)
-        values = []
-        for ch in mapping:
-            values.append(mapping.get(ch))
-
+        values = list(mapping.values())
         for i in range(1, len(values)):
-            if values[i] != values[0]:
+            if values[0] != values[i]:
                 return False
         return True
         
