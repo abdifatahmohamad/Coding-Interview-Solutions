@@ -1,18 +1,16 @@
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
-        mapping = {n: i for i, n in enumerate(order)}
-
-        for i in range(1, len(words)):
-            prevWord, currWord = words[i - 1], words[i]
-            for j in range(len(prevWord)):
-                if j == len(currWord):
+        mapping = {c: i for i, c in enumerate(order)}
+        
+        for i in range(len(words) - 1):
+            w1, w2 = words[i], words[i + 1]
+            for j in range(len(w1)):
+                if j == len(w2):
                     return False
-
-                prevChar, currChar = prevWord[j], currWord[j]
-                if prevChar != currChar:
-                    if mapping.get(prevChar) > mapping.get(currChar):
+                if w1[j] != w2[j]:
+                    if mapping.get(w1[j]) > mapping.get(w2[j]):
                         return False
                     break
-
+                    
         return True
         
