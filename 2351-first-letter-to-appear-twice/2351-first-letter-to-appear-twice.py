@@ -2,9 +2,9 @@ class Solution:
     def repeatedCharacter(self, s: str) -> str:
         mapping = {}
         for ch in s:
-            if ch not in mapping:
-                mapping[ch] = 1
-            else:
+            if ch in mapping:
                 return ch
+            else:
+                mapping[ch] = 1
         return None
         
