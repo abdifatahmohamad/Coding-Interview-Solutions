@@ -6,7 +6,7 @@ class Solution:
 
         max_val = float("-Inf")
         for k in mapping.keys():
-            if k > 0 and -k in mapping:
+            if -k in mapping:
                 max_val = max(max_val, k)
     
         if max_val == float("-Inf"):
