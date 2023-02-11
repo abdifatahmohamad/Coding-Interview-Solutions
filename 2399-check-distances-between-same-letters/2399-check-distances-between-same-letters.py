@@ -2,13 +2,13 @@ class Solution:
     def checkDistances(self, s: str, distance: List[int]) -> bool:
         mapping = {}
         for i, c in enumerate(s):
-            if c not in mapping:
-                mapping[c] = [i]
+            if c in mapping:
+                mapping[c] = i - mapping.get(c) - 1
             else:
-                mapping[c].append(i)
+                mapping[c] = i
         
-        for k, v in mapping.items():
-            if (abs(v[0] - v[1]) - 1) != distance[ord(k) - ord('a')]:
+        for k in mapping:
+            if mapping.get(k) != distance[ord(k) - ord('a')]:
                 return False
 
         return True
