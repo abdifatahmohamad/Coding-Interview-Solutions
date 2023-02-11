@@ -7,7 +7,6 @@ class Solution:
             else:
                 mapping[c].append(i)
         
-        print(mapping)
         for k, v in mapping.items():
             if (abs(v[0] - v[1]) - 1) != distance[ord(k) - ord('a')]:
                 return False
