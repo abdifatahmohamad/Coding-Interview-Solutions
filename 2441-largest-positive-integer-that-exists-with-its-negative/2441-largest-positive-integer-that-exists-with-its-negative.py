@@ -9,9 +9,6 @@ class Solution:
             if -k in mapping:
                 max_val = max(max_val, k)
     
-        if max_val == float("-Inf"):
-            return -1
-        else:
-            return max_val
+        return max_val if max_val != float("-Inf") else -1
             
         
