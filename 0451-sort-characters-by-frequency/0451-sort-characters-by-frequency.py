@@ -11,7 +11,7 @@ class Solution:
         heap.sort(key=lambda x: (-x[0], x[1]))
 
         res = []
-        for c in heap:
-            res.append((c[1] * c[0]))
+        for i, c in heap:
+            res.append((c * i))
         return "".join(res)
         
