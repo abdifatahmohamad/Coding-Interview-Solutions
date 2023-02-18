@@ -19,8 +19,8 @@ class Solution:
                 res.append(root.val)
                 root = root.right
 
-            ans = [0 for _ in range(len(res)-1)]
+            min_diff = float("Inf")
             for i in range(len(res)-1):
-                ans[i] = abs(res[i] - res[i + 1])
-            return min(ans)
+                min_diff = min(min_diff, abs(res[i] - res[i + 1]))
+            return min_diff
         
