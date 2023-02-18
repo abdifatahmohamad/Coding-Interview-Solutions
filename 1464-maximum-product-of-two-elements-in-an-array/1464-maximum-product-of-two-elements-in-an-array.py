@@ -4,9 +4,6 @@ class Solution:
         for n in nums:
             heapq.heappush(heap, -n)
 
-        max_val1 = -heapq.heappop(heap)
-        max_val2 = -heapq.heappop(heap)
-
-        return (max_val1 - 1) * (max_val2 - 1)
+        return (-heapq.heappop(heap) - 1) * (-heapq.heappop(heap) - 1)
 #
         
