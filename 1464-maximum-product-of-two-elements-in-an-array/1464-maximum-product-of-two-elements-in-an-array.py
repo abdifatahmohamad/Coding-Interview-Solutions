@@ -1,16 +1,12 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        num1 = float('-inf')
-        num2 = float('-inf')
+        heap = []
+        for n in nums:
+            heapq.heappush(heap, -n)
 
-        # Loop through the list and update the maximum values as necessary
-        for num in nums:
-            if num > num1:
-                num2 = num1
-                num1 = num
-            elif num > num2:
-                num2 = num
-        max_val = (num1 - 1) * (num2 - 1)
-        return max_val
+        max_val1 = -heapq.heappop(heap)
+        max_val2 = -heapq.heappop(heap)
+
+        return (max_val1 - 1) * (max_val2 - 1)
 #
         
