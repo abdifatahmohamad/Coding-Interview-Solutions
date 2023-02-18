@@ -9,18 +9,17 @@ class Solution:
             if not root:
                 return []
             stack = []
-            res = []
+            prev_val = float('-inf')
+            min_diff = float('inf')
             while stack or root:
                 while root:
                     stack.append(root)
                     root = root.left
 
                 root = stack.pop()
-                res.append(root.val)
+                min_diff = min(min_diff, root.val - prev_val)
+                prev_val = root.val
                 root = root.right
 
-            min_diff = float("Inf")
-            for i in range(len(res)-1):
-                min_diff = min(min_diff, abs(res[i] - res[i + 1]))
             return min_diff
         
