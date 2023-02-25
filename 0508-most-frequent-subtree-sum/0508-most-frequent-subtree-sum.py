@@ -18,10 +18,7 @@ class Solution:
             right_sum = post_order(node.right)
             total = node.val + left_sum + right_sum
 
-            if total in mapping:
-                mapping[total] += 1
-            else:
-                mapping[total] = 1
+            mapping[total] = mapping.get(total, 0) + 1
 
             return total
         
