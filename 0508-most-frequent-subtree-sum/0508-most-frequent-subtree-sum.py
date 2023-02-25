@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def findFrequentTreeSum(self, root: Optional[TreeNode]) -> List[int]:
+        mapping = {}
+        res = []
         def post_order(node):
             nonlocal mapping
 
@@ -22,17 +24,17 @@ class Solution:
                 mapping[total] = 1
 
             return total
-    
-        mapping = {}
-        res = []
-
+        
         post_order(root)
 
+        # Capture max frequent of the map
         max_freq = 0
         for value in mapping.values():
             if value > max_freq:
                 max_freq = value
-
+                
+        # Find the most frequent from the subtree sum.
+        # If there is a tie, return all the values with the highest frequency in any order.
         for key, value in mapping.items():
             if value == max_freq:
                 res.append(key)
