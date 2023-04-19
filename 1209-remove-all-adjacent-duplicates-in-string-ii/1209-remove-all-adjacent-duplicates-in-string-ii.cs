@@ -2,36 +2,22 @@ public class Solution {
     public string RemoveDuplicates(string s, int k) {
         
         // Stack with tuple
-        var stack = new Stack<(char ch, int count)>();
-
-        foreach (char c in s)
-        {
-            if (stack.Any() && stack.Peek().ch == c)
-            {
-                var val = stack.Pop();
-                val.count++;
-                stack.Push(val);
-                if (stack.Peek().count == k)
-                {
-                    stack.Pop();
+        Stack<(char, int)> stack = new Stack<(char, int)>();
+        foreach (char c in s) {
+            if (stack.Count > 0 && stack.Peek().Item1 == c) {
+                (char, int) top = stack.Pop();
+                if (top.Item2 + 1 < k) {
+                    stack.Push((c, top.Item2 + 1));
                 }
-            }
-            else
-            {
+            } else {
                 stack.Push((c, 1));
             }
-
         }
-
-        // String builder
-        var res = new StringBuilder();
-        while (stack.Any())
-        {
-            (char c, int count) = stack.Pop();
-            res.Insert(0, new string(c, count));
+        StringBuilder sb = new StringBuilder();
+        foreach ((char, int) tuple in stack.Reverse()) {
+            sb.Append(tuple.Item1, tuple.Item2);
         }
-
-        return res.ToString();
+        return sb.ToString();
         
     }
 }
