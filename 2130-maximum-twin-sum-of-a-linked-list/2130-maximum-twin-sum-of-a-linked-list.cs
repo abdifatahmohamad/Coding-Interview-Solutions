@@ -2,35 +2,38 @@ public class Solution
 {
     public int PairSum(ListNode head)
     {
-        ListNode head1 = head;
-        ListNode head2 = ReverseLinkedList(head);
-        int res = int.MinValue;
-        
-        while(head1 != null){
-            int currentSum = head1.val + head2.val;
-            res = Math.Max(res, currentSum);
-            head1 = head1.next;
-            head2 = head2.next;
-            
+        // Find the mid-point
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-
-        return res;
-    }
-
-    // Reverse LinkedList
-    private ListNode ReverseLinkedList(ListNode head)
-    {
+        ListNode head2 = slow.next;
+        slow.next = null; // Cut the pointer/connection after mid-point
+        
+        // Reverse from mid point
         ListNode prev = null;
-        ListNode curr = head;
-
+        ListNode curr = head2;
         while (curr != null)
         {
-            ListNode temp = new ListNode(curr.val);
-            temp.next = prev;
-            prev = temp;
-            curr = curr.next;
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
         }
-
-        return prev;
+        
+        // Compute maximum twin sum 
+        int res = int.MinValue;
+        while(prev != null){
+            res = Math.Max(res, head.val + prev.val);
+            head = head.next;
+            prev = prev.next;
+        }
+        
+        return res;
     }
+    
+
 }
