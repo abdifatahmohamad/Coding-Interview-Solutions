@@ -1,49 +1,36 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
-public class Solution {
-    public int PairSum(ListNode head) {
-        int[] array = LinkedListToArray(head);
-        return FindMaxSum(array);
-    }
-    
-    
-    // Method that converts LL into an array
-    private int[] LinkedListToArray(ListNode head)
+public class Solution
+{
+    public int PairSum(ListNode head)
     {
-        List<int> array = new List<int>();
+        ListNode head1 = head;
+        ListNode head2 = ReverseLinkedList(head);
+        int res = int.MinValue;
+        
+        while(head1 != null){
+            int currentSum = head1.val + head2.val;
+            res = Math.Max(res, currentSum);
+            head1 = head1.next;
+            head2 = head2.next;
+            
+        }
+
+        return res;
+    }
+
+    // Reverse LinkedList
+    private ListNode ReverseLinkedList(ListNode head)
+    {
+        ListNode prev = null;
         ListNode curr = head;
+
         while (curr != null)
         {
-            array.Add(curr.val);
+            ListNode temp = new ListNode(curr.val);
+            temp.next = prev;
+            prev = temp;
             curr = curr.next;
         }
 
-        return array.ToArray();
-    }
-
-    // Method that finds max sum using two pointers
-    private int FindMaxSum(int[] nums)
-    {
-        int i = 0;
-        int j = nums.Length - 1;
-        int maxSum = int.MinValue;
-        while (i < j)
-        {
-            int currentSum = nums[i] + nums[j];
-            maxSum = Math.Max(maxSum, currentSum);
-            i++;
-            j--;
-        }
-
-        return maxSum;
+        return prev;
     }
 }
