@@ -1,20 +1,43 @@
 public class Solution {
-    
-    // O(N Log N) time complexity || O(1) space complexity
     public int MinPairSum(int[] nums) {
-        // Sort array in ascending order
-        Array.Sort(nums);
+        int[] bucket = new int[nums.Max() + 1];
+        foreach (int n in nums)
+        {
+            bucket[n]++;
+        }
 
-        // Using two pointers technique get maximum between current sum and max pair sum.
-        int i = 0, j = nums.Length - 1;
+        return GetMinPairSum(bucket);
+         
+    }
+    
+    
+    // Method that gets the max per sum
+    public static int GetMinPairSum(int[] bucket)
+    {
+        int i = 1;
+        int j = bucket.Length - 1;
         int maxSum = int.MinValue;
-        while(i < j){
-            maxSum = Math.Max(maxSum, nums[i] + nums[j]);
-            i++;
-            j--;
+
+        while (i < j)
+        {
+            if (bucket[i] != 0 && bucket[j] != 0)
+            {
+                maxSum = Math.Max(maxSum, i + j);
+                bucket[i]--;
+                bucket[j]--;
+            }
+
+            if (bucket[i] == 0)
+                i++;
+
+            if (bucket[j] == 0)
+                j--;
         }
         
+        if (bucket[i] == bucket[j]) {
+            maxSum = Math.Max(maxSum, i + j);
+        }
+
         return maxSum;
-        
     }
 }
