@@ -3,11 +3,6 @@ public class Solution
     public double FindMedianSortedArrays(int[] nums1, int[] nums2)
     {
         int[] mergedArray = Merge(nums1, nums2);
-        
-        // foreach(int n in mergedArray){
-        //     Console.WriteLine(n);
-        // }
-        
         int count = mergedArray.Length;
 
         if (count % 2 == 0)
@@ -48,21 +43,8 @@ public class Solution
 
             last--;
         }
-
-        // Case 3: fill nums1 array with leftover nums2 array
-        while (n > 0)
-        {
-            res[last] = nums2[n - 1];
-            // Decrement both last and n pointers 
-            last--;
-            n--;
-        }
-    
-        for (int i = 0; i < res.Length; i++){
-            Console.WriteLine($"Index: {i} Number: {res[i]}");
-        }
         
-        // Case 4: fill nums1 array with leftover nums1 array
+        // Case 3: fill nums1 array with leftover nums1 array
         while (m > 0)
         {
             res[last] = nums1[m - 1];
@@ -70,8 +52,55 @@ public class Solution
             last--;
             m--;
         }
+
+        // Case 4: fill nums1 array with leftover nums2 array
+        while (n > 0)
+        {
+            res[last] = nums2[n - 1];
+            // Decrement both last and n pointers 
+            last--;
+            n--;
+        }
+        
+        // List<int> ans = new List<int>();
+        // foreach (int num in res)
+        // {
+        //     ans.Add(num);
+        // }
+
+//         string output = string.Join(", ", ans);
+//         Console.WriteLine(output);
         
         
         return res;
     }
 }
+
+
+/*
+
+How to find median number
+
+
+int[] nums = { 1, 2, 3, 4 };
+int length = nums.Length;
+int median;
+
+if (length % 2 == 0)
+{
+    // Even length: average of the two middle elements
+    int index1 = length / 2;
+    int index2 = (length / 2) - 1;
+    median = (nums[index1] + nums[index2]) / 2;
+}
+else
+{
+    // Odd length: middle element
+    int index = (length - 1) / 2;
+    median = nums[index];
+}
+
+Console.WriteLine("Median: " + median);
+
+
+*/
