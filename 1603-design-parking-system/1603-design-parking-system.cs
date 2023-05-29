@@ -1,49 +1,25 @@
 public class ParkingSystem {
-    private int bigSlots;
-    private int mediumSlots;
-    private int smallSlots;
+    int[] slots;
 
     public ParkingSystem(int big, int medium, int small) {
         
-        bigSlots = big;
-        mediumSlots = medium;
-        smallSlots = small;
+        slots = new int[] {big, medium, small};
         
     }
     
     public bool AddCar(int carType) {
+        // Check whether there is parking space of carType
+        if(carType < 1 || carType > 3){
+            throw new ArgumentException("Invalid carType");
+        }
         
-        switch(carType){
-                
-            case 1:
-                if(bigSlots > 0){
-                    bigSlots--;
-                    return true;
-                }
-                break;
-                
-            case 2:
-                if(mediumSlots > 0){
-                    mediumSlots--;
-                    return true;
-                }
-                break;
-            case 3:
-                if(smallSlots > 0){
-                    smallSlots--;
-                    return true;
-                }
-                break;
-                
+        // Car can only park in a parking space of its carType, return true if space available, else false
+        if(slots[carType -1] > 0){
+            slots[carType - 1]--;
+            return true;
         }
         
         return false;
-        
-        // Check whether there is parking space of carType
-        
-        // CarType can be of three kinds 1, 2, 3 respectively
-        
-        // Car can only park in a parking space of its carType, return true if space available, else false
         
         
     }
