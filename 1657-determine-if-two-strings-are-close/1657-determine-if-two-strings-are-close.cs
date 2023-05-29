@@ -18,13 +18,21 @@ public class Solution {
             map2[c] = map2.GetValueOrDefault(c, 0) + 1;
         }
 
-        var keys1 = map1.Keys.OrderBy(k => k);
-        var keys2 = map2.Keys.OrderBy(k => k);
+        List<int> value1 = new List<int>(map1.Values);
+        List<int> value2 = new List<int>(map2.Values);
+        List<char> key1 = new List<char>(map1.Keys);
+        List<char> key2 = new List<char>(map2.Keys);
 
-        var values1 = map1.Values.OrderBy(v => v);
-        var values2 = map2.Values.OrderBy(v => v);
-    
-        return keys1.SequenceEqual(keys2) && values1.SequenceEqual(values2); 
+        value1.Sort();
+        value2.Sort();
+        key1.Sort();
+        key2.Sort();
+
+        if (value1.SequenceEqual(value2) && key1.SequenceEqual(key2))
+        {
+            return true;
+        }
+        return false;
 
     }
 }
