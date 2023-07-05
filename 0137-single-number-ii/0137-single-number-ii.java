@@ -3,6 +3,27 @@ class Solution {
         
         Map<Integer, Integer> map = new HashMap<>();
         
+        // Normal check keys and values
+        // for(Integer n : nums){
+        //     if(map.containsKey(n)){
+        //         map.put(n, map.get(n) + 1);
+        //     } else{
+        //         map.put(n, 1);
+        //     }
+        // }
+        
+        // Using computeIfPresent
+//         for (Integer n : nums) {
+//             if (!map.containsKey(n)) {
+//                 map.put(n, 1);
+
+//             } else {
+//                 map.computeIfPresent(n,
+//                         (key, val) -> val + 1);
+//             }
+//         }
+        
+        // Preferred version and shortcut using getOrDefault
         for(Integer n : nums){
             map.put(n, map.getOrDefault(n, 0) +  1);
         }
