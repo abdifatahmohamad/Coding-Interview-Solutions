@@ -7,22 +7,26 @@ class Solution {
             map.put(n, map.getOrDefault(n, 0) + 1);
         }
         
-        List<Integer> res = new ArrayList<>();
+    
+        int valueCount = 0;
+        for(int val : map.values()){
+            if(val == 1){
+                valueCount++;
+            }
+        }
         
+        int[] res = new int[valueCount];
+        int idx = 0;
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){
             int key = entry.getKey();
             int value = entry.getValue();
             
             if(value == 1){
-                res.add(key);
+                res[idx++] = key;
             }
         }
         
-        int[] result = new int[res.size()];
-        for (int i = 0; i < res.size(); i++) {
-            result[i] = res.get(i);
-        }
 
-        return result;
+        return res;
     }
 }
