@@ -4,8 +4,8 @@ class Solution {
         int j = t.length() - 1; // Initialize pointer j to the last character of string T
 
         while (i >= 0 || j >= 0) { // Iterate until either pointer i or j reaches the beginning of their respective strings
-            i = processString(s, i); // Process string S and update pointer i
-            j = processString(t, j); // Process string T and update pointer j
+            i = processString(s, i); // Process string s and update pointer i
+            j = processString(t, j); // Process string t and update pointer j
 
             if (i >= 0 && j >= 0 && s.charAt(i) != t.charAt(j)) {
                 // If both strings have non-skipped characters at the same index and they are not equal, return false
@@ -24,6 +24,7 @@ class Solution {
         return true;       
     }
     
+    // Helper method that applies the backspace rules to a given string and returns the index of the last          non-skipped character.
     private int processString(String str, int index) {
         int skip = 0; // Counter for backspace characters encountered
 
