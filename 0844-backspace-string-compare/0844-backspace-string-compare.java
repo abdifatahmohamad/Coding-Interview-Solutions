@@ -4,16 +4,22 @@ class Solution {
     }
     
     // Helper method that removes string #
-    private String processString(String s){
-        StringBuilder sb = new StringBuilder();
-        for(char ch : s.toCharArray()){
-            if(ch == '#'){
-                if(sb.length() > 0){
-                    sb.deleteCharAt(sb.length() - 1);
+    private String processString(String s) {
+        Stack<Character> stack = new Stack<>();
+        
+        for (char ch : s.toCharArray()) {
+            if (ch == '#') {
+                if (!stack.isEmpty()) {
+                    stack.pop();
                 }
-            } else{
-                sb.append(ch);
+            } else {
+                stack.push(ch);
             }
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.insert(0, stack.pop());
         }
         
         return sb.toString();
