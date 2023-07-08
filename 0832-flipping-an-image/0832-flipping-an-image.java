@@ -4,26 +4,25 @@ class Solution {
         int cols = image[0].length;
 
         for (int i = 0; i < rows; i++) {
-            reverseRow(image[i]); // Reverse the current row
-
-            // Flip and invert each element in the row
-            for (int j = 0; j < cols; j++) {
-                image[i][j] = 1 - image[i][j]; // Flip and invert the current element
-            }
+            flipAndInvertRow(image[i]); // Flip and invert the current row
         }
 
         return image;
     }
 
-    private void reverseRow(int[] row) {
-        int start = 0;
-        int end = row.length - 1;
-        while (start < end) {
-            int temp = row[start];
-            row[start] = row[end];
-            row[end] = temp;
-            start++;
-            end--;
+    private void flipAndInvertRow(int[] row) {
+        int left = 0;
+        int right = row.length - 1;
+
+        while (left <= right) {
+            // Flip and invert the elements using XOR
+            int temp = row[left] ^ 1;
+            row[left] = row[right] ^ 1;
+            row[right] = temp;
+
+            // Move the pointers inward
+            left++;
+            right--;
         }
     }
         
