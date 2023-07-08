@@ -8,6 +8,9 @@ class Solution {
             minVal = Math.min(minVal, n);
             maxVal = Math.max(maxVal, n);
         }
+        
+        System.out.println(minVal);
+        System.out.println(maxVal);
 
         int res = 0;
 
