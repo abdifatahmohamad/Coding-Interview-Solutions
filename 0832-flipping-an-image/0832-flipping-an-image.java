@@ -1,29 +1,19 @@
 class Solution {
     public int[][] flipAndInvertImage(int[][] image) {
-         int rows = image.length;
+        int rows = image.length;
         int cols = image[0].length;
 
+        // Invert the values in-place without flipping
         for (int i = 0; i < rows; i++) {
-            flipAndInvertRow(image[i]); // Flip and invert the current row
+            for (int j = 0; j < (cols + 1) / 2; j++) {
+                // Invert and flip the elements simultaneously using XOR with 1
+                int temp = image[i][j] ^ 1;
+                image[i][j] = image[i][cols - j - 1] ^ 1;
+                image[i][cols - j - 1] = temp;
+            }
         }
 
         return image;
-    }
-
-    private void flipAndInvertRow(int[] row) {
-        int left = 0;
-        int right = row.length - 1;
-
-        while (left <= right) {
-            // Flip and invert the elements using XOR
-            int temp = row[left] ^ 1;
-            row[left] = row[right] ^ 1;
-            row[right] = temp;
-
-            // Move the pointers inward
-            left++;
-            right--;
-        }
     }
         
 }
