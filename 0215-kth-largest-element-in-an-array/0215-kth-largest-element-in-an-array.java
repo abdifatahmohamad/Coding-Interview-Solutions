@@ -5,7 +5,6 @@ class Solution {
         for(int n : nums){
             maxHeap.offer(n);
         }
-
         int res = 0;
         int i = 0;
         while(k > i++){
@@ -20,8 +19,8 @@ class Solution {
 }
 
 /*
+k = 4
 [3,2,3,1,2,4,5,5,6]
-
-[1, 2, 2, 3, 3, 4, 5, 5, 6]
+[6, 5, 5, 4, 3, 3, 2, 2, 1]
 
 */
