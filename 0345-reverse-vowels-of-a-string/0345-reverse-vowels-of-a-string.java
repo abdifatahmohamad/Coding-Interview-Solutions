@@ -11,15 +11,17 @@ class Solution {
     }
     
     private static void reverseVowelsInRange(char[] chars, int start, int end) {
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+
         while (start < end) {
-            if (isVowel(chars[start]) && isVowel(chars[end])) {
+            if (isVowel(chars[start], vowels) && isVowel(chars[end], vowels)) {
                 // Swap the vowels
                 char temp = chars[start];
                 chars[start] = chars[end];
                 chars[end] = temp;
                 start++;
                 end--;
-            } else if (isVowel(chars[start])) {
+            } else if (isVowel(chars[start], vowels)) {
                 end--;
             } else {
                 start++;
@@ -27,8 +29,13 @@ class Solution {
         }
     }
     
-    private static boolean isVowel(char c) {
+    private static boolean isVowel(char c, char[] vowels) {
         c = Character.toLowerCase(c);
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        for (char vowel : vowels) {
+            if (vowel == c) {
+                return true;
+            }
+        }
+        return false;
     }
 }
