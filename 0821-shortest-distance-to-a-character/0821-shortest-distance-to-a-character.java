@@ -10,38 +10,27 @@ class Solution {
                 count++;
             }
         }
-        
-        // Initialize the result array
         int[] res = new int[s.length()];
-
-        // Loop through the string again and find the closest occurrence of 'e' for index 0
+        // Find the closest occurrence of c for index 0
         for (int i = 0; i < chars.length; i++) {
-            int minDistance = Integer.MAX_VALUE;
-
-            for (int j = 0; j < count; j++) {
-                int distance = Math.abs(i - indices[j]);
-
-                if (distance < minDistance) {
-                    minDistance = distance;
-                }
-            }
-
-            res[i] = minDistance;
+            res[i] = findClosestOccurrence(i, indices, count);
         }
-        
-        
         return res;
         
+    }   
+    // Helper method to find the closest occurrence of 'e' for an index
+    private static int findClosestOccurrence(int index, int[] indices, int count) {
+        int minDistance = Integer.MAX_VALUE;
+
+        for (int j = 0; j < count; j++) {
+            int distance = Math.abs(index - indices[j]);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+            }
+        }
+
+        return minDistance;
     }
-    
-    // System.out.print(chars[i] + " ");
 }
 
-/*
-    s = "loveleetcode"
-    c = "e"
-    
-    Output: [3,2,1,0,1,0,0,1,2,2,1,0]
-
-
-*/
