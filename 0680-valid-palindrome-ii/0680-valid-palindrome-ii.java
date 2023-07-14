@@ -3,7 +3,13 @@ class Solution {
         int left = 0;
         int right = s.length() - 1;
         while(left <= right){
+            // If the characters at left and right are not equal
             if(s.charAt(left) != s.charAt(right)){
+                // Try skipping the character at left and 
+                // check if the remaining substring is a palindrome
+                
+                // Try skipping the character at right and 
+                // check if the remaining substring is a palindrome
                 if(isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1)){
                     return true;
                 } else{
@@ -28,12 +34,5 @@ class Solution {
             right--;
         }
         return true;
-    }
-    
-    // Helper method that only deals with alpha numeric values
-    private boolean isAlphaNumeric(char c){
-        return ('A' <= c && c <= 'Z') ||
-               ('a' <= c && c <= 'z') ||
-               ('0' <= c && c <= '9');
     }
 }
