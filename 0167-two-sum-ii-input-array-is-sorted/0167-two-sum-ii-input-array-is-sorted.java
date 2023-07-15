@@ -3,14 +3,13 @@ class Solution {
         int right = nums.length -1;
         int left = 0;
         while(left < right){
-            int complement = nums[left] + nums[right];
-            System.out.println(complement);
-            if(complement > target){
-                right--;
-            }else if (complement < target){
+            int total = nums[left] + nums[right];
+            if(total  == target){
+                return new int[]{left + 1, right + 1};
+            }else if (total < target){
                 left++;
             } else{
-                return new int[]{left + 1, right + 1};
+                right--;
             }
         }
         
