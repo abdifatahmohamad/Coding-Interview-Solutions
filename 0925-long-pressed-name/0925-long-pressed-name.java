@@ -12,6 +12,7 @@ class Solution {
             if (i < name.length() && j < typed.length() && name.charAt(i) == typed.charAt(j)) {
                 i++;
                 j++;
+                // handle the case where the current character in typed is a repeated character.
             } else if (j > 0 && j < typed.length() && typed.charAt(j) == typed.charAt(j - 1)) {
                 // Skip repeated characters in typed
                 j++; 
