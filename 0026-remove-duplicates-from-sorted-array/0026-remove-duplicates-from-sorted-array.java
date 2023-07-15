@@ -7,6 +7,7 @@ class Solution {
             if(nums[left] == nums[right]){
                 right++;
             }else{
+                // Remove duplicates
                 left++;
                 nums[left] = nums[right];
             }
