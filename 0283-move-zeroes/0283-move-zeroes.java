@@ -13,10 +13,15 @@ class Solution {
             } else if(nums[right] == 0){
                 right++;
             }else{
-                int temp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = temp;
+                swab(nums, left, right);
             }       
         }     
+    }
+    
+    // Helper method that swabs two values
+    private void swab(int[] nums, int left, int right){
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
     }
 }
