@@ -3,16 +3,14 @@ class Solution {
         int maxContent = 0;
         Arrays.sort(g);
         Arrays.sort(s);
-        int i = g.length -1;
-        int j = s.length -1; // cooky
-        while(i >= 0 && j >= 0){
+        int i = 0;
+        int j = 0; // cooky
+        while(i <= g.length -1 && j <= s.length -1){
             if(s[j] >= g[i]){
                 maxContent++;
-                i--;
-                j--;
-            }else{
-                i--;
+                i++;
             }
+            j++;
         } 
         
         return maxContent;
