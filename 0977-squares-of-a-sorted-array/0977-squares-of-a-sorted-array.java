@@ -10,13 +10,12 @@ class Solution {
             int rightNum = nums[right] * nums[right];
             if(leftNum < rightNum){
                 res[index] = rightNum;
-                index--;
                 right --;
             }else{
                 left++;
                 res[index] = leftNum;
-                index--;
             }
+            index--;
         }
         
         return res;
