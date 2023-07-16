@@ -7,12 +7,6 @@ class Solution {
             // map.put(chars[i] + "", i);
         }
         
-        // for (Map.Entry<String, Integer> entry : map.entrySet()) {
-        //     String key = entry.getKey();
-        //     int value = entry.getValue();
-        //     System.out.println(key + ":" + value);
-        // }
-        
         List<Integer> res = new ArrayList<>();
         int size = 0;
         int end = 0;
@@ -23,12 +17,6 @@ class Solution {
             String key = String.valueOf(ch); 
             // Retrieve last index from map
             int lastIndex = map.get(key); 
-
-            // System.out.println("Character: " + ch + 
-            //                    ", Index: " + i + 
-            //                    ", Key: " + key + 
-            //                    ", Last Index: " + lastIndex);
-            
             // As soon as we see a character, update the size of partition
             size++;
             // Update the end of the partition 
