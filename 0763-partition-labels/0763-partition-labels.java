@@ -1,24 +1,25 @@
 class Solution {
     public List<Integer> partitionLabels(String s) {
-        List<Integer> res = new ArrayList<>();
-        int[] lastOccurrences = new int[26];
-
-        // Store the last occurrence index of each character
-        for (int i = 0; i < s.length(); i++) {
-            lastOccurrences[s.charAt(i) - 'a'] = i;
+        Map<Character, Integer> map = new HashMap<>();
+        char[] chars = s.toCharArray();
+        for(int i = 0; i < chars.length; i++){
+            map.put(chars[i], i);
         }
-
-        int start = 0; // Start index of the current partition
-        int end = 0; // End index of the current partition
-
-        for (int i = 0; i < s.length(); i++) {
-            end = Math.max(end, lastOccurrences[s.charAt(i) - 'a']);
+            
+        List<Integer> res = new ArrayList<>();
+        int start = 0; 
+        int end = 0;
+        int i = 0;
+        while (i < s.length()) {
+            int lastIndex = map.get(s.charAt(i));
+            end = Math.max(end, lastIndex);
 
             // If the current index is equal to the end index, we have found a partition
             if (i == end) {
                 res.add(end - start + 1);
                 start = end + 1; // Move the start index to the next partition
             }
+            i++;
         }
 
         return res;
