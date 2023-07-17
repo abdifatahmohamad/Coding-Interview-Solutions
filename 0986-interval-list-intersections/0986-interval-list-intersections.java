@@ -15,7 +15,7 @@ class Solution {
             int s2 = nums2[j][0]; // nums2 start time
             int e2 = nums2[j][1]; // nums2 end time
             // If there is an intersection
-            if(s1 <= s2 && s2 <= e1 || s2 <= s1 && s1 <= e2){
+            if((s1 <= s2 && s2 <= e1) || (s2 <= s1 && s1 <= e2)){
                 // Find start and en time intervals for the result list
                 int start = Math.max(s1, s2);
                 int end = Math.min(e1, e2);
