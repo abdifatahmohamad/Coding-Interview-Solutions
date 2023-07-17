@@ -9,13 +9,11 @@ class Solution {
                 res++;
                 // Empty the map
                 seen.clear();
-                // Put that character in the map
-                seen.put(c, seen.getOrDefault(c, 0));
             } // If chacarter not in map
-            else{
-                // Put that character in the map
-                seen.put(c, seen.getOrDefault(c, 0));
-            }
+            
+            // Put that character in the map
+            seen.put(c, seen.getOrDefault(c, 0));
+        
         }  
         return res;
  
