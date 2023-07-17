@@ -1,7 +1,8 @@
 class Solution {
+    // https://www.youtube.com/watch?v=l3lWrfGiAFI
     public int[][] intervalIntersection(int[][] nums1, int[][] nums2) {
         // Result list
-        List<int[]> res = new LinkedList<>();
+        List<int[]> res = new ArrayList<>();
         // Get the length of both list
         int n1 = nums1.length, n2 = nums2.length;
         // Define pointers
@@ -35,33 +36,9 @@ class Solution {
             }
         }
         
-        return res.toArray(new int[res.size()][2]);
+        // Return the result in 2D array, for each interval we gonna have
+        // two slots; start time and end time
+        return res.toArray(new int[res.size()][]);
         
     }
 }
-
-/*
-
-        nums1 = [[0,2],[5,10],[13,23],[24,25]]
-        nums2 = [[1,5],[8,12],[15,24],[25,26]]
-        Output: [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
-        
-        nums1StartTime = 0;
-        nums1EndTime = 2;
-        nums2StartTime = 1;
-        nums2EndTime = 5;
-        
-        res = [max(nums1StartTime, nums2StartTime), min(nums1EndTime, nums2EndTime)]
-        res = [1, 2]
-        
-        nums1StartTime = 5;
-        nums1EndTime = 10;
-        nums2StartTime = 8;
-        nums2EndTime = 12;
-        
-        res = [max(nums1StartTime, nums2StartTime), min(nums1EndTime, nums2EndTime)]
-        res = [8, 12]
-
-
-
-*/
