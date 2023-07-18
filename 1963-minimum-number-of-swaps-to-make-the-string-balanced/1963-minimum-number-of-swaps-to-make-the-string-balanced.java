@@ -1,24 +1,19 @@
 class Solution {
     public int minSwaps(String s) {
-        int extraClosing = 0;
-        int res = Integer.MIN_VALUE;
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) == '['){
-                extraClosing--;          
-            }else{
-                extraClosing++;
+        Stack<Character> stack = new Stack<>();
+        int swabs = 0;
+        for(char ch : s.toCharArray()){
+            if(ch == '['){
+                stack.add(ch);
+            } else{
+                if(!stack.isEmpty() && ch == ']'){
+                    stack.pop();
+                }else{
+                    swabs++;
+                }
             }
-            
-            res = Math.max(res, extraClosing);
-        } 
-        return (res + 1) / 2;      
+        }
+        
+        return (swabs + 1) / 2;
     }
 }
-
-
-/*
-  s = "]]][[["
-  i =  012345
-  s = "[[][]]"
-
-*/
