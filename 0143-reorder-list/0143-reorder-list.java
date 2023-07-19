@@ -18,31 +18,33 @@ class Solution {
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+            slow = slow.next; // Move slow pointer by one node
+            fast = fast.next.next; // Move fast pointer by two nodes
         }
         
         // Reverse the second half of the list
-        ListNode prev = null;
-        ListNode curr = slow.next;
+        ListNode prev = null; 
+        ListNode curr = slow.next; 
         while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+            ListNode next = curr.next; // Store the next node
+            curr.next = prev; // Reverse the link
+            prev = curr; // Update the previous node
+            curr = next; // Move to the next node
         }
         slow.next = null; // Break the original list into two halves
         
         // Merge the two halves alternatively
-        ListNode first = head;
-        ListNode second = prev;
+        ListNode first = head; // Pointer to the first half
+        ListNode second = prev; // Pointer to the reversed second half
         while (second != null) {
-            ListNode nextFirst = first.next;
-            ListNode nextSecond = second.next;
-            first.next = second;
-            second.next = nextFirst;
-            first = nextFirst;
-            second = nextSecond;
+            ListNode nextFirst = first.next; // Store the next node in the first half
+            ListNode nextSecond = second.next; // Store the next node in the second half
+            // Link the current node in the first half to the current node in the second half
+            first.next = second; 
+            // Link the current node in the second half to the next node in the first half
+            second.next = nextFirst; 
+            first = nextFirst; // Move the first pointer to the next node in the first half
+            second = nextSecond; // Move the second pointer to the next node in the second half
         }
     }
 }
