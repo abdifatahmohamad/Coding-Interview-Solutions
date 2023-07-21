@@ -7,20 +7,19 @@ class Solution {
         for(int n : nums){
             map.put(n, map.getOrDefault(n, 0) + 1);
         }
-        
-         // Step 2: Sort the values of the HashMap
-        List<Integer> sortedValues = new ArrayList<>(map.keySet());
-        Collections.sort(sortedValues);
 
         // Find the longest consecutive sequence
         int res = 0;
-
-        for (int num : map.keySet()) {
-            if (!map.containsKey(num - 1)) {
+        
+        // Loop through the distinct elements in the map
+        for (int n : map.keySet()) {
+            // Check if the previous consecutive number exists in the map
+            if (!map.containsKey(n - 1)) {
+                // If not, start counting the consecutive sequence for that element
                 int curr = 1;
-
-                while (map.containsKey(num + 1)) {
-                    num++;
+        // Continue counting the consecutive sequence until there is no next consecutive number
+                while (map.containsKey(n + 1)) {
+                    n++;
                     curr++;
                 }
 
