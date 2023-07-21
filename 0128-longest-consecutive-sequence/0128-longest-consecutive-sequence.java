@@ -1,8 +1,5 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
-        if(nums.length == 0){
-            return 0;
-        }
         Map<Integer, Integer> map = new HashMap<>();
         for(int n : nums){
             map.put(n, map.getOrDefault(n, 0) + 1);
