@@ -4,28 +4,19 @@ class Solution {
         for(int n : nums){
             map.put(n, map.getOrDefault(n, 0) + 1);
         }
-
-        // Find the longest consecutive sequence
         int res = 0;
-        
-        // Loop through the distinct elements in the map
         for (int n : map.keySet()) {
-            // Check if the previous consecutive number exists in the map
-            if (!map.containsKey(n - 1)) {
-                // If not, start counting the consecutive sequence for that element
-                int curr = 1;
-        // Continue counting the consecutive sequence until there is no next consecutive number
-                while (map.containsKey(n + 1)) {
-                    n++;
-                    curr++;
+            // Check if i's the start of a sequence
+            if(!map.containsKey(n - 1)){
+                int length = 0;
+                while (map.containsKey(n + length)) {
+                    length++;
                 }
 
-                res = Math.max(res, curr);
+                res = Math.max(res, length);
+                
             }
-        }
-
-        
-        return res;
-        
+        }    
+        return res;      
     }
 }
