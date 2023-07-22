@@ -4,7 +4,7 @@ class Solution {
         for(int n : nums){
             map.put(n, map.getOrDefault(n, 0) + 1);
         }
-        int res = 0;
+        int res = Integer.MIN_VALUE;
         for (int n : map.keySet()) {
             // Check if i's the start of a sequence
             if(!map.containsKey(n - 1)){
@@ -16,7 +16,8 @@ class Solution {
                 res = Math.max(res, length);
                 
             }
-        }    
-        return res;      
+        }   
+        // when array [], it should return 0
+        return Integer.MIN_VALUE != res ? res : 0;      
     }
 }
