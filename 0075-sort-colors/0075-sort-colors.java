@@ -11,7 +11,7 @@ class Solution {
         
         int index = 0;
         // Step 3: Modify the input array in-place.
-        for (int color = 0; color <= 2; color++) {
+        for (int color = 0; color < 3; color++) {
             while (buckets[color] > 0) {
                 nums[index++] = color;
                 buckets[color]--;
