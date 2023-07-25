@@ -6,11 +6,21 @@ class Solution {
             res[i] = product;
             product *= nums[i];
         }
+        
+        for(int n : res){
+            System.out.print(n + " "); // 1 1 2 6 
+            // [4, 3, 2, 1]
+            //  1 1 2 6
+            // [24, ]
+        }
 
         product = 1;
         for (int i = nums.length - 1; i >= 0; i--) {
             res[i] *= product;
             product *= nums[i];
+            //nums = 4, 3, 2, 1
+            // res = 1, 1, 2, 6
+            // product = 1
         }
         return res;
     }
