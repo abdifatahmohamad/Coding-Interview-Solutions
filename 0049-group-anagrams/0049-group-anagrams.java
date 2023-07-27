@@ -1,7 +1,5 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        // Created result array or array
-        List<List<String>> res = new ArrayList<>();
         // Create map to fasilitate the operations
         Map<String, List<String>> map = new HashMap<>();
         // Loop the give array string
@@ -24,10 +22,7 @@ class Solution {
                 map.get(sortedStr).add(word);
             }
         }
-        // Append map values to the result
-        for(List<String> words : map.values()){
-            res.add(words);
-        }
-        return res;
+        // Return map values as a list
+        return new ArrayList<>(map.values());
     }
 }
