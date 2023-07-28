@@ -5,40 +5,38 @@ class Solution {
         }
 
         Map<Character, Integer> map1 = new HashMap<>();
-        for (char c : word1.toCharArray()) {
-            map1.put(c, map1.getOrDefault(c, 0) + 1);
-        }
-
         Map<Character, Integer> map2 = new HashMap<>();
-        for (char c : word2.toCharArray()) {
-            map2.put(c, map2.getOrDefault(c, 0) + 1);
+
+        // Build character frequency maps for both words in a single loop
+        for (int i = 0; i < word1.length(); i++) {
+            char c1 = word1.charAt(i);
+            char c2 = word2.charAt(i);
+
+            map1.put(c1, map1.getOrDefault(c1, 0) + 1);
+            map2.put(c2, map2.getOrDefault(c2, 0) + 1);
         }
 
-        int res = 0;
+        int count = 0;
         for (char k : map1.keySet()) {
             if (map2.containsKey(k)) {
                 if (Math.abs(map1.get(k) - map2.get(k)) > 3) {
-                    res++;
+                    count++;
                     break;
                 }
             } else if (map1.get(k) > 3) {
-                res++;
+                count++;
                 break;
             }
         }
 
         for (char k : map2.keySet()) {
-            if (map1.containsKey(k)) {
-                if (Math.abs(map1.get(k) - map2.get(k)) > 3) {
-                    res++;
-                    break;
-                }
-            } else if (map2.get(k) > 3) {
-                res++;
+            if (!map1.containsKey(k) && map2.get(k) > 3) {
+                count++;
                 break;
             }
         }
 
-        return res == 0;
+        return count == 0;
+        
     }
 }
