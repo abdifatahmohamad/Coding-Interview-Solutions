@@ -1,20 +1,26 @@
 class Solution {
+    Map<Character, Integer> map;
     public int canBeTypedWords(String text, String brokenLetters) {
-        Map<Character, Integer> map = new HashMap<>();
+        map = new HashMap<>();
         for(char c : brokenLetters.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
         
         int res = 0;
         for(String word : text.split(" ")){
-            res++;
-            for(char c : word.toCharArray()){
-                if(map.containsKey(c)){
-                    res--;
-                    break;
-                }
-            }           
+            if(canBeFullyTyped(word)){
+                res++;
+            }  
         }
         return res;
+    }
+    
+    private boolean canBeFullyTyped(String word){
+        for(char c : word.toCharArray()){
+            if(map.containsKey(c)){
+                return false;
+            }
+        }
+        return true;
     }
 }
