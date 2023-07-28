@@ -1,5 +1,6 @@
 class Solution {
     public int maximumValue(String[] strs) {
+        // System.out.println(getValue("300879"));
         int maxVal = Integer.MIN_VALUE;
         for(String s : strs){
             int value = getValue(s);
@@ -23,8 +24,7 @@ class Solution {
             value += (digit * placeValue);
             placeValue *= 10;
         }
-        
-        
         return value;
     }
+    
 }
