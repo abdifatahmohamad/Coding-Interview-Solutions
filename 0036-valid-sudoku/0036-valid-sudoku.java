@@ -1,30 +1,38 @@
 class Solution {
     public boolean isValidSudoku(char[][] board) {
-        int rows = board.length;
-        int cols = board[0].length;
-        Set<String> seen = new HashSet<>();
+        Map<Integer, Set<Character>> rows = new HashMap<>();
+        Map<Integer, Set<Character>> cols = new HashMap<>();
+        Map<Integer, Set<Character>> squares = new HashMap<>();
 
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                char ch = board[r][c];
-                if (ch != '.') {
-                    String rowVal = "r" + r + ch;
-                    String colVal = "c" + c + ch;
-                    String blockVal = "b" + (r / 3) + (c / 3) + ch;
-                    
-                    if (seen.contains(rowVal) || 
-                        seen.contains(colVal) || 
-                        seen.contains(blockVal)) {
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                char value = board[r][c];
+                if (value != '.') {
+                    // Check and create a new set if needed for rows
+                    if (!rows.containsKey(r))
+                        rows.put(r, new HashSet<>());
+                    // Check and create a new set if needed for columns
+                    if (!cols.containsKey(c))
+                        cols.put(c, new HashSet<>());
+                    // Check and create a new set if needed for squares
+                    int squareIndex = 3 * (r / 3) + c / 3;
+                    if (!squares.containsKey(squareIndex))
+                        squares.put(squareIndex, new HashSet<>());
+
+                    // Check if the value is already present in rows, columns, or squares
+                    if (rows.get(r).contains(value) || 
+                        cols.get(c).contains(value) ||
+                        squares.get(squareIndex).contains(value))
                         return false;
-                    }
 
-                    seen.add(rowVal);
-                    seen.add(colVal);
-                    seen.add(blockVal);
+                    // Add the value to the respective row, column, and square
+                    rows.get(r).add(value);
+                    cols.get(c).add(value);
+                    squares.get(squareIndex).add(value);
                 }
             }
         }
 
-        return true; 
+        return true;
     }
 }
