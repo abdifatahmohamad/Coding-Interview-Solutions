@@ -14,22 +14,20 @@ class Solution {
         for(int n : nums3){
             map3.put(n, map3.getOrDefault(n, 0) + 1);
         }
-
+        // Checking if key in map2 and map3 peresent in map1
         Set<Integer> set = new HashSet<>();
-        List<Integer> res = new ArrayList<>();
         for(int key : map1.keySet()){
             if(!set.contains(key) && map2.containsKey(key) || map3.containsKey(key)){
-                res.add(key);
                 set.add(key);
             }
         }
-
+        
+        // Checking if key in map3 peresent in map2
         for(int key : map2.keySet()){
             if(!set.contains(key) && map3.containsKey(key)){
-                res.add(key);
                 set.add(key);
             }
         }
-        return res;
+        return new ArrayList<>(set);
     }
 }
