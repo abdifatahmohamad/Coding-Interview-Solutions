@@ -18,23 +18,17 @@ class Solution {
         Set<Integer> set = new HashSet<>();
         List<Integer> res = new ArrayList<>();
         for(int key : map1.keySet()){
-            if(!set.contains(key)){
-                if(map2.containsKey(key) || map3.containsKey(key)){
-                    res.add(key);
-                }
+            if(!set.contains(key) && map2.containsKey(key) || map3.containsKey(key)){
+                res.add(key);
+                set.add(key);
             }
-            set.add(key);
-
         }
 
         for(int key : map2.keySet()){
-            if(!set.contains(key)){
-                if(map3.containsKey(key)){
-                    res.add(key);
-                }
+            if(!set.contains(key) && map3.containsKey(key)){
+                res.add(key);
+                set.add(key);
             }
-            set.add(key);
-
         }
         return res;
     }
