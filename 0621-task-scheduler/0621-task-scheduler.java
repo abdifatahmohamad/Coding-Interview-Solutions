@@ -14,25 +14,22 @@ class Solution {
             maxHeap.offer(num);
         }
 
-        int cycles = 0;
-        while (!maxHeap.isEmpty()) {
-            List<Integer> temp = new ArrayList<>();
-            for (int i = 0; i < n + 1; i++) {
-                if (!maxHeap.isEmpty()) {
-                    temp.add(maxHeap.poll() - 1);
-                }
-            }
+        // Get the maximum frequency from the max heap.
+        int maxNum = maxHeap.peek();
 
-            for (int num : temp) {
-                if (num > 0) {
-                    maxHeap.offer(num);
-                }
-            }
-
-            cycles += maxHeap.isEmpty() ? temp.size() : n + 1;
+        int i = 0, maxTaskCounter = 0;
+        // Find how many tasks have the maximum frequency.
+        while (!maxHeap.isEmpty() && maxHeap.peek() == maxNum) {
+            maxTaskCounter++;
+            maxHeap.poll();
         }
 
-        return cycles;
+        // Apply the formula to calculate intervals as derived from the Python code.
+        int intervals = (maxNum - 1) * (n + 1) + maxTaskCounter;
+
+        // The formula doesn't hold for some cases like (ABCABCDEFG),
+        // so we take the max of intervals and the total number of tasks to get the final answer.
+        return Math.max(intervals, tasks.length);
     }
 }
 
