@@ -17,11 +17,17 @@ class Solution:
             k -= 1
         
         # Construct the result string from the stack, removing leading zeros
-        result = ''.join(stack).lstrip('0')
+        result = ''
+        leading_zero = True  # Flag to track leading zeros
+        
+        for digit in stack:
+            if digit != '0':
+                leading_zero = False  # Once we encounter a non-zero digit, set leading_zero to False
+            if not leading_zero:
+                result += digit  # Add non-zero digits to the result string
         
         # If the result is empty, return '0'
         if not result:
             return '0'
         
         return result
-        
