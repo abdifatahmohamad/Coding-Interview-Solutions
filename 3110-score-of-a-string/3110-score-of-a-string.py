@@ -1,10 +1,15 @@
 class Solution:
     def scoreOfString(self, s: str) -> int:
-        ascii_values = [ord(char) for char in s]
-        
+        bucket = [0 for _ in range(26)]
+    
+        indices = []
+        for char in s:
+            index = ord(char) - ord('a')
+            indices.append(index)
+
         res = 0
-        for i in range(len(ascii_values) - 1):
-            res += abs(ascii_values[i] - ascii_values[i + 1])
+        for i in range(len(indices) - 1):
+            res += abs(indices[i] - indices[i + 1])
 
         return res
         
