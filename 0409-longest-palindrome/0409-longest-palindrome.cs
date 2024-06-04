@@ -4,7 +4,9 @@ public class Solution {
             return 1;
         }
         
-        Dictionary<char, int> map = new();
+        // Dictionary<char, int> map = new();
+        Dictionary<char, int> map = new(26 * 26); // Tachnically constant 52 uppder & lower case characters
+
         foreach (char ch in s){
             map[ch] = map.GetValueOrDefault(ch, 0) + 1;
         }
