@@ -1,3 +1,5 @@
+# Reference: https://www.youtube.com/watch?v=twuC1F6gLI8&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=4
+
 # Reverse array recursively
 # def reverse_array(arr, l, r):
 #     if l >= r:
@@ -16,6 +18,7 @@
 #     print(arr)
 
 # Reverse array in a single i:
+# Time complexity is N / 2 (half on N) || Space is O(N)
 def reverse_array(i, arr, n):
     if i >= n // 2:
         return
