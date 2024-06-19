@@ -1,1 +1,2 @@
-https://visualgo.net/en/graphds
+dfs(source, visited, adjacency)
+    # return destination in visited
