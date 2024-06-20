@@ -37,11 +37,11 @@ class Graph:
             if v in visited:
                 continue
             visited.add(v)
-            for w in self.graph[v]:
-                if w not in visited:
-                    stack.append(w)
+            for neighbor in self.graph[v]:
+                if neighbor not in visited:
+                    stack.append(neighbor)
 
-    # DFS recursive
+ # DFS recursive
 def dfs_util(n: int):
     visited = set()
 
