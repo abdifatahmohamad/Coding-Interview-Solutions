@@ -1,6 +1,23 @@
 from collections import defaultdict
 from typing import List
 
+"""
+Number of Provinces
+n = 3
+matrix = [
+    [1, 1, 0],
+    [1, 1, 0],
+    [0, 0, 1]
+]
+
+# Create the adjacency list from the matrix
+adjacency = {i: [] for i in range(1, n + 1)}
+for i in range(n):
+    for j in range(n):
+        if matrix[i][j] == 1:
+            adjacency[i + 1].append(j + 1)
+"""
+
 # If the graph bi-directional means graph in undirected
 
 # n = 3
